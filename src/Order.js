@@ -22,7 +22,7 @@ class Order extends React.Component{
       <h3 class="order__time"> 12:00 - 13:00 </h3>
       <ul class="order__list">
         {this.props.orders.map((order, index) =>{
-          return <li className="order__list__item" key={order.item}>{order.amount}x {order.item}</li>
+          return <li className="order__list__item" key={index}>{order.amount}x {order.item}</li>
         })}
       </ul>
     </section>

@@ -8,7 +8,7 @@ class Admin extends React.Component{
   render(){
     return(
 
-      <TimeslotList />
+      <OrderList />
     )
   }
 
