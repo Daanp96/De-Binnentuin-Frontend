@@ -1,12 +1,14 @@
-import React from 'react'';
+import React from 'react';
 
-import Admin from './Admin';
+import OrderList from './OrderList';
+import TimeslotList from './TimeslotList';
 
 
 class Admin extends React.Component{
   render(){
     return(
-      <Admin />
+
+      <TimeslotList />
     )
   }
 

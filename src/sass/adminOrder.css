@@ -2,6 +2,15 @@
   width: 50%;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
 .order {
   background-color: #336633;
   color: white;

@@ -35,8 +35,23 @@
     transform: rotate(360deg);
   }
 }
+.timeslot {
+  display: grid;
+  grid-template-columns: 45% 10% 45%;
+  margin-top: 1em;
+}
+
 .orderlist {
   width: 50%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
 }
 
 .order {
