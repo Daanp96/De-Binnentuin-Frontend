@@ -1,0 +1,27 @@
+.orderlist {
+  width: 50%;
+}
+
+.order {
+  background-color: #336633;
+  color: white;
+  padding: 1em 0;
+}
+.order__table {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+}
+.order__time {
+  font-size: 1.5em;
+  margin-bottom: 0.4em;
+}
+.order__list {
+  text-align: left;
+  width: 40%;
+  margin: auto;
+  color: yellow;
+  list-style-position: inside;
+  list-style-type: none;
+}
+
+/*# sourceMappingURL=adminOrder.css.map */
