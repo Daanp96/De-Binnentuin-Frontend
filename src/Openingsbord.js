@@ -1,9 +1,19 @@
 import React from 'react';
 
+import axios from 'axios';
+
 class Openingsbord extends React.Component{
+    state = {open: ""}
+
+    componentDidMount(){
+      axios.get('http://localhost:8000/admin/' + this.props.naam).then(res =>{
+        this.setState({open: res.data.isOpen})
+      });
+    }
+
 
     render(){
-      const isOpen = this.props.open;
+      const isOpen = this.state.open;
       let image_link;
       if(isOpen){
         image_link = 'images/open.png';
@@ -17,7 +27,7 @@ class Openingsbord extends React.Component{
           <figure>
             <img src={image_link} alt="Restaruant open" />
           </figure>
-          <button type="button" onClick={this.props.onClick}>Verander </button>
+          <button type="button" onClick={() => this.props.onClick(this.props.naam)}>Verander </button>
         </section>
 
       )
