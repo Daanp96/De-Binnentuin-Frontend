@@ -77,4 +77,13 @@ html {
   list-style-type: none;
 }
 
+.Openingsborden {
+  display: grid;
+  width: 50%;
+  grid-template-columns: 50% 50%;
+}
+.Openingsborden img {
+  max-width: 50%;
+}
+
 /*# sourceMappingURL=main.css.map */

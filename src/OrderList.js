@@ -16,18 +16,14 @@ class OrderList extends React.Component{
       this.setState({orders});
 
     })
-
-
-
     // pakt elk item en doet hem bij de bestellijst
       let bestellijst = [];
   for(const [order, value] of this.state.orders.entries()){
     bestellijst.push( {amount: this.state.orders[order].Aantal, item: this.state.orders[order].MenuItem_id} )
   }
+    //Return functie
     return(
-
       <section class="orderlist">
-
         <Order table="5" orders={bestellijst} />
       </section>
     )

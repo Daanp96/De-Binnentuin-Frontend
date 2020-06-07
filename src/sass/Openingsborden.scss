@@ -1,0 +1,10 @@
+.Openingsborden{
+  display: grid;
+  width: 50%;
+  grid-template-columns: 50% 50%;
+
+
+  & img{
+    max-width: 50%;
+  }
+}
