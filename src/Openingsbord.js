@@ -27,7 +27,11 @@ class Openingsbord extends React.Component{
           <figure>
             <img src={image_link} alt="Restaruant open" />
           </figure>
-          <button type="button" onClick={() => this.props.onClick(this.props.naam)}>Verander </button>
+        { /*  <form onSubmit={() => this.props.onSubmit(this.props.naam)}>
+            <input type="text" name="name" value={this.props.naam}/>
+            <button type="submit">Verander</button>
+          </form> */}
+          <button onClick={() => this.props.onClick(this.props.naam)}>Change </button>
         </section>
 
       )

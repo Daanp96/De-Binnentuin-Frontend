@@ -23,7 +23,7 @@ class OrderList extends React.Component{
   }
     //Return functie
     return(
-      <section class="orderlist">
+      <section className="orderlist">
         <Order table="5" orders={bestellijst} />
       </section>
     )

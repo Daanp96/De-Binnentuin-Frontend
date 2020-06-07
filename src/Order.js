@@ -17,10 +17,10 @@ class Order extends React.Component{
   } */
 
   return(
-    <section class="order">
-      <h2 class="order__table"> Table {this.props.table || 0} </h2>
-      <h3 class="order__time"> 12:00 - 13:00 </h3>
-      <ul class="order__list">
+    <section className="order">
+      <h2 className="order__table"> Table {this.props.table || 0} </h2>
+      <h3 className="order__time"> 12:00 - 13:00 </h3>
+      <ul className="order__list">
         {this.props.orders.map((order, index) =>{
           return <li className="order__list__item" key={index}>{order.amount}x {order.item}</li>
         })}
