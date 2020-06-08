@@ -10,8 +10,7 @@ class Weather extends React.Component {
             access_key: "caf3e0d51caea7508e1b5b2575eaa3a1",
             query: "52.163660,4.492393"
         };
-        // const BASE_URL = "http://api.weatherstack.com/current";
-        const BASE_URL = "http://api.weatherstack.com/current?access_key=caf3e0d51caea7508e1b5b2575eaa3a1&query=New%20York";
+        const BASE_URL = "http://api.weatherstack.com/current";
         axios.get(BASE_URL, {params}).then(res => {
             console.log(res.data.error);
             if(res.data.error){
