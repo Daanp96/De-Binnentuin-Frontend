@@ -2,6 +2,8 @@ import React from 'react';
 // import logo from './logo.svg';
 import './sass/App.scss';
 
+import Allergeen from "./Allergeen";
+
 function App() {
   return (
     <div className="App">
@@ -10,6 +12,7 @@ function App() {
           De Binnentuin
         </p>
       </header>
+      <Allergeen allergy="fish"/>
     </div>
   );
 }
