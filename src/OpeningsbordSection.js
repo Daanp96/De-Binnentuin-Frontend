@@ -9,11 +9,15 @@ class OpeningsbordSection extends React.Component{
 
     onClick = (tekst) =>{
       console.log(tekst);
-    //  axios.defaults.headers.patch['X-CSRF-Token'] = response.data._csrf;
-      axios.patch('http://localhost:8000/admin/binnentuin/change',
-      { name:"binnentuin", isOpen:0, menu_number:1, _method: 'patch'}).then((response) => {
-          console.log(response);
-        });
+      axios.put('http://localhost:8000/admin/binnentuin/change', { name:"binnentuin", isOpen:0, menu_number:1}, {withCredentials: true});
+
+
+    // axios.defaults.headers.patch['X-CSRF-Token'] = response.data._csrf;
+    // axios.patch('http://localhost:8000/admin/binnentuin/change',
+    //  { name:"binnentuin", isOpen:0, menu_number:1, _method: 'patch'},
+    //  { headers: { 'X-Requested-With': 'XMLHttpRequest'}}).then((response) => {
+      //    console.log(response);
+        //});
 
     }
 
@@ -22,7 +26,7 @@ class OpeningsbordSection extends React.Component{
       return(
         <section className="Openingsborden">
           <Openingsbord naam="binnentuin" open={false} onClick={this.onClick}/>
-          <Openingsbord naam="Roof" open={true} onClick={this.onClick}/>
+          <Openingsbord naam="dakterras" open={true} onClick={this.onClick}/>
         </section>
       )
     }

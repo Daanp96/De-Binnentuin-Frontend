@@ -10,9 +10,7 @@ import AdminMenu from './AdminMenu';
 class Admin extends React.Component{
   render(){
     return(
-      <section class="AdminMenuSection">
-      <AdminMenu />
-      </section>
+      <OpeningsbordSection />
     )
   }
 

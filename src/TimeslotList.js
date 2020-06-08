@@ -12,7 +12,7 @@ class TimeslotList extends React.Component{
 
 
   componentDidMount(){
-    axios.get('http://localhost:8000/timeslots').then(res =>{
+    axios.get('http://localhost:8000/admin/timeslots').then(res =>{
       this.setState({timeslots: res.data});
     })
   }
