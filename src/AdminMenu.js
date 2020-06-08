@@ -1,15 +1,31 @@
 import React from 'react';
+import axios from 'axios';
+import AdminMenuItem from './AdminMenuItem';
 
-const AdminMenu = () =>{
+class AdminMenu extends React.Component{
+  constructor(){
+    super()
+    this.state =   {  menu: [] }
+  }
+
+  componentDidMount(){
+    axios.get('http://localhost:8000/admin/menu/1').then(res =>{
+      this.setState({menu: res.data});
+    })
+
+  }
+
+  render(){
+
   return(
-    <section className="AdminMenuSection">
-      <h1> Menu </h1>
-
-      <button className="AdminMenuSection__button">Binnentuin Menu</button>
-      <button className="AdminMenuSection__button">Roof menu</button>
-      <button className="AdminMenuSection__button">Dranken menu</button>
+    <section>
+      {this.state.menu.map((menuItem, index) =>{
+        console.log(menuItem);
+        return <AdminMenuItem key={index} naam={menuItem.naam} kosten={menuItem.prijs} beschrijving={menuItem.beschrijving} />
+      })} 
     </section>
   )
+}
 }
 
 export default AdminMenu;

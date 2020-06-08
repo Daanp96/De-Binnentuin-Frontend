@@ -93,6 +93,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 60%;
 }
 .AdminMenuSection__button {
   margin: 1em 0;
@@ -101,6 +102,28 @@ html {
   border: none;
   background-color: #996501;
   color: white;
+}
+
+.menuItemCard {
+  width: 100%;
+  background-color: #336633;
+  margin: 0.5em 0;
+  text-align: left;
+}
+.menuItemCard h2 {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+  display: inline;
+  margin-left: 1em;
+}
+.menuItemCard h3 {
+  display: inline;
+  margin-left: 5em;
+}
+.menuItemCard p {
+  font-size: 1em;
+  width: 50%;
+  padding-bottom: 0.5em;
 }
 
 /*# sourceMappingURL=main.css.map */
