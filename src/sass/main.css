@@ -40,6 +40,9 @@
   grid-template-columns: 45% 10% 45%;
   margin-top: 1em;
 }
+.timeslot input {
+  width: 100%;
+}
 
 .orderlist {
   width: 50%;
@@ -84,6 +87,20 @@ html {
 }
 .Openingsborden img {
   max-width: 50%;
+}
+
+.AdminMenuSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.AdminMenuSection__button {
+  margin: 1em 0;
+  font-size: 1.3em;
+  padding: 0.3em 0.2em;
+  border: none;
+  background-color: #996501;
+  color: white;
 }
 
 /*# sourceMappingURL=main.css.map */

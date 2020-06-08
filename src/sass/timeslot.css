@@ -3,5 +3,8 @@
   grid-template-columns: 45% 10% 45%;
   margin-top: 1em;
 }
+.timeslot input {
+  width: 100%;
+}
 
 /*# sourceMappingURL=timeslot.css.map */
