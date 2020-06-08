@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "./sass/Weather.scss";
 
 class Weather extends React.Component {
     state = {temperature: "", image: ""};
@@ -15,8 +16,8 @@ class Weather extends React.Component {
             console.log(res.data.error);
             if(res.data.error){
                 this.setState({
-                    temperature: "Geen weer bekend",
-                    image: "logo512.png"
+                    temperature: "Geen weer beschikbaar",
+                    image: "img/noweather.png"
                 });
             } else {
                 this.setState({
@@ -34,9 +35,8 @@ class Weather extends React.Component {
     render(){
         return(
             <section>
-                {/* <button onClick={this.getWeather}>Click Me</button> */}
                 <p>{this.state.temperature}</p>
-                <img src={this.state.image} alt="weather_icon"/>
+                <img class="weather" src={this.state.image} alt="weather_icon"/>
             </section>
         );
     }
