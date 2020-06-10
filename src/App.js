@@ -1,6 +1,7 @@
 import React from 'react';
 import './sass/App.scss';
 import Weather from "./Weather";
+import Opmerking from "./Opmerking";
 
 class App extends React.Component {
 
@@ -11,6 +12,7 @@ class App extends React.Component {
           <p>De Binnentuin</p>
         </header>
         <Weather/>
+        <Opmerking/>
       </div>
     );
   }
