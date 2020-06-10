@@ -12,7 +12,7 @@ function App() {
           De Binnentuin
         </p>
       </header>
-      <Allergeen allergy="fish"/>
+      <Allergeen allergy="fish" line="false"/>
     </div>
   );
 }

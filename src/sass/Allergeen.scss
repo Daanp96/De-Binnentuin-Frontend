@@ -1,16 +1,32 @@
-.allergeen-icoon{
+.allergeen-icoon-container{
   width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 120px;
 
-  border-radius: 50%;
-  background-color: #A83D2E;
+  &__icoon{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
+    flex-wrap: wrap;
 
-  &__img{
-    transform: scale(1.4,1.4);
+    &--colored{
+      border-radius: 50%;
+      background-color: #A83D2E;
+
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
+    }
+
+    &__img{
+      transform: scale(1.4,1.4);
+    }
   }
+
+  &__text{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    text-align: center;
+  }
+
 }
