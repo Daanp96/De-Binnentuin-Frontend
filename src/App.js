@@ -1,16 +1,20 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './sass/App.scss';
+import LocationButton from "./LocationButton";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          De Binnentuin
-        </p>
+    <main className="main">
+
+      <header className="main__header">
+
       </header>
-    </div>
+      <section className="main__locationContainer">
+        <LocationButton locatie="binnentuin"/>
+        <LocationButton locatie="dakterras"/>
+      </section>
+    </main>
   );
 }
 
