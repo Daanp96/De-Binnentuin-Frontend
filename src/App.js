@@ -1,7 +1,7 @@
 import React from 'react';
 import './sass/App.scss';
 // import Weather from "./Weather";
-import MenuItem from "./MenuItem";
+import MenuItemList from "./MenuItemList";
 
 class App extends React.Component {
 
@@ -11,8 +11,7 @@ class App extends React.Component {
         <header className="App-header">
           <p>De Binnentuin</p>
         </header>
-        {/* <Weather/> */}
-        <MenuItem/>
+        <MenuItemList/>
       </div>
     );
   }
