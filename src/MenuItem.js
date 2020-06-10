@@ -13,7 +13,7 @@ class MenuItem extends React.Component {
     getMenu = () => {
         const BASE_URL = "http://127.0.0.1:8000/api/menu";
         axios.get(BASE_URL).then(res => {
-            console.log(res.data[0]);
+            console.log(res);
             this.setState({
                 naam: res.data[0].naam,
                 beschrijving: res.data[0].beschrijving,
