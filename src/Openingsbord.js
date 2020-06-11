@@ -3,12 +3,12 @@ import React from 'react';
 import axios from 'axios';
 
 class Openingsbord extends React.Component{
-    state = {open: ""}
+    state = {open: "", token: ""}
 
     componentDidMount(){
       axios.get('http://localhost:8000/admin/' + this.props.naam).then(res =>{
-        this.setState({open: res.data.isOpen})
-        console.log(res.data._csrf);
+        this.setState({open: res.data[0].isOpen, token: res.data[1]})
+        console.log(res.data);
 
       });
     }
@@ -21,7 +21,7 @@ class Openingsbord extends React.Component{
         image_link = 'images/open.png';
       }
       else{
-        image_link = 'images/close.png';
+        image_link = 'images/closed-sign.png';
       }
       return(
         <section>
@@ -33,7 +33,7 @@ class Openingsbord extends React.Component{
             <input type="text" name="name" value={this.props.naam}/>
             <button type="submit">Verander</button>
           </form> */}
-          <button onClick={() => this.props.onClick("hey")}>Change </button>
+          <button onClick={() => this.props.onClick(this.props.naam, this.state.open)}>Change </button>
         </section>
 
       )

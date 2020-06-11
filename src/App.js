@@ -7,17 +7,13 @@ import Admin from './Admin';
 
 function App() {
   return (
-    <html>
-      <head>
-        <meta name="csrf-token" content="{{ csrf_token() }}" />
-      </head>
     <div className="App">
       <header className="App-header">
         <Admin />
 
       </header>
     </div>
-    </html>
+
   );
 }
 

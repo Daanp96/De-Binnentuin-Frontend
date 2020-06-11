@@ -9,22 +9,22 @@ import axios from 'axios';
 class OpeningsbordSection extends React.Component{
 
 
-    onClick = (tekst) =>{
-
-      axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
-axios.defaults.xsrfCookieName = "csrftoken";
-
-    let token = document.head.querySelector('meta[name="csrf-token"]');
-     console.log(tekst);
-     console.log(token);
-     window.csrf_token = "{{ csrf_token() }}";
-      //axios.defaults.headers.common = {    'X-Requested-With': 'XMLHttpRequest',  'X-CSRF-TOKEN': window.csrf_token};
-    //  axios.defaults.headers.common['X-CSRF-TOKEN'] = ('meta[name="csrf-token"]').attr('content');
-      axios.put('http://localhost:8000/admin/binnentuin/change', { name:"binnentuin", isOpen:0, menu_number:1},
-      {'Access-Control-Allow-Credentials':true});
-
-
-    }
+    onClick = (naam, geopend) =>{
+      if(geopend == 1){
+        geopend = 0;
+      }
+      else {
+        geopend = 1;
+      }
+     console.log(naam, geopend);
+      axios.patch('http://localhost:8000/admin/change', {name:naam, isOpen:geopend},
+      {'Access-Control-Allow-Headers':' X-CSRF-TOKEN'},
+    )  .then(response => {
+  console.log(response);})
+  .catch(error => {
+    console.log(error);
+  });
+ }
 
 
     render(){
