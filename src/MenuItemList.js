@@ -24,7 +24,7 @@ class MenuItemList extends React.Component {
 
         const items = this.state.itemList.map((item, index) => 
             <MenuItem 
-                id={index}
+                key={index}
                 naam={item.naam}
                 beschrijving={item.beschrijving}
                 categorie={item.categorie}
@@ -34,7 +34,9 @@ class MenuItemList extends React.Component {
         );
 
         return(
-            items
+            <section className="menu_list">
+                {items}
+            </section>
         );
     }
 }
