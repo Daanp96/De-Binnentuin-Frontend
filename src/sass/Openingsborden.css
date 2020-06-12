@@ -1,10 +1,32 @@
 .Openingsborden {
   display: grid;
-  width: 50%;
+  width: 70%;
   grid-template-columns: 50% 50%;
 }
-.Openingsborden img {
-  max-width: 50%;
+.Openingsbord {
+  display: grid;
+  grid-template-columns: 1fr 50%;
+  grid-template-rows: 1fr;
+}
+.Openingsbord h2 {
+  grid-column: 1/span 2;
+}
+.Openingsbord__figure {
+  margin: auto;
+  width: 70%;
+  grid-column: 1/span 2;
+  grid-row: 2/span 3;
+}
+.Openingsbord__figure img {
+  width: 100%;
+}
+.Openingsbord__changeButton {
+  grid-column: 2;
+  grid-row: 4;
+  width: 70%;
+  margin: auto;
+  border: none;
+  background-color: transparent;
 }
 
 /*# sourceMappingURL=Openingsborden.css.map */

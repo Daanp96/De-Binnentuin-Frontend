@@ -12,7 +12,7 @@ import ItemEdit from './AdminMenuItemEdit';
 class Admin extends React.Component{
   render(){
     return(
-      <TimeslotList />
+      <OpeningsbordSection  />
     )
   }
 

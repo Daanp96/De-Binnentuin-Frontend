@@ -9,21 +9,7 @@ import axios from 'axios';
 class OpeningsbordSection extends React.Component{
 
 
-    onClick = (naam, geopend,token) =>{
-      if(geopend == 1){
-        geopend = 0;
-      }
-      else {
-        geopend = 1;
-      }
-     console.log(naam, geopend);
 
-
-        axios({
-          method:'put',
-          url: 'http://localhost:8000/admin/change',
-          data: {name:naam, isOpen:geopend},
-        });
       /*axios.patch('http://localhost:8000/admin/change', {name:naam, isOpen:geopend},
 
 
@@ -32,7 +18,7 @@ class OpeningsbordSection extends React.Component{
   .catch(error => {
     console.log(error);
   }); */
- }
+ 
 
 
     render(){
