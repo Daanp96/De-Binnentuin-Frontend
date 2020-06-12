@@ -9,11 +9,11 @@ class Openingsbord extends React.Component{
 
       if(geopend == 1){
         geopend = 0;
-        this.setState({open: 0});
+      //  this.setState({open: 0});
       }
       else {
         geopend = 1;
-        this.setState({open: 1});
+      //  this.setState({open: 1});
       }
      console.log(naam, geopend);
 
