@@ -1,0 +1,13 @@
+.MenuEditBox{
+  width: 50%;
+
+  & h2{
+    margin-bottom: 1em;
+  }
+
+  &__Form{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-row-gap: 1em;
+  }
+}

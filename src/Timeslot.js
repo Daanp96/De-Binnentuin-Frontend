@@ -1,16 +1,22 @@
 import React from 'react';
 
 class Timeslot extends React.Component{
-  inputChangedHandler = (event) => {
-    const updatedKeyword = event.target.value;
+  state = {start: "", end: ""}
+
+
+  onStartChange = (event) => {
+    this.setState({start: event.target.value})
+}
+onEndChange = (event) => {
+  this.setState({end: event.target.value})
 }
 
   render(){
     return(
     <section className="timeslot">
-      <input type="time" value={this.props.start} onChange={(event) =>this.inputChangedHandler(event)}/>
+      <input type="time" defaultValue={this.props.start} onChange={(event) =>this.onStartChange(event)}/>
       <p> - </p>
-      <input type="time" value={this.props.end} onChange={(event) =>this.inputChangedHandler(event)}/>
+      <input type="time" defaultValue={this.props.end} onChange={(event) =>this.onEndChange(event)}/>
     </section>
 
 

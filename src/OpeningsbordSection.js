@@ -9,7 +9,7 @@ import axios from 'axios';
 class OpeningsbordSection extends React.Component{
 
 
-    onClick = (naam, geopend) =>{
+    onClick = (naam, geopend,token) =>{
       if(geopend == 1){
         geopend = 0;
       }
@@ -17,13 +17,21 @@ class OpeningsbordSection extends React.Component{
         geopend = 1;
       }
      console.log(naam, geopend);
-      axios.patch('http://localhost:8000/admin/change', {name:naam, isOpen:geopend},
-      {'Access-Control-Allow-Headers':' X-CSRF-TOKEN'},
+
+
+        axios({
+          method:'put',
+          url: 'http://localhost:8000/admin/change',
+          data: {name:naam, isOpen:geopend},
+        });
+      /*axios.patch('http://localhost:8000/admin/change', {name:naam, isOpen:geopend},
+
+
     )  .then(response => {
   console.log(response);})
   .catch(error => {
     console.log(error);
-  });
+  }); */
  }
 
 

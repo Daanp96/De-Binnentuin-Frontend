@@ -126,4 +126,16 @@ html {
   padding-bottom: 0.5em;
 }
 
+.MenuEditBox {
+  width: 50%;
+}
+.MenuEditBox h2 {
+  margin-bottom: 1em;
+}
+.MenuEditBox__Form {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-row-gap: 1em;
+}
+
 /*# sourceMappingURL=main.css.map */
