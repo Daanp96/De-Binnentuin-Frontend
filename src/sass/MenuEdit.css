@@ -5,9 +5,12 @@
   margin-bottom: 1em;
 }
 .MenuEditBox__Form {
-  display: grid;
-  grid-template-columns: 30% 70%;
-  grid-row-gap: 1em;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+}
+.MenuEditBox__Form label {
+  margin: 0.5em 0;
 }
 
 /*# sourceMappingURL=MenuEdit.css.map */

@@ -6,8 +6,12 @@
   }
 
   &__Form{
-    display: grid;
-    grid-template-columns: 30% 70%;
-    grid-row-gap: 1em;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+
+  & label{
+    margin: 0.5em 0;
+  }
   }
 }

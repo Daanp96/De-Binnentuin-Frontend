@@ -26,6 +26,13 @@ class TimeslotList extends React.Component{
     this.setState({timeslots: oldInput})
   }
 
+  handleDeleteClick(placeIndex){
+    var currentState = this.state.timeslots;
+    currentState.splice(placeIndex, 1);
+    this.setState({timeslots: currentState});
+    console.log(this.state.timeslots);
+  }
+
   render(){
     return(
       <section>
@@ -33,12 +40,21 @@ class TimeslotList extends React.Component{
       <form>
         <label> Tijd </label>
           {this.state.timeslots.map((timeslot, index) =>{
-            return <Timeslot key={index} start={timeslot.TimeStart} end={timeslot.TimeStop}/>
+          return (
+           <React.Fragment key={index}>
+            <Timeslot key={index} start={timeslot.TimeStart} end={timeslot.TimeStop}/>
+            <button type="button" onClick={() => this.handleDeleteClick(index)} >remove</button>
+          </React.Fragment>
+        )
+
+
+
+
           })}
 
         <input type="submit" value="Submit"/>
       </form>
-              <button onClick={() => this.handleClick()} >+</button>
+      <button onClick={() => this.handleClick()} >+</button>
       </section>
     )
   }

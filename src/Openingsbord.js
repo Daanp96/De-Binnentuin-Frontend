@@ -35,6 +35,9 @@ class Openingsbord extends React.Component{
 
 
     render(){
+      axios.get('http://localhost:8000/admin/' + this.props.naam).then(res =>{
+        this.setState({open: res.data[0].isOpen})
+      });
       const isOpen = this.state.open;
       let image_link;
       if(isOpen){
