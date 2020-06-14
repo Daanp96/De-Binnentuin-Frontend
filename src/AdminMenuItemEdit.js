@@ -20,13 +20,14 @@ class AdminMenuItemEdit extends React.Component{
         special: res.data.chefSpecial
 
       })
-      console.log(this.state);
+
       if(this.state.special == 1){
-        this.setState({special: "checked"});
+        this.setState({special: true});
       }
       else{
-            this.setState({special: ""});
+          this.setState({special: false});
       }
+            console.log(this.state);
 
     });
 
@@ -45,16 +46,17 @@ class AdminMenuItemEdit extends React.Component{
        this.setState({categorie: event.target.value});
   }
   handleChangeSpecial(event){
-    console.log(event.target);
-       this.setState({special: event});
+    console.log(event.target.checked);
+     this.setState({special: event.target.checked});
   }
 
-  handleSubmit(){
+  handleSubmit = (event) =>{
+    event.preventDefault();
     console.log(this.state);
     axios({
       method:'put',
       url: 'http://localhost:8000/admin/menuitem/update',
-      data: {id: this.state.id, naam:this.state.naam, beschrijving:this.state.beschrijving, prijs:this.state.prijs, categorie:this.state.categorie},
+      data: {id: this.state.id, naam:this.state.naam, beschrijving:this.state.beschrijving, prijs:this.state.prijs, categorie:this.state.categorie, special:this.state.special},
     });
   }
 
@@ -62,7 +64,7 @@ class AdminMenuItemEdit extends React.Component{
     return (
       <section className = "MenuEditBox">
         <h2> {this.state.naam} aanpassen </h2>
-        <form className="MenuEditBox__Form" onSubmit={() => this.handleSubmit()}>
+        <form className="MenuEditBox__Form" onSubmit={this.handleSubmit}>
           <label >
             Naam:
             <input type="text" id="naam" name="naam" defaultValue={this.state.naam}  onChange={(event) => this.handleChangeNaam(event)}/>
@@ -83,13 +85,12 @@ class AdminMenuItemEdit extends React.Component{
         </label>
         <label>
           Chef's special:
-          <input type="checkbox" id="special" name="special" defaultChecked='{this.state.special}' onChange={(event) => this.handleChangeSpecial(event)}/>
+          <input type="checkbox" id="special" name="special" checked={this.state.special} onChange={(event) => this.handleChangeSpecial(event)}/>
         </label>
 
         <input type="submit" value="Veranderen"/>
 
         </form>
-        <button onClick={() => this.handleSubmit()}>test</button>
       </section>
     )
   }
