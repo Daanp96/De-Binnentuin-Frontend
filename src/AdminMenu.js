@@ -22,7 +22,7 @@ class AdminMenu extends React.Component{
       {this.state.menu.map((menuItem, index) =>{
         console.log(menuItem);
         return <AdminMenuItem key={index} naam={menuItem.naam} kosten={menuItem.prijs} beschrijving={menuItem.beschrijving} />
-      })} 
+      })}
     </section>
   )
 }

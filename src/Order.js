@@ -1,15 +1,23 @@
 import React from 'react';
 
 class Order extends React.Component{
-  render(){
-      const elements = ['one', 'two', 'three'];
-      let shoppingCart = [
-      {id: 35, item: 'jumper', color: 'red', size: 'medium', price: 20},
-      {id: 42, item: 'shirt', color: 'blue', size: 'medium', price: 15},
-      {id: 71, item: 'socks', color: 'black', size: 'all', price: 5},
-      ]
-  const items = []
 
+  constructor(){
+    super();
+
+  }
+
+  componentDidMount(){
+
+
+
+  }
+  render(){
+
+       const item_aantallen = this.props.aantallen.split(',');
+
+           console.log(item_aantallen);
+  //  console.log(this.props.lijst)
   //een voorbeeld van een for loop
   /*  index hier is een naam
   for(const [index, value] of elements.entries()){
@@ -18,13 +26,14 @@ class Order extends React.Component{
 
   return(
     <section className="order">
-      <h2 className="order__table"> Table {this.props.table || 0} </h2>
-      <h3 className="order__time"> 12:00 - 13:00 </h3>
-      <ul className="order__list">
-        {this.props.orders.map((order, index) =>{
-          return <li className="order__list__item" key={index}>{order.amount}x {order.item}</li>
-        })}
-      </ul>
+      <h1>{this.props.timestart.slice(0, -3)} - {this.props.timestop.slice(0, -3)}</h1>
+
+        <ul className="order__list">
+          {(this.props.items.split(',') || []).map((item, index) =>{
+            return <li className="order__list__item" key={index}>{item_aantallen[index]}x  {item}</li>
+          })}
+        </ul>
+
     </section>
   );
 }

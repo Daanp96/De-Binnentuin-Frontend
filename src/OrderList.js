@@ -6,16 +6,24 @@ import axios from "axios";
 import Order from './Order';
 
 class OrderList extends React.Component{
-  state = {  orders: [] }
+  constructor(){
+    super();
+    this.state = {  orders: []}
+  }
+
+    componentDidMount(){
+      axios.get('http://localhost:8000/admin/kok').then(res =>{
+        const lijst = res.data;
+        this.setState({orders: res.data});
+        console.log(this.state.orders)
+      })
+    }
 
   render(){
-
     //check de api op orders
-    axios.get('http://localhost:8000/orders').then(res =>{
-      const orders = res.data;
-      this.setState({orders});
 
-    })
+
+
     // pakt elk item en doet hem bij de bestellijst
       let bestellijst = [];
   for(const [order, value] of this.state.orders.entries()){
@@ -24,7 +32,9 @@ class OrderList extends React.Component{
     //Return functie
     return(
       <section className="orderlist">
-        <Order table="5" orders={bestellijst} />
+        {(this.state.orders).map((order, index) =>{
+          return <Order key={order.id} items={order.items} aantallen={order.aantal} timestart={order.TimeStart} timestop={order.TimeStop}/>
+        })}
       </section>
     )
   }
