@@ -1,7 +1,3 @@
-.orderlist {
-  width: 50%;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -11,11 +7,23 @@ html {
   box-sizing: border-box;
 }
 
-.order {
+.orderlist {
+  width: 90%;
+}
+.orderlist .order:nth-child(odd) h2 {
   background-color: #336633;
+}
+.orderlist .order:nth-child(even) h2 {
+  background-color: #996501;
+}
+
+.order {
+  background-color: white;
+  margin-bottom: 2em;
+}
+.order h2 {
   color: white;
-  padding: 1em 0;
-  margin: 0.5em 0;
+  padding: 0.3em 0;
 }
 .order__table {
   font-size: 1.8em;
@@ -27,9 +35,12 @@ html {
 }
 .order__list {
   text-align: left;
-  width: 40%;
+  width: 90%;
   margin: auto;
-  color: yellow;
+  padding: 0.5em 0;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #002C2D;
   list-style-position: inside;
   list-style-type: none;
 }

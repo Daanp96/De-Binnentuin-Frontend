@@ -26,7 +26,7 @@ class Order extends React.Component{
 
   return(
     <section className="order">
-      <h1>{this.props.timestart.slice(0, -3)} - {this.props.timestop.slice(0, -3)}</h1>
+      <h2>{this.props.timestart.slice(0, -3)} - {this.props.timestop.slice(0, -3)}</h2>  
 
         <ul className="order__list">
           {(this.props.items.split(',') || []).map((item, index) =>{
