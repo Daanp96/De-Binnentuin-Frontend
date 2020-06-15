@@ -35,15 +35,14 @@ class TimeslotList extends React.Component{
 
   render(){
     return(
-      <section>
-
-      <form>
-        <label> Tijd </label>
+      <section className="timeslotlist">
+        <h2> Tijd</h2>
+      <form className="timeslotlist__form" action="">
           {this.state.timeslots.map((timeslot, index) =>{
           return (
            <React.Fragment key={index}>
             <Timeslot key={index} start={timeslot.TimeStart} end={timeslot.TimeStop}/>
-            <button type="button" onClick={() => this.handleDeleteClick(index)} >remove</button>
+            <button type="button" className="timeslotlist__form__button" onClick={() => this.handleDeleteClick(index)} >&#10006;</button>
           </React.Fragment>
         )
 
@@ -51,10 +50,16 @@ class TimeslotList extends React.Component{
 
 
           })}
+          <button className="timeslotlist__form__button--add" type="button" onClick={() => this.handleClick()} >
+            <figure className="timeslotlist__form__button--add__figure">
+              <img src="/images/plus.svg"></img>
+            </figure>
+            Nieuw Tijdslot
+          </button>
 
-        <input type="submit" value="Submit"/>
+        <input className='timeslotlist__form__button--submit' type="submit" value="Submit"/>
       </form>
-      <button onClick={() => this.handleClick()} >+</button>
+
       </section>
     )
   }
