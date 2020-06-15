@@ -11,7 +11,7 @@ import {
 
 
 import LoginPage from "./js/pages/LoginPage";
-import Home from "./js/pages/Home";
+// import Home from "./js/pages/Home";
 import RegisterPage from "./js/pages/RegisterPage";
 import UserPage from "./js/pages/UserPage";
 
@@ -25,7 +25,7 @@ const App = (props) => {
           <Route path="/login" component={LoginPage} />
           <Route path="/signup" component={RegisterPage} />
           <Route path="/user" component={UserPage} />
-          <Route path="/" component={Home} />
+          {/* <Route path="/" component={Home} /> */}
         </Switch>
         <MenuItemList/>
 
