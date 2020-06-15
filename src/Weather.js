@@ -30,12 +30,12 @@ class Weather extends React.Component {
     componentDidMount = () =>{
         this.getWeather();
     }
-    
+
     render(){
         return(
             <section>
                 <p>{this.state.temperature}</p>
-                <img class="weather" src={this.state.image} alt="weather_icon"/>
+                <img className="weather" src={this.state.image} alt="weather_icon"/>
             </section>
         );
     }

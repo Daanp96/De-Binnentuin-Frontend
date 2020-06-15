@@ -4,7 +4,7 @@ import './sass/App.scss';
 
 class Opmerking extends React.Component{
 
-  state = {opmerking: ""};
+  state = {opmerking: "", text: ""};
 
   onSearch = event =>{
     this.setState({opmerking: event.target.value});
@@ -14,16 +14,30 @@ class Opmerking extends React.Component{
   onCheck = event =>{
     event.preventDefault();
     console.log("FFFF");
-    console.log(this.state.opmerking);
+    this.setState({text: event.target.value});
+    console.log(event);
+  }
+
+  makeApiCallPatch = event =>{
+    event.preventDefault();
+    const BASE_URL = 'http://127.0.0.1:8000/api/bestellingen/'
+    axios.put( BASE_URL + '2/update',{
+      opmerking: this.state.opmerking
+    }).then(res =>{
+      console.log(res);
+    }).catch(error => {
+   console.log(error.response)
+    });
   }
 
   render(){
     return(
       <section>
-        <form onSubmit={this.onCheck}>
+        <form onSubmit={(event) => this.makeApiCallPatch(event)}>
           <input className="" type="text" placeholder="Opmerkingen..." onChange={this.onSearch} />
-          <button className="" type="button" name="button" onClick={this.onCheck}>Submit</button>
+          <input className="" type="submit" name="button" value = "Submit" />
         </form>
+        <p>{this.state.text}</p>
       </section>
     )
   }
