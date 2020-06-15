@@ -18,11 +18,13 @@ class App extends React.Component {
       this.tafels = res.data.map(x =>
       <TafelCard key={res.data[res.data.indexOf(x)].tafelnummer}
       tafelNummer={res.data[res.data.indexOf(x)].tafelnummer}
-      maxAantalPersonen={res.data[res.data.indexOf(x)].maxAantalMensen}/>);
+      maxAantalPersonen={res.data[res.data.indexOf(x)].maxAantalMensen}
+      tafelId={res.data[res.data.indexOf(x)].id}/>);
 
       this.setState({locatie:locatie});
     })
   }
+
 
   render(){
     return (
