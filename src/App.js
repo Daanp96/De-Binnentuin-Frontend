@@ -1,44 +1,39 @@
 import React from 'react';
-// import logo from './logo.svg';
-import './sass/main.css';
-import Maincontent from "./Maincontent.js"
-import Opening from "./Opening.js"
-import WeatherCard from './WeatherCard.js'
-
-import axios from "axios";
+import './sass/App.scss';
+// import Weather from "./Weather";
+import MenuItemList from "./MenuItemList";
+import axios from 'axios';
 
 class App extends React.Component {
-  state = {time: "", isOpen1: "true" , isOpen2: "false"}
-
-  fetchPage(){
-    const Base_URL = "http://127.0.0.1:8000";
-    axios.get(Base_URL + "/landing").then(res => {
-       this.setState({
-          time: res.data[0] + "-" + res.data[1],
-       });
-    });
+  state = {
+      itemList: [],
+      restaurant: 1
   }
 
-  componentDidMount() {
-    this.fetchPage();
+  getMenu = (submenu) => {
+      const BASE_URL = "http://127.0.0.1:8000/api/menu/" + this.state.restaurant +"/"+ submenu;
+      axios.get(BASE_URL).then(res => {
+          this.setState({
+              itemList: res.data
+          });
+      });
   }
+
+  componentDidMount = () =>{
+      this.getMenu("all");
+  }
+
 
   render(){
     return (
-      <article className="App">
+      <div className="App">
         <header className="App-header">
-          <h1>
-            De Binnentuin
-          </h1>
-            <Maincontent/>
-            <Opening img1Src ="./images/open-sign.png" imgName1 ="De Binnentuin is open" img2Src ="./images/closed-sign.png" imgName2 ="Het dakterras is dicht" time={this.state.time}/>
-            <WeatherCard/>
-
+          <p>De Binnentuin</p>
         </header>
-      </article>
+        <MenuItemList itemList={this.state.itemList} />
+      </div>
     );
   }
-
 }
 
 
