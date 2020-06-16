@@ -14,9 +14,9 @@ onEndChange = (event) => {
   render(){
     return(
     <section className="timeslot">
-      <input type="time" defaultValue={this.props.start} onChange={(event) =>this.onStartChange(event)}/>
+      <input type="time" defaultValue={this.props.start} name="timestart[]" onChange={(event) =>this.onStartChange(event)}/>
       <p> - </p>
-      <input type="time" defaultValue={this.props.end} onChange={(event) =>this.onEndChange(event)}/>
+      <input type="time" defaultValue={this.props.end} name="timestop[]" onChange={(event) =>this.onEndChange(event)}/>
     </section>
 
 

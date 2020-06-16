@@ -69,6 +69,10 @@
   font-size: 1em;
 }
 
+.timeslotlist__form__button--submit:disabled {
+  background-color: #857d6e;
+}
+
 .timeslotlist__form__button--add {
   margin: 1em 0;
   background-color: #996501;

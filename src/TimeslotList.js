@@ -33,11 +33,33 @@ class TimeslotList extends React.Component{
     console.log(this.state.timeslots);
   }
 
+  handleSubmit(event){
+    event.preventDefault();
+    console.log('send');
+    var start = [];
+    var stop = [];
+    {this.state.timeslots.map((timeslot, index) =>{
+          start.push(timeslot.TimeStart);
+          stop.push(timeslot.TimeStop);
+    })}
+
+  {/*   axios({
+      method:'put',
+      url: 'http://localhost:8000/api/admin/timeslots/update',
+      data: {timestart: start, timestop: stop},
+    }); */}
+    console.log(start);
+    console.log(stop);
+  }
+
   render(){
+
+    const enabled = !(this.state.timeslots.length > 0);
+
     return(
       <section className="timeslotlist">
         <h2> Tijd</h2>
-      <form className="timeslotlist__form" action="">
+      <form className="timeslotlist__form" onSubmit={(event) => this.handleSubmit(event)}>
           {this.state.timeslots.map((timeslot, index) =>{
           return (
            <React.Fragment key={index}>
@@ -50,14 +72,14 @@ class TimeslotList extends React.Component{
 
 
           })}
-          <button className="timeslotlist__form__button--add" type="button" onClick={() => this.handleClick()} >
+          <button  className="timeslotlist__form__button--add" type="button" onClick={() => this.handleClick()} >
             <figure className="timeslotlist__form__button--add__figure">
               <img src="/images/plus.svg"></img>
             </figure>
             Nieuw Tijdslot
           </button>
 
-        <input className='timeslotlist__form__button--submit' type="submit" value="Submit"/>
+        <input disabled={enabled} className='timeslotlist__form__button--submit' type="submit" value="Submit"/>
       </form>
 
       </section>
