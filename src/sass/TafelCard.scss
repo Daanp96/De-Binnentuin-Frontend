@@ -1,55 +1,94 @@
 .tafelcard{
   width: 50%;
-  height: 150px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  margin: 40px auto 20px;
 
-  margin: 20px auto;
+  &__head{
+    width: 100%;
+    height: 150px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    background-color: white;
 
-  border-radius: 10px;
-  overflow: hidden;
-
-  &__infoContainer{
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
 
-    width: 20%;
+    border-radius: 10px;
+    overflow: hidden;
 
-    &__text{
-      font-family: 'Abel', sans-serif;
-      width: 100%;
-      text-align: center;
+    &__infoContainer{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
 
-      &--label{
-        font-weight: bold;
+      width: 20%;
+
+      &__text{
+        font-family: 'Abel', sans-serif;
+        width: 100%;
+        text-align: center;
+
+        &--label{
+          font-weight: bold;
+        }
+      }
+    }
+
+    &__continue{
+      width: 150px;
+      height: 100%;
+      position: relative;
+      right: 0px;
+      top: 0px;
+
+      border: none;
+      background-color: #2EA899;
+
+      transform: translateX(50%);
+
+      transition: 0.5s all;
+
+        &__text{
+          font-size: 50px;
+          font-family: 'Abel', sans-serif;
+
+          transition: 0.5s all;
+
+          display: block;
+          pointer-events: none;
+
+          &--selected{
+            transform: rotate(90deg);
+          }
+        }
+
+      &:hover{
+        background-color: #278E82;
+        font-size: 55px;
       }
     }
   }
 
-  &__continue{
-    width: 150px;
-    height: 100%;
+  &__dropdown{
+    width: 98%;
+    height: 0px;
+
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    margin: -20px auto 0;
     position: relative;
-    right: 0px;
-    top: 0px;
+    z-index: -1;
 
-    border: none;
-    background-color: #2EA899;
+    background-color: white;
 
-    transform: translateX(50%);
+    transition: 0.5s all;
 
-    font-size: 50px;
-    font-family: 'Abel', sans-serif;
+    padding-top: 20px;
 
-    transition: 0.2s all;
-
-    &:hover{
-      background-color: #278E82;
-      font-size: 55px;
+    &--open{
+      height: 200px;
     }
   }
+
 }
