@@ -28,6 +28,11 @@ class TafelCard extends React.Component{
 
 
     this.setState({day:currentDate.day, month:currentDate.month, year:currentDate.year});
+
+    let dateInputs = document.getElementsByClassName("js--date");
+    for (let i = 0; i < dateInputs.length; i++) {
+      dateInputs[i].value = currentDate.year + "-" + currentDate.month + "-" + currentDate.day;
+    }
   }
 
   openDropdown = (event) =>{
@@ -47,7 +52,7 @@ class TafelCard extends React.Component{
     buttonText.classList.toggle("tafelcard__head__continue__text--selected");
     dropdown.classList.toggle("tafelcard__dropdown--open");
 
-    this.updateTimeslots("31", "01", this.state.year);
+    this.updateTimeslots(this.state.day, this.state.month, this.state.year);
   }
 
   selectedDate = (event) =>{
@@ -100,17 +105,17 @@ class TafelCard extends React.Component{
         </section>
         <section className="tafelcard__dropdown">
           <section className="tafelcard__dropdown__inputContainer" style={{display:"none"}}>
-            <label  className="tafelcard__dropdown__inputContainer__label" for="datum">Kies uw datum</label>
-            <input  className="tafelcard__dropdown__inputContainer__input" name="datum" type="date" onBlur={this.selectedDate}/>
+            <label  className="tafelcard__dropdown__inputContainer__label" htmlFor="datum">Kies uw datum</label>
+            <input  className="tafelcard__dropdown__inputContainer__input js--date" name="datum" type="date" onBlur={this.selectedDate}/>
           </section>
           <section className="tafelcard__dropdown__inputContainer" style={{display:"none"}}>
-            <label  className="tafelcard__dropdown__inputContainer__label" for="tijden">Kies uw tijd</label>
+            <label  className="tafelcard__dropdown__inputContainer__label" htmlFor="tijden">Kies uw tijd</label>
             <select  className="tafelcard__dropdown__inputContainer__input" name="tijden">
               {this.timeslots}
             </select>
           </section>
           <section className="tafelcard__dropdown__inputContainer" style={{display:"none"}}>
-            <label className="tafelcard__dropdown__inputContainer__label" for="submit">Reserveer</label>
+            <label className="tafelcard__dropdown__inputContainer__label" htmlFor="submit">Reserveer</label>
             <button name="submit" className="tafelcard__dropdown__inputContainer__input tafelcard__dropdown__submit">reserveer</button>
           </section>
 
