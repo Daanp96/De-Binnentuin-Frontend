@@ -34,6 +34,16 @@ class TafelCard extends React.Component{
     let dropdown = event.target.parentNode.parentNode.childNodes[1];
     let buttonText = event.target.childNodes[0];
 
+    if (dropdown.classList.contains("tafelcard__dropdown--open")) {
+      for (let i = 0; i < dropdown.childNodes.length; i++) {
+        dropdown.childNodes[i].style.display = "none";
+      }
+    }else{
+      for (let i = 0; i < dropdown.childNodes.length; i++) {
+        dropdown.childNodes[i].style.display = "block";
+      }
+    }
+
     buttonText.classList.toggle("tafelcard__head__continue__text--selected");
     dropdown.classList.toggle("tafelcard__dropdown--open");
 
@@ -89,10 +99,21 @@ class TafelCard extends React.Component{
           /button>
         </section>
         <section className="tafelcard__dropdown">
-          <input type="date" onBlur={this.selectedDate}/>
-          <select>
-            {this.timeslots}
-          </select>
+          <section className="tafelcard__dropdown__inputContainer" style={{display:"none"}}>
+            <label  className="tafelcard__dropdown__inputContainer__label" for="datum">Kies uw datum</label>
+            <input  className="tafelcard__dropdown__inputContainer__input" name="datum" type="date" onBlur={this.selectedDate}/>
+          </section>
+          <section className="tafelcard__dropdown__inputContainer" style={{display:"none"}}>
+            <label  className="tafelcard__dropdown__inputContainer__label" for="tijden">Kies uw tijd</label>
+            <select  className="tafelcard__dropdown__inputContainer__input" name="tijden">
+              {this.timeslots}
+            </select>
+          </section>
+          <section className="tafelcard__dropdown__inputContainer" style={{display:"none"}}>
+            <label className="tafelcard__dropdown__inputContainer__label" for="submit">Reserveer</label>
+            <button name="submit" className="tafelcard__dropdown__inputContainer__input tafelcard__dropdown__submit">reserveer</button>
+          </section>
+
         </section>
       </section>
     );
