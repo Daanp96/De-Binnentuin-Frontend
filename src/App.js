@@ -29,9 +29,12 @@ class App extends React.Component {
   render(){
     return (
       <main className="main">
-        <section className="main__locationContainer">
-          <LocationButton locatie="binnentuin" onClick={this.makeApiCall}/>
-          <LocationButton locatie="dakterras" onClick={this.makeApiCall}/>
+        <section className="main__location">
+          <h2 className="main__location__text">Kies uw locatie</h2>
+          <section className="main__location__locationContainer">
+            <LocationButton locatie="binnentuin" onClick={this.makeApiCall}/>
+            <LocationButton locatie="dakterras" onClick={this.makeApiCall}/>
+          </section>
         </section>
 
         {this.tafels}
