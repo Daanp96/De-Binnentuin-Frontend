@@ -29,7 +29,7 @@ class TafelCard extends React.Component{
     if ((today.getMonth()+1) < 10){
       currentDate.month = "0" + (today.getMonth()+1).toString();
     }else{
-      currentDate.day = (today.getMonth()+1).toString();
+      currentDate.month = (today.getMonth()+1).toString();
     }
 
     //push to currentDate object
