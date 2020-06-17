@@ -43,13 +43,35 @@ class TimeslotList extends React.Component{
           stop.push(timeslot.TimeStop);
     })}
 
-  {/*   axios({
+   axios({
       method:'put',
       url: 'http://localhost:8000/api/admin/timeslots/update',
       data: {timestart: start, timestop: stop},
-    }); */}
+    });
     console.log(start);
     console.log(stop);
+  }
+
+  onStartChange = (event, index) => {
+    console.log(event);
+    this.setState(state => {
+        this.state.timeslots.map((item, j) =>{
+        if(j == index){
+          item.TimeStart = event;
+        }
+      });
+    });
+  }
+
+  onEndChange = (event, index) => {
+    console.log(event);
+    this.setState(state => {
+        this.state.timeslots.map((item, j) =>{
+        if(j == index){
+          item.TimeStop = event;
+        }
+      });
+    });
   }
 
   render(){
@@ -63,7 +85,7 @@ class TimeslotList extends React.Component{
           {this.state.timeslots.map((timeslot, index) =>{
           return (
            <React.Fragment key={index}>
-            <Timeslot key={index} start={timeslot.TimeStart} end={timeslot.TimeStop}/>
+            <Timeslot index={index} onStart={this.onStartChange} onEnd={this.onEndChange} start={timeslot.TimeStart} end={timeslot.TimeStop}/>
             <button type="button" className="timeslotlist__form__button" onClick={() => this.handleDeleteClick(index)} >&#10006;</button>
           </React.Fragment>
         )

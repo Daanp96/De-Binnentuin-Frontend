@@ -1,7 +1,18 @@
 import React from 'react';
 
 class Timeslot extends React.Component{
-  state = {start: "", end: ""}
+  constructor(){
+    super()
+    this.state =  {start: "", end: "", key: ""}
+  }
+
+
+
+  componentDidMount(){
+      this.setState({start: this.props.start});
+      this.setState({end: this.props.end});
+      this.setState({key: this.props.index});
+  }
 
 
   onStartChange = (event) => {
@@ -9,14 +20,15 @@ class Timeslot extends React.Component{
 }
 onEndChange = (event) => {
   this.setState({end: event.target.value})
+  console.log(this.state.end);
 }
 
   render(){
     return(
     <section className="timeslot">
-      <input type="time" defaultValue={this.props.start} name="timestart[]" onChange={(event) =>this.onStartChange(event)}/>
+      <input type="time" defaultValue={this.props.start} name="timestart[]" onChange={(event) =>this.props.onStart(event.target.value, this.state.key)}/>
       <p> - </p>
-      <input type="time" defaultValue={this.props.end} name="timestop[]" onChange={(event) =>this.onEndChange(event)}/>
+      <input type="time" defaultValue={this.props.end} name="timestop[]" onChange={(event) =>this.props.onEnd(event.target.value, this.state.key)}/>
     </section>
 
 
