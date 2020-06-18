@@ -11,8 +11,9 @@ class AdminMenuItemEdit extends React.Component{
   }
 
   componentDidMount(){
-    console.log(this.state);
-  {/*   axios.get('http://localhost:8000/admin/menuitem/' + this.props.naam).then(res =>{
+    console.log(this.props);
+  //  const BASE_URL = 'http://127.0.0.1:8000/api/admin/menuitem/' + {this.props.id};
+    axios.get('http://127.0.0.1:8000/api/admin/menuitem/' + this.props.id).then(res =>{
       this.setState({
         naam: res.data.naam,
         prijs: res.data.prijs,
@@ -31,7 +32,7 @@ class AdminMenuItemEdit extends React.Component{
       }
             console.log(this.state);
 
-    }); */}
+    });
 
   }
 

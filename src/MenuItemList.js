@@ -3,10 +3,10 @@ import MenuItem from "./MenuItem";
 import {Switch, Route, BrowserRouter as Router, Link} from "react-router-dom";
 
 class MenuItemList extends React.Component {
-  onClick = (id, event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    console.log(id);
+  onClic = () => {
+
+    console.log("hey");
+    this.props.onClick();
 
   }
 
@@ -15,10 +15,9 @@ class MenuItemList extends React.Component {
 
         const items = this.props.itemList.map((item, index) =>
              <React.Fragment key={index}>
-                <Link onClick={(event) => this.props.onClic("hey", event)} to={{
-                    pathname: "/edit",
-                  state: {id: item.id } }} >
+               <Link to="/edit" onClick={() => this.props.onClick(item.id)}>
                     <MenuItem
+
                         id={item.id}
                         naam={item.naam}
                         beschrijving={item.beschrijving}
@@ -26,7 +25,7 @@ class MenuItemList extends React.Component {
                         prijs={item.prijs}
                         aantalVerkocht={item.aantalVerkocht}
                     />
-                </Link>
+                  </Link>
                 </React.Fragment>
         );
 

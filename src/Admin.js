@@ -10,7 +10,7 @@ import SidewaysMenu from './SidewaysMenu';
 import MenuItemList from './MenuItemList';
 
 
-import {Switch, Route, BrowserRouter as Router, Link} from "react-router-dom";
+import {Switch, Route, BrowserRouter as Router, Link, Redirect} from "react-router-dom";
 import axios from 'axios';
 
 
@@ -19,7 +19,8 @@ class Admin extends React.Component{
   state = {
     itemList: [],
     categoryList: [],
-    restaurant: 1
+    restaurant: 1,
+    item_id: 1,
 }
 
 getMenu = (submenu) => {
@@ -40,8 +41,9 @@ getCatergories = () => {
   });
 }
 
-onClick = (id, event) => {
-  console.log("test");
+onClick = (id) => {
+  this.setState({item_id: id});
+  console.log(this.state.item_id)
 }
 
 componentDidMount = () =>{
@@ -58,10 +60,10 @@ componentDidMount = () =>{
           <Switch>
           <Route path="/menu">
             <SidewaysMenu function={this.getMenu} categoryList ={this.state.categoryList}/>
-            <MenuItemList onClic={() => this.onClick} itemList={this.state.itemList} />
+            <MenuItemList onClick={this.onClick} itemList={this.state.itemList} />
           </Route>
           <Route path="/edit">
-            <AdminMenuItemEdit />
+            <AdminMenuItemEdit id={this.state.item_id}/>
           </Route>
 
           </Switch>

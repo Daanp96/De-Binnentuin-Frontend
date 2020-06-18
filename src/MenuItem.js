@@ -2,7 +2,9 @@ import React from "react";
 import "./sass/Menuitem.scss";
 
 const MenuItem = props => {
-//  console.log(props);
+  console.log(props);
+
+
     return(
         <section className="menu_list__item">
             <h2>{props.naam}</h2>
