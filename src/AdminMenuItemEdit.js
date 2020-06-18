@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
+
 class AdminMenuItemEdit extends React.Component{
   //state = {naam: "", prijs: "", beschrijving: "", categorie: ""}
 
@@ -10,7 +11,8 @@ class AdminMenuItemEdit extends React.Component{
   }
 
   componentDidMount(){
-    axios.get('http://localhost:8000/admin/menuitem/' + this.props.naam).then(res =>{
+    console.log(this.state);
+  {/*   axios.get('http://localhost:8000/admin/menuitem/' + this.props.naam).then(res =>{
       this.setState({
         naam: res.data.naam,
         prijs: res.data.prijs,
@@ -29,7 +31,7 @@ class AdminMenuItemEdit extends React.Component{
       }
             console.log(this.state);
 
-    });
+    }); */}
 
   }
 

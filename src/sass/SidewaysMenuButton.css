@@ -1,0 +1,16 @@
+.sidewaysMenuButtoncontainer_button {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #777;
+  float: left;
+}
+
+.sidewaysMenuButtoncontainer_button:hover {
+  background-color: #ffffff;
+}
+
+/*# sourceMappingURL=SidewaysMenuButton.css.map */
