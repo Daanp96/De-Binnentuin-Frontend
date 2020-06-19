@@ -47,6 +47,16 @@ onClick = (naam) => {
   console.log(this.state.item_naam);
 }
 
+onDelete = (id, restaurant) => {
+
+  axios({
+    method:"DELETE",
+    url: 'http://localhost:8000/api/admin/restaurant_item/delete',
+    data: {restaurant: restaurant, item_id: id}
+  })
+  window.location.reload();
+}
+
 componentDidMount = () =>{
     this.getMenu("all");
     this.getCatergories();
@@ -61,7 +71,7 @@ componentDidMount = () =>{
           <Switch>
           <Route path="/menu">
             <SidewaysMenu function={this.getMenu} categoryList ={this.state.categoryList}/>
-            <MenuItemList onClick={this.onClick} itemList={this.state.itemList} />
+            <MenuItemList onClick={this.onClick} restaurant={this.state.restaurant} onDelete={this.onDelete} itemList={this.state.itemList} />
           </Route>
           <Route path="/edit">
             <AdminMenuItemEdit naam={this.state.item_naam}/>

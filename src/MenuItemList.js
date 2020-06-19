@@ -5,12 +5,12 @@ import {Switch, Route, BrowserRouter as Router, Link} from "react-router-dom";
 class MenuItemList extends React.Component {
 
     render(){
-
+        console.log(this.props.itemList);
         const items = this.props.itemList.map((item, index) =>
              <React.Fragment key={index}>
                <Link to="/edit" onClick={() => this.props.onClick(item.naam)}>
                     <MenuItem
-
+                        index={index}
                         id={item.id}
                         naam={item.naam}
                         beschrijving={item.beschrijving}
@@ -19,6 +19,7 @@ class MenuItemList extends React.Component {
                         aantalVerkocht={item.aantalVerkocht}
                     />
                   </Link>
+                  <button onClick={() => this.props.onDelete(item.menuitem_id, this.props.restaurant)}>Delete</button>
                 </React.Fragment>
         );
 
