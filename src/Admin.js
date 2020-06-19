@@ -6,6 +6,7 @@ import OpeningsbordSection from './OpeningsbordSection';
 import AdminMenuOverview from './AdminMenuOverview';
 import AdminMenu from './AdminMenu';
 import AdminMenuItemEdit from './AdminMenuItemEdit';
+import AdminMenuItemCreate from './AdminMenuItemCreate';
 import SidewaysMenu from './SidewaysMenu';
 import MenuItemList from './MenuItemList';
 
@@ -20,7 +21,7 @@ class Admin extends React.Component{
     itemList: [],
     categoryList: [],
     restaurant: 1,
-    item_id: 1,
+    item_naam: "",
 }
 
 getMenu = (submenu) => {
@@ -41,9 +42,9 @@ getCatergories = () => {
   });
 }
 
-onClick = (id) => {
-  this.setState({item_id: id});
-  console.log(this.state.item_id)
+onClick = (naam) => {
+  this.setState({item_naam: naam});
+  console.log(this.state.item_naam);
 }
 
 componentDidMount = () =>{
@@ -63,7 +64,10 @@ componentDidMount = () =>{
             <MenuItemList onClick={this.onClick} itemList={this.state.itemList} />
           </Route>
           <Route path="/edit">
-            <AdminMenuItemEdit id={this.state.item_id}/>
+            <AdminMenuItemEdit naam={this.state.item_naam}/>
+          </Route>
+          <Route path="/create">
+            <AdminMenuItemCreate />
           </Route>
 
           </Switch>
