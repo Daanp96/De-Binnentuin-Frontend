@@ -103,56 +103,72 @@ html {
   background-color: transparent;
 }
 
-.AdminMenuSection {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 60%;
-}
-.AdminMenuSection__button {
-  margin: 1em 0;
-  font-size: 1.3em;
-  padding: 0.3em 0.2em;
-  border: none;
-  background-color: #996501;
+.admin_menu_list__link {
+  text-decoration: none;
   color: white;
+  width: 60%;
+  background-color: #336633;
+  margin: 1em auto;
+  padding: 0.4em 0;
+  display: block;
+}
+.admin_menu_list__div {
+  overflow: auto;
+  max-height: 60vh;
+}
+.admin_menu_list__div button {
+  border: none;
+  background-color: #336633;
+  color: white;
+  padding: 0.4em 0.6em;
+  margin-top: 0.6em;
+}
+.admin_menu_list__item {
+  margin: 35px 35px 0 35px;
+  text-align: left;
+  color: #002C2D;
+  text-decoration: none;
+}
+.admin_menu_list__item:link {
+  text-decoration: none;
 }
 
-.menuItemCard {
-  width: 100%;
-  background-color: #336633;
-  margin: 0.5em 0;
-  text-align: left;
-}
-.menuItemCard h2 {
-  font-size: 1.5em;
-  margin: 0.5em 0;
-  display: inline;
-  margin-left: 1em;
-}
-.menuItemCard h3 {
-  display: inline;
-  margin-left: 5em;
-}
-.menuItemCard p {
-  font-size: 1em;
-  width: 50%;
-  padding-bottom: 0.5em;
+html, body {
+  height: 100vh;
 }
 
 .MenuEditBox {
-  width: 50%;
+  width: 90%;
+  margin: auto;
 }
 .MenuEditBox h2 {
-  margin-bottom: 1em;
+  margin: 0.5em 0;
+  color: #002C2D;
 }
 .MenuEditBox__Form {
   display: flex;
   justify-content: center;
   flex-flow: column;
+  text-align: left;
+}
+.MenuEditBox__Form__submit {
+  background-color: #336633;
+  color: white;
+  padding: 0.4em 0.6em;
+  border: none;
+  margin-bottom: 1em;
+  font-size: 1em;
 }
 .MenuEditBox__Form label {
   margin: 0.5em 0;
+  border: 2px solid #336633;
+  padding: 0.4em;
+  color: #996501;
+  font-weight: bold;
+}
+.MenuEditBox__Form input, .MenuEditBox__Form textarea {
+  margin-top: 0.4em;
+  display: block;
 }
 
 .menu_list__item {

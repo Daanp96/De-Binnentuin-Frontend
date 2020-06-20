@@ -19,16 +19,21 @@ class MenuItemList extends React.Component {
                         aantalVerkocht={item.aantalVerkocht}
                     />
                   </Link>
-                  <button onClick={() => this.props.onDelete(item.menuitem_id, this.props.restaurant)}>Delete</button>
+                  <button onClick={() => this.props.onDelete(item.menuitem_id, this.props.restaurant)}>
+                    Verwijder item
+                  </button>
                 </React.Fragment>
         );
 
         return(
 
 
-            <section className="menu_list">
-              {items}
-              <Link to="/create">
+            <section className="admin_menu_list">
+              <div className="admin_menu_list__div">
+                {items}
+              </div>
+
+              <Link to="/create" className="admin_menu_list__link">
                 Add new item
               </Link>
             </section>

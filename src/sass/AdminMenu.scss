@@ -1,40 +1,43 @@
-.AdminMenuSection{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 60%;
+.admin_menu_list{
 
-  &__button{
-    margin: 1em 0;
-    font-size: 1.3em;
-    padding: 0.3em 0.2em ;
-    border: none;
-    background-color: #996501;
+
+  &__link{
+    text-decoration: none;
     color: white;
+    width: 60%;
+    background-color: #336633;
+    margin: 1em auto;
+    padding: 0.4em 0;
+    display: block;
+
+  }
+
+  &__div{
+    overflow: auto;
+    max-height: 60vh;
+
+    & button{
+      border: none;
+      background-color: #336633;
+      color: white;
+      padding: 0.4em 0.6em;
+      margin-top: 0.6em;
+    }
+  }
+
+  &__item{
+    margin: 35px 35px 0 35px;
+    text-align: left;
+    color: #002C2D;
+    text-decoration: none;
+
+  }
+
+  &__item:link{
+    text-decoration: none;
   }
 }
 
-.menuItemCard{
-  width: 100%;
-  background-color: #336633;
-  margin: 0.5em 0;
-  text-align: left;
-
-  & h2{
-    font-size: 1.5em;
-    margin: 0.5em 0;
-    display: inline;
-    margin-left: 1em;
-  }
-
-  & h3{
-    display: inline;
-    margin-left: 5em;
-  }
-
-  & p{
-    font-size: 1em;
-    width: 50%;
-    padding-bottom: 0.5em;
-  }
+html, body{
+  height: 100vh;
 }

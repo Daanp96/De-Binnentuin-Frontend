@@ -91,7 +91,7 @@ class AdminMenuItemEdit extends React.Component{
           <input type="checkbox" id="special" name="special" checked={this.state.special} onChange={(event) => this.handleChangeSpecial(event)}/>
         </label>
 
-        <input type="submit" value="Veranderen"/>
+        <input className='MenuEditBox__Form__submit' type="submit" value="Veranderen"/>
 
         </form>
       </section>

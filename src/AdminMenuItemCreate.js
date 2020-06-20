@@ -98,10 +98,10 @@ class AdminMenuItemEdit extends React.Component{
         </label>
         <label>
           Restaurant Dakterras:
-          <input type="checkbox" id="dakterras" name="dakterras"  onChange={(event) => this.handleChangeDakterras(event)}/>
+          <input className='MenuEditBox__Form__check' type="checkbox" id="dakterras" name="dakterras"  onChange={(event) => this.handleChangeDakterras(event)}/>
         </label>
 
-        <input type="submit" value="Veranderen"/>
+        <input className='MenuEditBox__Form__submit' type="submit" value="Opslaan"/>
 
         </form>
       </section>
