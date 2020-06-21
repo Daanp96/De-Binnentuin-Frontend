@@ -3,6 +3,13 @@ import MenuItem from "./MenuItem";
 import {Switch, Route, BrowserRouter as Router, Link} from "react-router-dom";
 
 class MenuItemList extends React.Component {
+      constructor(){
+        super();
+      }
+
+      componentDidMount(){
+        this.props.function('all');
+      }
 
     render(){
         console.log(this.props.itemList);

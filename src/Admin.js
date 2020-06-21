@@ -4,7 +4,7 @@ import OrderList from './OrderList';
 import TimeslotList from './TimeslotList';
 import OpeningsbordSection from './OpeningsbordSection';
 import AdminMenuOverview from './AdminMenuOverview';
-import AdminMenu from './AdminMenu';
+
 import AdminMenuItemEdit from './AdminMenuItemEdit';
 import AdminMenuItemCreate from './AdminMenuItemCreate';
 import SidewaysMenu from './SidewaysMenu';
@@ -20,7 +20,7 @@ class Admin extends React.Component{
   state = {
     itemList: [],
     categoryList: [],
-    restaurant: 1,
+    restaurant: 1,  
     item_naam: "",
 }
 
@@ -44,11 +44,13 @@ getCatergories = () => {
 
 onClick = (naam) => {
   this.setState({item_naam: naam});
-  console.log(this.state.item_naam);
+}
+
+onRestaurantClick = (restaurant) => {
+  this.setState({restaurant: restaurant});
 }
 
 onDelete = (id, restaurant) => {
-
   axios({
     method:"DELETE",
     url: 'http://localhost:8000/api/admin/restaurant_item/delete',
@@ -58,8 +60,8 @@ onDelete = (id, restaurant) => {
 }
 
 componentDidMount = () =>{
-    this.getMenu("all");
-    this.getCatergories();
+  this.getMenu("all");
+  this.getCatergories();
 }
   render(){
     return(
@@ -71,13 +73,16 @@ componentDidMount = () =>{
           <Switch>
           <Route path="/menu">
             <SidewaysMenu function={this.getMenu} categoryList ={this.state.categoryList}/>
-            <MenuItemList onClick={this.onClick} restaurant={this.state.restaurant} onDelete={this.onDelete} itemList={this.state.itemList} />
+            <MenuItemList function={this.getMenu} onClick={this.onClick} restaurant={this.state.restaurant} onDelete={this.onDelete} itemList={this.state.itemList} />
           </Route>
           <Route path="/edit">
             <AdminMenuItemEdit naam={this.state.item_naam}/>
           </Route>
           <Route path="/create">
             <AdminMenuItemCreate />
+          </Route>
+          <Route path="/restaurantmenus">
+            <AdminMenuOverview event={this.onRestaurantClick}/>
           </Route>
 
           </Switch>

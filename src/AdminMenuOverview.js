@@ -1,14 +1,24 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
+const AdminMenuOverview = (props) =>{
 
-const AdminMenuOverview = () =>{
   return(
     <section className="AdminMenuSection">
       <h1> Menu </h1>
+      <Link to="/menu" onClick={() => props.event(1)}>
+        <button className="AdminMenuSection__button">Binnentuin Menu Edit</button>
+      </Link>
+      <Link to="/menu" onClick={() => props.event(2)}>
+        <button className="AdminMenuSection__button">Roof menu Edit</button>
+      </Link>
+      <Link to="/bestellingen">
+        <button className="AdminMenuSection__button">Koks scherm</button>
+      </Link>
+      <Link to="/onderhoud">
+        <button className="AdminMenuSection__button">Restaurant tijden</button>
+      </Link>
 
-      <button className="AdminMenuSection__button">Binnentuin Menu</button>
-      <button className="AdminMenuSection__button">Roof menu</button>
-      <button className="AdminMenuSection__button">Dranken menu</button>
     </section>
   )
 }
