@@ -12,6 +12,7 @@ class OrderList extends React.Component{
   }
 
     componentDidMount(){
+      //pakt van de api alle bestellingen die nog niet klaar zijn
       axios.get('http://localhost:8000/api/admin/kok').then(res =>{
         const lijst = res.data;;
         this.setState({orders: res.data});
@@ -19,6 +20,8 @@ class OrderList extends React.Component{
       })
     }
 
+    //onclick event dat voor een specifieke bestelling
+    //een update bij de api doet om te zeggen dat de bestelling klaar is
     onClick = (id, index) =>{
       axios({
         method: 'put',
@@ -31,9 +34,6 @@ class OrderList extends React.Component{
     }
 
   render(){
-    //check de api op orders
-
-
 
     // pakt elk item en doet hem bij de bestellijst
   let bestellijst = [];
@@ -48,6 +48,7 @@ class OrderList extends React.Component{
              &#8592; Terug
           </button>
         </Link>
+        {/* voor elke bestelling in de lijst maakt hij een nieuwe Order class  */ }
         {(this.state.orders).map((order, index) =>{
           return <Order key={order.id} index={index} onClick={this.onClick} id={order.id} items={order.items} aantallen={order.aantal} timestart={order.TimeStart} timestop={order.TimeStop}/>
         })}

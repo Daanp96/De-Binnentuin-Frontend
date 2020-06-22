@@ -42,14 +42,17 @@ getCatergories = () => {
   });
 }
 
+//event de item naam veranderd voor het aanpassen van het item in de menu pagina's
 onClick = (naam) => {
   this.setState({item_naam: naam});
 }
 
+//event voor update van open/dicht
 onRestaurantClick = (restaurant) => {
   this.setState({restaurant: restaurant});
 }
 
+//event dat een menu item van de restaurant_menu verwijderd
 onDelete = (id, restaurant) => {
   axios({
     method:"DELETE",

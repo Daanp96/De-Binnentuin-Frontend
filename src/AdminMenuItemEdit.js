@@ -3,7 +3,6 @@ import axios from 'axios';
 
 
 class AdminMenuItemEdit extends React.Component{
-  //state = {naam: "", prijs: "", beschrijving: "", categorie: ""}
 
   constructor(props){
     super(props);
@@ -11,8 +10,7 @@ class AdminMenuItemEdit extends React.Component{
   }
 
   componentDidMount(){
-    console.log(this.props);
-  //  const BASE_URL = 'http://127.0.0.1:8000/api/admin/menuitem/' + {this.props.id};
+    //console.log(this.props);
     axios.get('http://127.0.0.1:8000/api/admin/menuitem/' + this.props.naam).then(res =>{
       this.setState({
         naam: res.data.naam,
@@ -36,6 +34,7 @@ class AdminMenuItemEdit extends React.Component{
 
   }
 
+  //events voor de input veranderingen
   handleChangeBeschrijving(event){
    this.setState({beschrijving: event.target.value});
   }
@@ -53,6 +52,7 @@ class AdminMenuItemEdit extends React.Component{
      this.setState({special: event.target.checked});
   }
 
+  //verstuurd de form naar de api en de api update de gegevens vervolgens
   handleSubmit = (event) =>{
     event.preventDefault();
     console.log(this.state);

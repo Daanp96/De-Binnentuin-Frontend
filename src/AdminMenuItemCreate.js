@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 class AdminMenuItemEdit extends React.Component{
-  //state = {naam: "", prijs: "", beschrijving: "", categorie: ""}
+
 
   constructor(props){
     super(props);
@@ -18,10 +18,7 @@ class AdminMenuItemEdit extends React.Component{
     }
   }
 
-  componentDidMount(){
-
-  }
-
+  //events voor de input veranderingen
   handleChangeBeschrijving(event){
    this.setState({beschrijving: event.target.value});
   }
@@ -47,6 +44,7 @@ class AdminMenuItemEdit extends React.Component{
     this.setState({dakterras: event.target.checked});
   }
 
+//stuurd de form naar de api om een nieuw item aan te maken
   handleSubmit = (event) =>{
     event.preventDefault();
     console.log(this.state);
