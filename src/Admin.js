@@ -14,6 +14,7 @@ class Admin extends React.Component{
     return(
       <section>
         <OpeningsbordSection />
+        <TimeslotList />
       </section>
     )
   }

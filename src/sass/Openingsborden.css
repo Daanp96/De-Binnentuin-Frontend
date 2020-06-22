@@ -1,7 +1,8 @@
 .Openingsborden {
   display: grid;
-  width: 70%;
+  width: 80%;
   grid-template-columns: 50% 50%;
+  margin: auto;
 }
 .Openingsbord {
   display: grid;

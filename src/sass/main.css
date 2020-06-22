@@ -46,6 +46,7 @@
 
 .timeslotlist {
   width: 90%;
+  margin: 2em auto;
 }
 .timeslotlist__form {
   display: grid;
@@ -60,13 +61,15 @@
   font-size: 1.3em;
 }
 .timeslotlist__form__button--submit {
-  background-color: #996501;
+  background-color: #336633;
   grid-column: 1/span 2;
   border: none;
   color: white;
   border-radius: 15px 50px 30px 5px;
   padding: 0.4em 0.4em;
   font-size: 1em;
+  width: 60%;
+  margin: auto;
 }
 
 .timeslotlist__form__button--submit:disabled {
@@ -74,8 +77,8 @@
 }
 
 .timeslotlist__form__button--add {
-  margin: 1em 0;
-  background-color: #996501;
+  margin: 1em auto;
+  background-color: #336633;
   grid-column: 1/span 2;
   border: none;
   color: white;
@@ -83,6 +86,7 @@
   padding: 0.4em 0.4em;
   font-size: 1em;
   font-family: "Muli", sans-serif;
+  width: 60%;
 }
 .timeslotlist__form__button--add__figure {
   display: inline;
@@ -131,8 +135,9 @@ html {
 
 .Openingsborden {
   display: grid;
-  width: 70%;
+  width: 80%;
   grid-template-columns: 50% 50%;
+  margin: auto;
 }
 .Openingsbord {
   display: grid;

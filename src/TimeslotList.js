@@ -83,7 +83,7 @@ class TimeslotList extends React.Component{
 
     return(
       <section className="timeslotlist">
-        <h2> Tijd</h2>
+        <h2> Timeslots</h2>
       <form className="timeslotlist__form" onSubmit={(event) => this.handleSubmit(event)}>
           {this.state.timeslots.map((timeslot, index) =>{
           return (
