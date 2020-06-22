@@ -10,14 +10,15 @@ class TimeslotList extends React.Component{
   }
 
 
-
+//haalt de timeslots van de api
   componentDidMount(){
-    axios.get('http://localhost:8000/admin/timeslots').then(res =>{
+    axios.get('http://localhost:8000/api/admin/timeslots').then(res =>{
       this.setState({timeslots: res.data});
       console.log(this.state.timeslots);
     })
   }
 
+  //maakt een nieuwe timeslot aan en voegt die aan de state toe
   handleClick(){
     //console.log('this is', this);
     var oldInput = this.state.timeslots;
@@ -26,6 +27,7 @@ class TimeslotList extends React.Component{
     this.setState({timeslots: oldInput})
   }
 
+//verwijdert een timeslot uit de state
   handleDeleteClick(placeIndex){
     var currentState = this.state.timeslots;
     currentState.splice(placeIndex, 1);
@@ -42,7 +44,7 @@ class TimeslotList extends React.Component{
           start.push(timeslot.TimeStart);
           stop.push(timeslot.TimeStop);
     })}
-
+    // stuurt naar de api
    axios({
       method:'put',
       url: 'http://localhost:8000/api/admin/timeslots/update',
@@ -52,6 +54,7 @@ class TimeslotList extends React.Component{
     console.log(stop);
   }
 
+  //onclick event dat de state van één input (Timestart) veranderd
   onStartChange = (event, index) => {
     console.log(event);
     this.setState(state => {
@@ -62,7 +65,7 @@ class TimeslotList extends React.Component{
       });
     });
   }
-
+  //onclick event dat de state van één input (TimeStop) veranderd
   onEndChange = (event, index) => {
     console.log(event);
     this.setState(state => {
