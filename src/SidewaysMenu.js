@@ -17,6 +17,7 @@ class SidewaysMenu extends React.Component  {
             <SidewaysMenuButton name ="Chefs special" function ={this.props.function}/>
             <SidewaysMenuButton name ="best selling" function ={this.props.function}/>
             {buttons}
+            <SidewaysMenuButton name ="Shopping Cart" function ={this.props.function}/>
         </article>
     );
   }

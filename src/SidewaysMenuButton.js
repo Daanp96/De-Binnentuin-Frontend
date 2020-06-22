@@ -3,7 +3,6 @@ import React from "react";
 class SidewaysMenuButton extends React.Component {
 
   onClick = () =>{
-    console.log(this.props.name);
     this.props.function(this.props.name);
   }
 

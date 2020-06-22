@@ -7,11 +7,9 @@ class MenuItemList extends React.Component {
         const items = this.props.itemList.map((item, index) =>
             <MenuItem
                 key={index}
-                naam={item.naam}
-                beschrijving={item.beschrijving}
-                categorie={item.categorie}
-                prijs={item.prijs}
-                aantalVerkocht={item.aantalVerkocht}
+                item={item}
+                addFunction = {this.props.addFunction}
+                removeFunction = {this.props.removeFunction}
             />
         );
 

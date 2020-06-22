@@ -9,16 +9,25 @@ class App extends React.Component {
   state = {
       itemList: [],
       categoryList: [],
+      shoppingcart: [],
       restaurant: 1
   }
 
   getMenu = (submenu) => {
+    if(submenu == "Shopping Cart"){
+      this.setState({
+        itemList: this.state.shoppingcart
+      });
+      console.log(this.state.shoppingcart);
+      console.log(this.state.itemList);
+    }else{
     const BASE_URL = `http://127.0.0.1:8000/api/menu/${this.state.restaurant}/${submenu}`;
       axios.get(BASE_URL).then(res => {
           this.setState({
               itemList: res.data
           });
       });
+    }
   }
 
   getCatergories = () => {
@@ -28,6 +37,31 @@ class App extends React.Component {
             categoryList: res.data
         });
     });
+  }
+
+  addToShopping = (item) => {
+    this.setState({
+      shoppingcart: [...this.state.shoppingcart, item]
+    });
+  }
+
+  removeFromShopping = (item) => {
+    //check of er iets is om te verwijderen
+    let newCart;
+    if(this.state.shoppingcart[0] != null){
+      newCart = [];
+      console.log(newCart);
+      this.state.shoppingcart.map((cartItem, index) => {
+        if(cartItem != item){
+          newCart.push(cartItem);
+        }
+      });
+        this.setState({
+          shoppingcart:[...newCart]
+        });
+    }
+
+    console.log(this.state.shoppingcart);
   }
 
   componentDidMount = () =>{
@@ -43,7 +77,7 @@ class App extends React.Component {
           <p>De Binnentuin</p>
         </header>
         <SidewaysMenu function={this.getMenu} categoryList ={this.state.categoryList}/>
-        <MenuItemList itemList={this.state.itemList} />
+        <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} itemList={this.state.itemList} />
       </div>
     );
   }
