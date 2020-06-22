@@ -15,7 +15,7 @@ class App extends React.Component {
         </header>
         <Weather/>
         <Opmerking/>
-        <Korting/>
+        <Rekening/>
       </div>
     );
   }
