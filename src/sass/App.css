@@ -6,6 +6,10 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+  background-image: url("/images/plant2.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .App {
