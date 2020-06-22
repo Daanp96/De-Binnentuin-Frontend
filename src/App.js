@@ -2,33 +2,12 @@ import React from 'react';
 // import logo from './logo.svg';
 import './sass/App.scss';
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from "react-router-dom";
-
-
-import LoginPage from "./js/pages/LoginPage";
-import Home from "./js/pages/Home";
-import RegisterPage from "./js/pages/RegisterPage";
-import UserPage from "./js/pages/UserPage";
+import Twitter from "./js/Twitter";
 
 
 const App = (props) => {
   return (
-    <Router>
-      <div>
-
-        <Switch>
-          <Route path="/login" component={LoginPage} />
-          <Route path="/signup" component={RegisterPage} />
-          <Route path="/user" component={UserPage} />
-          <Route path="/" component={Home} />
-        </Switch>
-
-      </div>
-    </Router>
+    <Twitter/>
   );
 };
 
