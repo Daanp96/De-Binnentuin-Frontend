@@ -36,6 +36,11 @@ class MenuItemList extends React.Component {
 
 
             <section className="admin_menu_list">
+              <Link to="/admin" className="admin_menu_list__a">
+              <button className="Terugknop">
+                 &#8592; Terug
+              </button>
+              </Link>
               <div className="admin_menu_list__div">
                 {items}
               </div>

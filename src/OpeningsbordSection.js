@@ -13,9 +13,11 @@ class OpeningsbordSection extends React.Component{
     render(){
       return(
         <section className="Openingsborden">
-          <button className="Openingsborden__terug">
-             &#8592; Terug
-          </button>
+          <Link to="/admin">
+            <button className="Openingsborden__terug">
+               &#8592; Terug
+            </button>
+          </Link>
           <Openingsbord naam="binnentuin" />
           <Openingsbord naam="dakterras" />
         </section>

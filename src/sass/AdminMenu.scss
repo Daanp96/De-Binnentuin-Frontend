@@ -1,5 +1,11 @@
 .admin_menu_list{
 
+  &__a{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-decoration: none;
+  }
 
   &__link{
     text-decoration: none;
@@ -15,6 +21,7 @@
   &__div{
     overflow: auto;
     max-height: 60vh;
+    margin-top: 0.7em;
 
     & button{
       border: none;
@@ -22,15 +29,15 @@
       color: white;
       padding: 0.4em 0.6em;
       margin-top: 0.6em;
+      margin-bottom: 35px;
     }
   }
 
   &__item{
-    margin: 35px 35px 0 35px;
+    margin: 0px 35px 0px 35px;
     text-align: left;
     color: #002C2D;
     text-decoration: none;
-
   }
 
   &__item:link{
@@ -40,6 +47,18 @@
 
 html, body{
   height: 100vh;
+}
+
+.Terugknop{
+  border: none;
+  text-decoration: none;
+  background-color: #336633;
+  color: white;
+  margin-top: 1em;
+  font-size: 1.2em;
+  padding: 0.4em ;
+  margin-left: 1em;
+
 }
 
 .AdminMenuSection{
