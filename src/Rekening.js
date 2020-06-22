@@ -23,7 +23,7 @@ class Rekening extends React.Component{
     const BASE_URL = 'http://127.0.0.1:8000/api/users/'
     axios.get( BASE_URL + '2').then(res =>{
       console.log(res);
-        this.setState({rekening: res.data.rekeningNummer});
+      this.setState({rekening: res.data.rekeningNummer});
   });
 }
 
