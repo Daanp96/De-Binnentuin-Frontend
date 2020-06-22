@@ -7,25 +7,11 @@ import axios from 'axios';
 
 
 class OpeningsbordSection extends React.Component{
-
-
-
-      /*axios.patch('http://localhost:8000/admin/change', {name:naam, isOpen:geopend},
-
-
-    )  .then(response => {
-  console.log(response);})
-  .catch(error => {
-    console.log(error);
-  }); */
- 
-
-
     render(){
       return(
         <section className="Openingsborden">
-          <Openingsbord naam="binnentuin" open={false} onClick={this.onClick}/>
-          <Openingsbord naam="dakterras" open={true} onClick={this.onClick}/>
+          <Openingsbord naam="binnentuin" />
+          <Openingsbord naam="dakterras" />
         </section>
       )
     }
