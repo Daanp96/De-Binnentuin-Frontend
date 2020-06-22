@@ -104,6 +104,24 @@ html {
 
 .orderlist {
   width: 90%;
+  margin: auto;
+}
+.orderlist__a {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-decoration: none;
+  margin-bottom: 1em;
+}
+.orderlist__a button {
+  border: none;
+  text-decoration: none;
+  background-color: #336633;
+  color: white;
+  margin-top: 1em;
+  font-size: 1.2em;
+  padding: 0.4em;
+  margin-left: 1em;
 }
 .orderlist .order:nth-child(odd) h2 {
   background-color: #336633;
@@ -112,9 +130,14 @@ html {
   background-color: #996501;
 }
 
+.order:nth-child(even) {
+  border: 3px solid #996501;
+}
+
 .order {
   background-color: white;
   margin-bottom: 2em;
+  border: 3px solid #336633;
 }
 .order h2 {
   color: white;

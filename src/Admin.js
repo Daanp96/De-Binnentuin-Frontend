@@ -84,6 +84,9 @@ componentDidMount = () =>{
           <Route path="/admin">
             <AdminMenuOverview event={this.onRestaurantClick}/>
           </Route>
+          <Route path="/bestellingen">
+            <OrderList />
+          </Route>
           <Route path="/tijden">
             <OpeningsbordSection />
             <TimeslotList />

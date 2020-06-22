@@ -11,6 +11,26 @@ html{
 
 .orderlist{
   width: 90%;
+  margin: auto ;
+
+  &__a{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-decoration: none;
+    margin-bottom: 1em;
+
+    & button{
+      border: none;
+      text-decoration: none;
+      background-color: #336633;
+      color: white;
+      margin-top: 1em;
+      font-size: 1.2em;
+      padding: 0.4em ;
+      margin-left: 1em;
+    }
+  }
 
   & .order:nth-child(odd){
     & h2{
@@ -25,10 +45,14 @@ html{
   }
 }
 
+.order:nth-child(even){
+      border: 3px solid #996501;
+}
 
 .order{
   background-color: white;
   margin-bottom: 2em;
+  border: 3px solid #336633;
 
   & h2{
     color: white;

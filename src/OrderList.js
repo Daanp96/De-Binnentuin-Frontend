@@ -1,7 +1,7 @@
 import React from 'react';
 
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 //Import van eigen elementen
 import Order from './Order';
 
@@ -43,6 +43,11 @@ class OrderList extends React.Component{
     //Return functie
     return(
       <section className="orderlist">
+        <Link to='/admin' className='orderlist__a'>
+          <button>
+             &#8592; Terug
+          </button>
+        </Link>
         {(this.state.orders).map((order, index) =>{
           return <Order key={order.id} index={index} onClick={this.onClick} id={order.id} items={order.items} aantallen={order.aantal} timestart={order.TimeStart} timestop={order.TimeStop}/>
         })}
