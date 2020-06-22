@@ -20,7 +20,7 @@ class Admin extends React.Component{
   state = {
     itemList: [],
     categoryList: [],
-    restaurant: 1,  
+    restaurant: 1,
     item_naam: "",
 }
 

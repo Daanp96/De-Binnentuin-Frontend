@@ -3,31 +3,29 @@ import React from 'react';
 import axios from 'axios';
 
 class Openingsbord extends React.Component{
-    state = {open: "", token: ""}
+    state = {open: "", token: "", image_link: "images/open.png"}
 
     onClick = (naam, geopend,token) =>{
-
       if(geopend == 1){
         geopend = 0;
-      //  this.setState({open: 0});
       }
-      else {
-        geopend = 1;
-      //  this.setState({open: 1});
-      }
+      else {  geopend = 1;  }
      console.log(naam, geopend);
-
-
         axios({
           method:'put',
-          url: 'http://localhost:8000/admin/change',
+          url: 'http://localhost:8000/api/admin/change',
           data: {name:naam, isOpen:geopend},
-        });
+        }).then(this.setState({open: geopend})
+        );
       }
 
     componentDidMount(){
-      axios.get('http://localhost:8000/admin/' + this.props.naam).then(res =>{
-        this.setState({open: res.data[0].isOpen, token: res.data[1]})
+      this.loadApi();
+    }
+
+    loadApi = () => {
+      axios.get('http://localhost:8000/api/admin/' + this.props.naam).then(res =>{
+        this.setState({open: res.data[0].isOpen});
         console.log(res.data);
 
       });
@@ -35,28 +33,18 @@ class Openingsbord extends React.Component{
 
 
     render(){
-      axios.get('http://localhost:8000/admin/' + this.props.naam).then(res =>{
-        this.setState({open: res.data[0].isOpen})
-      });
-      const isOpen = this.state.open;
-      let image_link;
-      if(isOpen){
-        image_link = 'images/open.png';
+      if(this.state.open){
+        this.state.image_link = 'images/open.png';
       }
       else{
-        image_link = 'images/closed-sign.png';
+        this.state.image_link = 'images/closed-sign.png';
       }
       return(
         <section className="Openingsbord">
           <h2> {this.props.naam || 'restaurant'} </h2>
           <figure className="Openingsbord__figure">
-            <img src={image_link} alt="Restaruant open" />
+            <img src={this.state.image_link} alt="Restaruant open" />
           </figure>
-      {/*      <form onSubmit={() => this.props.onSubmit(this.props.naam)}>
-            <input type="text" name="name" value={this.props.naam}/>
-            <input type="number" number="isOpen" value={this.state.open}/>
-            <button type="submit">Verander</button>
-          </form> */}
           <button className='Openingsbord__changeButton' onClick={() => this.onClick(this.props.naam, this.state.open, this.state.token)}>
             <figure className="Openingsbord__figure">
               <img src="images/circle_arrow.png" alt="Verander bord"></img>
