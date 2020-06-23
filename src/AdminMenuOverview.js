@@ -5,7 +5,6 @@ const AdminMenuOverview = (props) =>{
 
   return(
     <section className="AdminMenuSection">
-      <h1> Menu </h1>
       <Link to="/menu" onClick={() => props.event(1)}>
         <button className="AdminMenuSection__button">Binnentuin Menu Edit</button>
       </Link>

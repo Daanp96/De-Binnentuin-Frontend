@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-
+import {Link} from "react-router-dom";
 
 class AdminMenuItemEdit extends React.Component{
 
@@ -66,6 +66,11 @@ class AdminMenuItemEdit extends React.Component{
   render(){
     return (
       <section className = "MenuEditBox">
+        <Link to="/menu" className="MenuEditBox__link">
+          <button className="Terugknop">
+             &#8592; Terug
+          </button>
+        </Link>
         <h2> Nieuw menu item maken </h2>
         <form className="MenuEditBox__Form" onSubmit={this.handleSubmit}>
           <label >

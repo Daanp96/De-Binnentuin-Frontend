@@ -32,6 +32,9 @@
   color: #002C2D;
   text-decoration: none;
 }
+.admin_menu_list__item:hover {
+  background-color: #6BB46B;
+}
 .admin_menu_list__item:link {
   text-decoration: none;
 }

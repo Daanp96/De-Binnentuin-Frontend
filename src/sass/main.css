@@ -251,6 +251,9 @@ html {
   color: #002C2D;
   text-decoration: none;
 }
+.admin_menu_list__item:hover {
+  background-color: #6BB46B;
+}
 .admin_menu_list__item:link {
   text-decoration: none;
 }
@@ -295,6 +298,15 @@ html, body {
 .MenuEditBox {
   width: 90%;
   margin: auto;
+}
+.MenuEditBox__link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-decoration: none;
+}
+.MenuEditBox__link button {
+  margin-left: 0;
 }
 .MenuEditBox h2 {
   margin: 0.5em 0;

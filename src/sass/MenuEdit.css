@@ -2,6 +2,15 @@
   width: 90%;
   margin: auto;
 }
+.MenuEditBox__link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-decoration: none;
+}
+.MenuEditBox__link button {
+  margin-left: 0;
+}
 .MenuEditBox h2 {
   margin: 0.5em 0;
   color: #002C2D;
