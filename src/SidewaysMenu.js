@@ -13,11 +13,10 @@ class SidewaysMenu extends React.Component  {
 
       return(
         <article className="sidewaysMenu">
-            <SidewaysMenuButton name ='All' function ={this.props.function}/>
-            <SidewaysMenuButton name ="Chefs special" function ={this.props.function}/>
-            <SidewaysMenuButton name ="Best selling" function ={this.props.function}/>
-            {buttons}
-            <SidewaysMenuButton name ="Shopping Cart" function ={this.props.function}/>
+            <SidewaysMenuButton className="sidewaysMenu_button" name ='All' function ={this.props.function}/>
+            <SidewaysMenuButton className="sidewaysMenu_button" name ="Chefs special" function ={this.props.function}/>
+            <SidewaysMenuButton className="sidewaysMenu_button" name ="Best selling" function ={this.props.function}/>
+            {buttons}        
         </article>
     );
   }
