@@ -82,6 +82,10 @@ html, body{
       padding: 0.4em 0.4em;
   }
 
+  &__button:hover{
+    background-color: #6BB46B;
+  }
+
   & a{
     width: 50%;
     text-decoration: none;

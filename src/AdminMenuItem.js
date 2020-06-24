@@ -1,7 +1,7 @@
 import React from "react";
 import "./sass/Menuitem.scss";
 
-const MenuItem = props => {
+const AdminMenuItem = props => {
       return(
         <section className="admin_menu_list__item">
             <h2>{props.naam}</h2>
@@ -11,4 +11,4 @@ const MenuItem = props => {
     );
 }
 
-export default MenuItem;
+export default AdminMenuItem;

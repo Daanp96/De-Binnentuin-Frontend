@@ -8,7 +8,7 @@ import AdminMenuOverview from './AdminMenuOverview';
 import AdminMenuItemEdit from './AdminMenuItemEdit';
 import AdminMenuItemCreate from './AdminMenuItemCreate';
 import SidewaysMenu from './SidewaysMenu';
-import MenuItemList from './MenuItemList';
+import AdminMenuItemList from './AdminMenuItemList';
 
 
 import {Switch, Route, BrowserRouter as Router, Link, Redirect} from "react-router-dom";

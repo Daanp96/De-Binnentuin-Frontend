@@ -1,8 +1,8 @@
 import React from "react";
-import MenuItem from "./MenuItem";
+import AdminMenuItem from "./AdminMenuItem";
 import {Switch, Route, BrowserRouter as Router, Link} from "react-router-dom";
 
-class MenuItemList extends React.Component {
+class AdminMenuItemList extends React.Component {
       constructor(){
         super();
       }
@@ -54,4 +54,4 @@ class MenuItemList extends React.Component {
     }
 }
 
-export default MenuItemList;
+export default AdminMenuItemList;
