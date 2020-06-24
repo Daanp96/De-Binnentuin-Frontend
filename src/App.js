@@ -41,10 +41,14 @@ class App extends React.Component {
 
 
   addToShopping = (item) => {
+    let newCart;
+    newCart = this.state.shoppingcart;
+    newCart.push(item);
     this.setState({
-      shoppingcart: [...this.state.shoppingcart, item],
+      shoppingcart: newCart,
       popup: true
     });
+    this.forceUpdate();
     setTimeout(()=>{this.setState({popup:false})}, 1000);
   }
 
