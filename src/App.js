@@ -16,7 +16,7 @@ class App extends React.Component {
   }
 
   getMenu = (submenu) => {
-    if(submenu == "Shopping Cart"){
+    if(submenu === "Shopping Cart"){
       this.setState({
         itemList: this.state.shoppingcart
       });
@@ -39,24 +39,18 @@ class App extends React.Component {
     });
   }
 
+
   addToShopping = (item) => {
     this.setState({
       shoppingcart: [...this.state.shoppingcart, item],
       popup: true
     });
-     // var popup = e.currentTarget.id;
-
-     // popup.classList.toggle("show");
-  }
-
-  findItem(item){
-    return item.id == item.id;
+    setTimeout(()=>{this.setState({popup:false})}, 1000);
   }
 
   removeFromShopping = (item) => {
     //check of er iets is om te verwijderen
     let newCart;
-    console.log(item);
     if(this.state.shoppingcart[0] != null){
       newCart = this.state.shoppingcart;
       newCart.splice(newCart.indexOf(item),1);
@@ -74,7 +68,7 @@ class App extends React.Component {
 
   render(){
     let classNameForPopup = "popuptext";
-    if (this.state.popup == true){
+    if (this.state.popup === true){
       classNameForPopup += " show";
     }
     return (
@@ -83,7 +77,7 @@ class App extends React.Component {
           <p>De Binnentuin</p>
         </header>
         <SidewaysMenu function={this.getMenu} categoryList ={this.state.categoryList}/>
-        <SidewaysMenuButton name ="Shopping Cart" function ={() => this.getMenu("Shopping Cart")}><span id="addToShoppingPopup" class={classNameForPopup}>+1</span></SidewaysMenuButton>
+        <SidewaysMenuButton name ="Shopping Cart" function ={() => this.getMenu("Shopping Cart")}><span id="addToShoppingPopup" className={classNameForPopup}>+1</span></SidewaysMenuButton>
         <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} itemList={this.state.itemList} />
       </div>
     );

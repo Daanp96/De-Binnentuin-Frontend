@@ -10,6 +10,7 @@ class SidewaysMenuButton extends React.Component {
     return(
         <section className="sidewaysMenuButtoncontainer">
             <button onClick={this.onClick} className="sidewaysMenuButtoncontainer_button" type="button">{this.props.name}</button>
+            {this.props.children}
         </section>
     );
   }
