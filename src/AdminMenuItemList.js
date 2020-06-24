@@ -16,7 +16,7 @@ class AdminMenuItemList extends React.Component {
         const items = this.props.itemList.map((item, index) =>
              <React.Fragment key={index}>
                <Link to="/edit" onClick={() => this.props.onClick(item.naam)}>
-                    <MenuItem
+                    <AdminMenuItem
                         index={index}
                         id={item.id}
                         naam={item.naam}

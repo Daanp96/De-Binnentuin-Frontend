@@ -76,7 +76,7 @@ componentDidMount = () =>{
           <Switch>
           <Route path="/menu">
             <SidewaysMenu function={this.getMenu} categoryList ={this.state.categoryList}/>
-            <MenuItemList function={this.getMenu} onClick={this.onClick} restaurant={this.state.restaurant} onDelete={this.onDelete} itemList={this.state.itemList} />
+            <AdminMenuItemList function={this.getMenu} onClick={this.onClick} restaurant={this.state.restaurant} onDelete={this.onDelete} itemList={this.state.itemList} />
           </Route>
           <Route path="/edit">
             <AdminMenuItemEdit naam={this.state.item_naam}/>

@@ -4,6 +4,11 @@ import axios from 'axios';
 
 class Order extends React.Component{
 
+  opmerkingenPlaatsen = () =>{
+
+
+  }
+
 
   render(){
   const item_aantallen = this.props.aantallen.split(',');
@@ -18,6 +23,10 @@ class Order extends React.Component{
             return <li className="order__list__item" key={index}>{item_aantallen[index]}x  {item}</li>
           })}
         </ul>
+        <div className = "order__opmerking">
+          <h3>Opmerking</h3>
+          <p>{this.props.opmerking}</p>
+        </div>
         <button className="order__button" onClick={() => this.props.onClick(this.props.id, this.props.index)}>Klaar</button>
     </section>
   );

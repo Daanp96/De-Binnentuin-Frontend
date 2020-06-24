@@ -50,7 +50,15 @@ class OrderList extends React.Component{
         </Link>
         {/* voor elke bestelling in de lijst maakt hij een nieuwe Order class  */ }
         {(this.state.orders).map((order, index) =>{
-          return <Order key={order.id} index={index} onClick={this.onClick} id={order.id} items={order.items} aantallen={order.aantal} timestart={order.TimeStart} timestop={order.TimeStop}/>
+          return <Order key={order.id}
+            index={index}
+            onClick={this.onClick}
+            id={order.id}
+            items={order.items}
+            aantallen={order.aantal}
+            opmerking={order.opmerking}
+            timestart={order.TimeStart}
+            timestop={order.TimeStop}/>
         })}
       </section>
     )
