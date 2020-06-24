@@ -1,5 +1,31 @@
+@import 'variables';
+
 .menu_list__item{
-    margin: 35px;
-    text-align: left;
+  margin: 35px;
+  text-align: left;
+  color: white;
+  background-color: $green;
+  padding: 15px;
+  width: 350px;
+
+  &__title{
+    font-size: 32px;
   }
+
+  &__description{
+    font-weight: $font_light;
+  }
+
+  &__price{
+    font-size: 24px;
+  }
+
+  &__cart, &__favorite{
+    display: inline-block;
+    background-color: $button;
+    margin: 10px 9%;
+    width: 100px;
+    padding: 10px;
+  }
+}
   
