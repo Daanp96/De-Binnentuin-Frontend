@@ -24,11 +24,15 @@ class Korting extends React.Component{
     axios.get( BASE_URL + '2').then(res =>{
       console.log(res);
       if (this.state.login == "true") {
-        this.setState({prijs: (res.data.prijsVoledigeBestelling/10) * 9});
+        this.setState({prijs: (res.data.prijsVoledigeBestelling/10) * 8.5});
       }else {
         this.setState({prijs: res.data.prijsVoledigeBestelling});
       }
     });
+  }
+
+  componentDidMount = () =>{
+    this.makeApiCallUsers();
   }
 
   render(){
