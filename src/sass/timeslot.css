@@ -9,7 +9,9 @@
 
 .timeslotlist {
   width: 90%;
-  margin: 2em auto;
+  margin: 0 auto;
+  grid-row: 2;
+  grid-column: auto;
 }
 .timeslotlist__form {
   display: grid;
@@ -58,6 +60,12 @@
 .timeslotlist__form__button--add__figure img {
   max-width: 20%;
   max-height: 0.7em;
+}
+
+@media screen and (max-width: 700px) {
+  .timeslotlist {
+    margin: 2em auto;
+  }
 }
 
 /*# sourceMappingURL=timeslot.css.map */

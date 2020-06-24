@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 
 import Openingsbord from './Openingsbord';
 import axios from 'axios';
@@ -8,11 +8,6 @@ class OpeningsbordSection extends React.Component{
     render(){
       return(
         <section className="Openingsborden">
-          <Link to="/admin">
-            <button className="Openingsborden__terug">
-               &#8592; Terug
-            </button>
-          </Link>
           <Openingsbord naam="binnentuin" />
           <Openingsbord naam="dakterras" />
         </section>

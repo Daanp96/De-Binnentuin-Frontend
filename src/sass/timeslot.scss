@@ -10,7 +10,9 @@
 
 .timeslotlist{
   width: 90%;
-  margin: 2em auto;
+  margin: 0 auto;
+  grid-row: 2;
+  grid-column: auto;
 
   &__form{
     display: grid;
@@ -66,5 +68,11 @@
       max-width: 20%;
       max-height: 0.7em;
     }
+  }
+}
+
+@media screen and (max-width: 700px){
+  .timeslotlist{
+    margin: 2em auto;
   }
 }

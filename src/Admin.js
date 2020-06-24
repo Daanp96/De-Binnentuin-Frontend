@@ -91,8 +91,15 @@ componentDidMount = () =>{
             <OrderList />
           </Route>
           <Route path="/tijden">
-            <OpeningsbordSection />
-            <TimeslotList />
+            <section className="tijden_section">
+              <Link to='/admin' className='orderlist__a'>
+                <button>
+                   &#8592; Terug
+                </button>
+              </Link>
+              <OpeningsbordSection />
+              <TimeslotList />
+            </section>
           </Route>
 
           </Switch>
