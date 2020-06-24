@@ -32,7 +32,7 @@ class App extends React.Component {
   render(){
     return (
       <article className="App">
-        <header className="App-header">
+        <header className="App-header"></header>
           <Router>
             <Route path="/">
               <h1>
@@ -43,7 +43,6 @@ class App extends React.Component {
               <Weather/>
             </Route>
           </Router>
-        </header>
       </article>
     );
   }
