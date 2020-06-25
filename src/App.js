@@ -13,6 +13,9 @@ import MenuItemList from "./MenuItemList";
 import SidewaysMenu from './SidewaysMenu';
 import SidewaysMenuButton from "./SidewaysMenuButton";
 
+import Opmerking from "./Opmerking";
+import Korting from "./Korting";
+
 import axios from "axios";
 
 import {
@@ -212,6 +215,10 @@ class App extends React.Component {
                 <SidewaysMenuButton name ="Shopping Cart" function ={() => this.getMenu("Shopping Cart")}><span id="addToShoppingPopup" className={classNameForPopup}>+1</span></SidewaysMenuButton>
                 <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} itemList={this.state.itemList} />
               </Route>
+              <Route path="/opmerking">
+                <Weather/>
+                <Opmerking/>
+              </Route
             </Router>
         </main>
       </article>

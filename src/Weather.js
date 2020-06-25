@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "./sass/Weather.scss";
 
 class Weather extends React.Component {
     state = {temperature: "", image: ""};
@@ -34,7 +35,7 @@ class Weather extends React.Component {
         return(
             <section>
                 <p>{this.state.temperature}</p>
-                <img class="weather" src={this.state.image} alt="weather_icon"/>
+                <img className="weather" src={this.state.image} alt="weather_icon"/>
             </section>
         );
     }
