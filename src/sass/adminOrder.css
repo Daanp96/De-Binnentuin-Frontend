@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+.orderlist {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column-gap: 1em;
+}
+.orderlist__a {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-decoration: none;
+  margin-bottom: 1em;
+  grid-column: 1/span 2;
+}
+.orderlist__a button {
+  border: none;
+  text-decoration: none;
+  background-color: #336633;
+  color: white;
+  margin-top: 1em;
+  font-size: 1.2em;
+  padding: 0.4em;
+  margin-left: 1em;
+}
+.orderlist .order:nth-child(odd) h2 {
+  background-color: #336633;
+}
+.orderlist .order:nth-child(even) h2 {
+  background-color: #996501;
+}
+
+.order:nth-child(even) {
+  border: 3px solid #996501;
+}
+
+.order {
+  background-color: white;
+  margin-bottom: 2em;
+  border: 3px solid #336633;
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+.order h2 {
+  color: white;
+  grid-column: 1/span 2;
+  padding: 0.3em 0;
+}
+.order__button {
+  border: none;
+  background-color: #002C2D;
+  color: white;
+  font-size: 1.2em;
+  padding: 0.3em 0.9em;
+  border-radius: 15px 50px 30px 5px;
+  grid-column: 1/span 2;
+  margin: 0.7em auto 0.7em auto;
+  width: 50%;
+}
+.order__opmerking {
+  margin: 0.6em auto;
+  width: 80%;
+}
+.order__opmerking h3 {
+  margin-bottom: 0.6em;
+}
+.order__table {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+}
+.order__time {
+  font-size: 1.5em;
+  margin-bottom: 0.4em;
+}
+.order__list {
+  text-align: left;
+  width: 90%;
+  margin: auto;
+  padding: 0.5em 0;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #002C2D;
+  list-style-position: inside;
+  list-style-type: none;
+}
+
+@media screen and (max-width: 700px) {
+  .orderlist__a {
+    grid-column: 1;
+  }
+
+  .orderlist {
+    grid-template-columns: 100%;
+  }
+}
+
+/*# sourceMappingURL=adminOrder.css.map */

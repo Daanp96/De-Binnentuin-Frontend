@@ -1,0 +1,44 @@
+.MenuEditBox {
+  width: 90%;
+  margin: auto;
+}
+.MenuEditBox__link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-decoration: none;
+}
+.MenuEditBox__link button {
+  margin-left: 0;
+}
+.MenuEditBox h2 {
+  margin: 0.5em 0;
+  color: #002C2D;
+}
+.MenuEditBox__Form {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  text-align: left;
+}
+.MenuEditBox__Form__submit {
+  background-color: #336633;
+  color: white;
+  padding: 0.4em 0.6em;
+  border: none;
+  margin-bottom: 1em;
+  font-size: 1em;
+}
+.MenuEditBox__Form label {
+  margin: 0.5em 0;
+  border: 2px solid #336633;
+  padding: 0.4em;
+  color: #996501;
+  font-weight: bold;
+}
+.MenuEditBox__Form input, .MenuEditBox__Form textarea {
+  margin-top: 0.4em;
+  display: block;
+}
+
+/*# sourceMappingURL=MenuEdit.css.map */

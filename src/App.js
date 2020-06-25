@@ -21,6 +21,8 @@ import Home from "./js/pages/Home";
 import RegisterPage from "./js/pages/RegisterPage";
 import UserPage from "./js/pages/UserPage";
 
+import Admin from './Admin';
+
 import axios from "axios";
 
 import {
@@ -229,6 +231,9 @@ class App extends React.Component {
               <Route path="/signup" component={RegisterPage} />
               <Route path="/user" component={UserPage} />
               <Route path="/" component={Home} />
+
+            //admin
+            <Route path="/Admin" component={Admin} />
             </Router>
         </main>
       </article>
