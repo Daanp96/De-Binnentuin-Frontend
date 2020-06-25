@@ -16,6 +16,11 @@ import SidewaysMenuButton from "./SidewaysMenuButton";
 import Opmerking from "./Opmerking";
 import Korting from "./Korting";
 
+import LoginPage from "./js/pages/LoginPage";
+import Home from "./js/pages/Home";
+import RegisterPage from "./js/pages/RegisterPage";
+import UserPage from "./js/pages/UserPage";
+
 import axios from "axios";
 
 import {
@@ -217,22 +222,16 @@ class App extends React.Component {
                 <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} itemList={this.state.itemList} />
               </Route>
               <Route path="/opmerking">
-                <Weather/>
                 <Opmerking/>
-              </Route
+                <Korting/>
+              </Route>
+              <Route path="/login" component={LoginPage} />
+              <Route path="/signup" component={RegisterPage} />
+              <Route path="/user" component={UserPage} />
+              <Route path="/" component={Home} />
             </Router>
         </main>
       </article>
-=======
-      <div className="App">
-        <header className="App-header">
-          <p>De Binnentuin</p>
-        </header>
-        <Weather/>
-        <Opmerking/>
-        <Korting/>
-      </div>
->>>>>>> origin/User-story-17V2
     );
   }
 }
