@@ -188,6 +188,7 @@ class App extends React.Component {
       classNameForPopup += " show";
     }
     return (
+<<<<<<< HEAD
       <article className="App">
         <header className="App-header"></header>
           <main className="main">
@@ -222,6 +223,16 @@ class App extends React.Component {
             </Router>
         </main>
       </article>
+=======
+      <div className="App">
+        <header className="App-header">
+          <p>De Binnentuin</p>
+        </header>
+        <Weather/>
+        <Opmerking/>
+        <Korting/>
+      </div>
+>>>>>>> origin/User-story-17V2
     );
   }
 }
