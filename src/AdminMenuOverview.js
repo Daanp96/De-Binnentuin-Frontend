@@ -5,10 +5,10 @@ const AdminMenuOverview = (props) =>{
 
   return(
     <section className="AdminMenuSection">
-      <Link to="/menu" onClick={() => props.event(1)}>
+      <Link to="/adminmenu" onClick={() => props.event(1)}>
         <button className="AdminMenuSection__button">Binnentuin Menu Edit</button>
       </Link>
-      <Link to="/menu" onClick={() => props.event(2)}>
+      <Link to="/adminmenu" onClick={() => props.event(2)}>
         <button className="AdminMenuSection__button">Roof Menu Edit</button>
       </Link>
       <Link to="/bestellingen">
