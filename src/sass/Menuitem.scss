@@ -10,7 +10,7 @@
 
   &__title{
     font-size: 32px;
-  } 
+  }
 
   &__description{
     font-weight: $font_light;
@@ -19,7 +19,7 @@
   &__price{
     font-size: 24px;
   }
-
+ 
   &__cart, &__favorite{
     display: inline-block;
     background-color: $button;

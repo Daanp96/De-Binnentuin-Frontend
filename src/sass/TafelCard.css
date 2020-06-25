@@ -1,0 +1,106 @@
+.tafelcard {
+  width: 50%;
+  margin: 40px auto 20px;
+}
+.tafelcard__head {
+  width: 100%;
+  height: 150px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+}
+.tafelcard__head__infoContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 20%;
+}
+.tafelcard__head__infoContainer__text {
+  font-family: "Abel", sans-serif;
+  width: 100%;
+  text-align: center;
+}
+.tafelcard__head__infoContainer__text--label {
+  font-weight: bold;
+}
+.tafelcard__head__continue {
+  width: 150px;
+  height: 100%;
+  position: relative;
+  right: 0px;
+  top: 0px;
+  border: none;
+  background-color: #2EA899;
+  transform: translateX(50%);
+  transition: 0.5s all;
+}
+.tafelcard__head__continue__text {
+  font-size: 50px;
+  font-family: "Abel", sans-serif;
+  transition: 0.5s all;
+  display: block;
+  pointer-events: none;
+}
+.tafelcard__head__continue__text--selected {
+  transform: rotate(90deg);
+}
+.tafelcard__head__continue:hover {
+  background-color: #278E82;
+  font-size: 55px;
+}
+.tafelcard__dropdown {
+  width: 98%;
+  height: 0px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin: -20px auto 0;
+  position: relative;
+  z-index: 1;
+  background-color: white;
+  transition: 0.5s all;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.tafelcard__dropdown--open {
+  height: 200px;
+  padding: 40px;
+}
+.tafelcard__dropdown__inputContainer {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.tafelcard__dropdown__inputContainer__label {
+  width: 100%;
+  font-family: "Abel", sans-serif;
+  font-weight: bold;
+}
+.tafelcard__dropdown__inputContainer__input {
+  width: 100%;
+  padding: 20px;
+  font-family: "Abel", sans-serif;
+  cursor: pointer;
+}
+.tafelcard__dropdown__submit {
+  padding: 20px;
+  width: 250px;
+  font-size: 20px;
+  background-color: #2EA899;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+.tafelcard__dropdown__submit:hover {
+  background-color: #278E82;
+}
+
+/*# sourceMappingURL=TafelCard.css.map */
