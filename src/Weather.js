@@ -12,7 +12,7 @@ class Weather extends React.Component {
         };
         const BASE_URL = "http://api.weatherstack.com/current";
         axios.get(BASE_URL, {params}).then(res => {
-            console.log(res.data.error);
+            //console.log(res.data.error);
             if(res.data.error){
                 this.setState({
                     temperature: "Geen weer beschikbaar",
