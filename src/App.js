@@ -15,6 +15,7 @@ import SidewaysMenuButton from "./SidewaysMenuButton";
 
 import Opmerking from "./Opmerking";
 import Korting from "./Korting";
+import LogInKnoppen from "./LogInKnoppen";
 
 import LoginPage from "./js/pages/LoginPage";
 
@@ -220,15 +221,17 @@ class App extends React.Component {
                   <LocationButton locatie="dakterras" onClick={this.makeApiCall}/>
                 </section>
                 {this.tafels}
-              </Route>
-              <Route path="/submenu">
+              </section>
+            </Route>
+            <Route path="/submenu">
                 <SidewaysMenu function={this.getMenu} categoryList ={this.state.categoryList}/>
                 <SidewaysMenuButton name ="Shopping Cart" function ={() => this.getMenu("Shopping Cart")}><span id="addToShoppingPopup" className={classNameForPopup}>+1</span></SidewaysMenuButton>
                 <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} itemList={this.state.itemList} buttonClass={classNameForButtons}/>
               </Route>
               <Route path="/opmerking">
-                <Opmerking/>
                 <Korting shoppingcart = {this.state.shoppingcart}/>
+                <Opmerking/>
+                <LogInKnoppen/>
               </Route>
               <Route path="/login" component={LoginPage} />
               <Route path="/signup" component={RegisterPage} />

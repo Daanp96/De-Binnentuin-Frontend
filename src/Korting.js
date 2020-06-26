@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from "axios";
 import './sass/App.scss';
+import ShoppingCartConfirm from "./ShoppingCartConfirm";
 
 class Korting extends React.Component{
 
@@ -28,7 +29,7 @@ class Korting extends React.Component{
     axios.get( BASE_URL + '2').then(res =>{
       console.log(res);
       if (this.state.login == "true") {
-        this.setState({prijs: (res.data.prijsVoledigeBestelling/10) * 8.5});
+        this.setState({prijs: (res.data.prijsVoledigeBestelling/100) * 85});
       }else {
         this.setState({prijs: res.data.prijsVoledigeBestelling});
       }
@@ -37,16 +38,12 @@ class Korting extends React.Component{
 
   componentDidMount = () =>{
     this.makeApiCallUsers();
-    console.log(this.props.shoppingcart);
   }
 
   render(){
     return(
       <section>
-        <button className="" type="button" name="button" onClick={() => this.makeApiCallUsers(1)}>log in voor Plnt</button>
-        <button className="" type="button" name="button" onClick={() => this.makeApiCallUsers(2)}>log in not Plnt</button>
-        <button className="" type="button" name="button" onClick={this.makeApiCall}>Show Prijs</button>
-        <p>{this.state.prijs}</p>
+        <ShoppingCartConfirm itemList = {this.props.shoppingcart}/>
       </section>
     )
   }

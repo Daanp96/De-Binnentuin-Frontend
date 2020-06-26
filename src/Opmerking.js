@@ -11,13 +11,6 @@ class Opmerking extends React.Component{
     console.log(this.state.opmerking);
   }
 
-  onCheck = event =>{
-    event.preventDefault();
-    console.log("FFFF");
-    this.setState({text: event.target.value});
-    console.log(event);
-  }
-
   makeApiCallPatch = event =>{
     event.preventDefault();
     const BASE_URL = 'http://127.0.0.1:8000/api/bestellingen/'
@@ -37,7 +30,6 @@ class Opmerking extends React.Component{
           <input className="" type="text" placeholder="Opmerkingen..." onChange={this.onSearch} />
           <input className="" type="submit" name="button" value = "Submit" />
         </form>
-        <p>{this.state.text}</p>
       </section>
     )
   }
