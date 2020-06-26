@@ -16,7 +16,7 @@ class Weather extends React.Component {
             if(res.data.error){
                 this.setState({
                     temperature: "Geen weer beschikbaar",
-                    image: "img/noweather.png"
+                    image: "images/noweather.png"
                 });
             } else {
                 this.setState({

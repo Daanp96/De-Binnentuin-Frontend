@@ -23,6 +23,8 @@ import UserPage from "./js/pages/UserPage";
 
 import Admin from './Admin';
 
+import Header from "./Header";
+
 import axios from "axios";
 
 import {
@@ -207,17 +209,15 @@ class App extends React.Component {
 
     return (
       <article className="App">
-        <header className="App-header"></header>
-          <main className="main">
-            <Router>
-
-              <Route path="/reserveren">
-                <section className="main__location">
-                  <h2 className="main__location__text">Kies uw locatie</h2>
-                  <section className="main__location__locationContainer">
-                    <LocationButton locatie="binnentuin" onClick={this.makeApiCall}/>
-                    <LocationButton locatie="dakterras" onClick={this.makeApiCall}/>
-                  </section>
+        <main className="main">
+          <Router>
+            <Header/>
+            <Route path="/reserveren">
+              <section className="main__location">
+                <h2 className="main__location__text">Kies uw locatie</h2>
+                <section className="main__location__locationContainer">
+                  <LocationButton locatie="binnentuin" onClick={this.makeApiCall}/>
+                  <LocationButton locatie="dakterras" onClick={this.makeApiCall}/>
                 </section>
                 {this.tafels}
               </Route>
@@ -236,15 +236,12 @@ class App extends React.Component {
 
               <Route path="/Admin" component={Admin} />
 
-                <Route path="/home">
-                  <h1>
-                    De Binnentuin
-                  </h1>
-                  <Maincontent/>
-                  <Opening img1Src ="./images/open-sign.png" imgName1 ="De Binnentuin is open" img2Src ="./images/closed-sign.png" imgName2 ="Het dakterras is dicht" time={this.state.time}/>
-                  <Weather/>
-                </Route>
-            </Router>
+              <Route path="/home">
+                <Maincontent/>
+                <Opening img1Src ="./images/open-sign.png" imgName1 ="De Binnentuin is open" img2Src ="./images/closed-sign.png" imgName2 ="Het dakterras is dicht" time={this.state.time}/>
+                <Weather/>
+              </Route>
+          </Router>
         </main>
       </article>
     );
