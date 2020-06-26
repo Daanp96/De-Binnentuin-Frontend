@@ -16,7 +16,7 @@
 
     border-radius: 10px;
     overflow: hidden;
- 
+
     z-index: 2;
     position: relative;
 
@@ -131,10 +131,48 @@
       border-radius: 5px;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 
+      height: 68px;
+
       &:hover{
         background-color: #278E82;
       }
     }
   }
 
+}
+
+@media only screen and (max-width: 600px){
+  .tafelcard{
+    width: 95%;
+
+    &__head{
+      &__infoContainer{
+        margin-left: 10px;
+      }
+
+      &__continue{
+        width: 100px;
+        right: 30px;
+      }
+    }
+
+    &__dropdown{
+      flex-wrap: wrap;
+
+      &__inputContainer{
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      &--open{
+        height: 375px;
+      }
+
+      &__submit{
+        margin: 0 auto;
+        height: 60px;
+        padding: 15px;
+      }
+    }
+  }
 }
