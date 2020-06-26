@@ -1,11 +1,17 @@
 .sidewaysMenu{
   background-color: #333;
-  overflow: auto;
+  overflow: scroll;
   white-space: nowrap;
-  width: 90%;
+  width: 100%;
   display: inline-block;
   float:left;
 }
 
+.submenu{
+  display: grid;
+  grid-template-columns: 85% 15%;
 
- 
+  &__button{
+    background-color: blue;
+  }
+}

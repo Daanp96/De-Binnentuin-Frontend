@@ -12,6 +12,7 @@ import Weather from './Weather.js'
 import MenuItemList from "./MenuItemList";
 import SidewaysMenu from './SidewaysMenu';
 import SidewaysMenuButton from "./SidewaysMenuButton";
+import SidewaysMenuButtonShopping from './SidewaysMenuButtonShopping';
 
 import Opmerking from "./Opmerking";
 import Korting from "./Korting";
@@ -216,9 +217,11 @@ class App extends React.Component {
               {this.tafels}
             </Route>
             <Route path="/submenu">
-              <SidewaysMenu function={this.getMenu} categoryList ={this.state.categoryList}/>
-              <SidewaysMenuButton name ="Shopping Cart" function ={() => this.getMenu("Shopping Cart")}><span id="addToShoppingPopup" className={classNameForPopup}>+1</span></SidewaysMenuButton>
-              <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} itemList={this.state.itemList} />
+              <section className="submenu">
+                <SidewaysMenu function={this.getMenu} categoryList ={this.state.categoryList}/>
+                <SidewaysMenuButtonShopping className='bob' name ="Shopping Cart" function ={() => this.getMenu("Shopping Cart")}><span id="addToShoppingPopup" className={classNameForPopup}>+1</span></SidewaysMenuButtonShopping>
+              </section>
+            <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} itemList={this.state.itemList} />
             </Route>
             <Route path="/opmerking">
               <Opmerking/>

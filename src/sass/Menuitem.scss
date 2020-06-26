@@ -1,30 +1,59 @@
 @import 'variables';
 
-.menu_list__item{
-  margin: 35px;
-  text-align: left;
-  color: white;
-  background-color: $green;
-  padding: 15px;
-  width: 350px;
+.menu_list{
+  width: 70%;
+  margin: auto;
+  padding-top: 1em;
 
-  &__title{
-    font-size: 32px;
+  &__item{
+    text-align: left;
+    color: #002C2D;
+    padding: 15px;
+    width: 100%;
+    border-top: 4px solid #336633;
+
+    & div{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__title{
+      font-size: 32px;
+    }
+
+    &__description{
+      font-weight: $font_light;
+    }
+
+    &__price{
+      font-size: 24px;
+    }
+
+    &__cart, &__favorite{
+      color: white;
+      display: inline-block;
+      background-color: #336633;
+      border: none;
+      font-size: 0.8em;
+      border-radius: 5px;
+      margin: 1em 9% 0 9%;
+      width: 100px;
+      padding: 10px;
+    }
+
+    & p:nth-child(odd){
+      margin-top: 0.5em;
+    }
   }
 
-  &__description{
-    font-weight: $font_light;
+  &__item:first-child{
+    border: none;
   }
+}
 
-  &__price{
-    font-size: 24px;
-  }
- 
-  &__cart, &__favorite{
-    display: inline-block;
-    background-color: $button;
-    margin: 10px 9%;
-    width: 100px;
-    padding: 10px;
+@media screen and (max-width: 700px){
+  .menu_list{
+    width: 90%;
   }
 }

@@ -1,5 +1,6 @@
 .sidewaysMenuButtoncontainer {
   display: inline;
+  width: 100%;
 }
 
 .sidewaysMenuButtoncontainer_button {
@@ -8,13 +9,26 @@
   padding: 14px;
   text-decoration: none;
   display: inline;
-  background-color: #777;
-  width: 10%;
+  background-color: #002C2D;
+  width: 8em;
   position: relative;
+  border: none;
 }
 
 .sidewaysMenuButtoncontainer_button:hover {
   background-color: #ffffff;
+}
+
+.sidewaysMenuButtoncontainer--shopping__button {
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  display: inline;
+  background-color: #002C2D;
+  width: 100%;
+  position: relative;
+  border: none;
 }
 
 /*# sourceMappingURL=SidewaysMenuButton.css.map */
