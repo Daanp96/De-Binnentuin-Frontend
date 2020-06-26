@@ -231,7 +231,7 @@ class App extends React.Component {
               <Route path="/opmerking">
                 <Korting shoppingcart = {this.state.shoppingcart}/>
                 <Opmerking/>
-                <LogInKnoppen/>
+                <LogInKnoppen shoppingcart = {this.state.shoppingcart}/>
               </Route>
               <Route path="/login" component={LoginPage} />
               <Route path="/signup" component={RegisterPage} />
