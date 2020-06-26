@@ -8,14 +8,17 @@ export class RegisterPage extends React.Component {
 /*hier word geregiestreerd welke taal voorkeur heeft en er word door gegaan naar
  de volgende pagina*/
   Register = () => {
-     axios.post('http://localhost:8000/api/auth/signup', {
-       naam: document.getElementById("username").value,
+     // var combineAddress = document.getElementById("postcode").value + " " + document.getElementById("huisnummer").value;
+     // console.log(combineAddress);
+     // console.log(document.getElementById("username").value);
+
+     axios.post('http://127.0.0.1:8000/api/auth/signup', {
+       name: document.getElementById("username").value,
        email: document.getElementById("email").value,
        password: document.getElementById("password").value,
        password_confirmation: document.getElementById("confirm-password").value,
        rekeningNummer: document.getElementById("rekeningnummer").value,
-       postcode: document.getElementById("postcode").value,
-       huisnummer: document.getElementById("huisnummer").value,
+       adres: document.getElementById("postcode").value + " " + document.getElementById("huisnummer").value,
 
      headers: {'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest'},
      })
@@ -26,7 +29,7 @@ export class RegisterPage extends React.Component {
      })
      .catch(function (error) {
        console.log(error);
-
+       alert("Not possible to register, try again!");
      });
   };
 
@@ -51,11 +54,11 @@ export class RegisterPage extends React.Component {
         </label>
 
         <label><b>Bevestig wachtwoord</b>
-        <input type="text" placeholder="Bevestig wachtwoord" id="confirm-password" name="confirm-psw" required />
+        <input type="password" placeholder="Bevestig wachtwoord" id="confirm-password" name="confirm-psw" required />
         </label>
 
         <label><b>Rekeningnummer</b>
-        <input type="text" placeholder="Vul rekeningnummer in" id="rekeningnummer" name="iban" required />
+        <input type="password" placeholder="Vul rekeningnummer in" id="rekeningnummer" name="iban" required />
         </label>
 
         <label><b>Postcode</b>

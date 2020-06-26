@@ -9,8 +9,8 @@ export class LoginPage extends React.Component {
 /*hier word geregiestreerd welke taal voorkeur heeft en er word door gegaan naar
  de volgende pagina*/
   loginReq = () => {
-     axios.post('http://localhost:8000/api/auth/login', {
-     email: document.getElementById("username").value,
+     axios.post('http://127.0.0.1:8000/api/auth/login', {
+     email: document.getElementById("email").value,
      password: document.getElementById("password").value,
      remember_me: true,
      headers: {'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest'},
@@ -25,6 +25,7 @@ export class LoginPage extends React.Component {
      })
      .catch(function (error) {
        console.log(error);
+       alert("Not possible to login, try again!");
      });
   };
 
@@ -41,7 +42,7 @@ export class LoginPage extends React.Component {
           </label>
 
           <label><b>Wachtwoord</b>
-          <input type="text" placeholder="Vul wachtwoord in" id="password" name="psw" required />
+          <input type="password" placeholder="Vul wachtwoord in" id="password" name="psw" required />
           </label>
 
           <label><b>Herinner mij?</b>
