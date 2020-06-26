@@ -34,19 +34,23 @@ export class LoginPage extends React.Component {
         <Helmet>
           <style>{'body { background-color: white; background-repeat: no-repeat;}'}</style>
         </Helmet>
-        <div className="login-container">
-        <label for="uname"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" id="username" name="uname" required />
+        <section className="login-container">
 
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" id="password" name="psw" required />
+          <label><b>Email</b>
+          <input type="text" placeholder="Vul email in" id="email" name="email" required />
+          </label>
 
-        <label for="remember"><b>Remember me?</b></label>
-        <input type="checkbox" checked="checked" name="remember" />
+          <label><b>Wachtwoord</b>
+          <input type="text" placeholder="Vul wachtwoord in" id="password" name="psw" required />
+          </label>
 
-        <button type="submit" onClick={this.loginReq}>Login</button>
+          <label><b>Herinner mij?</b>
+          <input type="checkbox" checked="checked" name="remember" />
+          </label>
 
-        </div>
+        <button type="submit" onClick={this.loginReq}>Log in</button>
+
+        </section>
       </div>
     );
   }
