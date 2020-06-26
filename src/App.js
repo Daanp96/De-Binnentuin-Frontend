@@ -219,7 +219,7 @@ class App extends React.Component {
             <Route path="/submenu">
               <section className="submenu">
                 <SidewaysMenu function={this.getMenu} categoryList ={this.state.categoryList}/>
-                <SidewaysMenuButtonShopping className='bob' name ="Shopping Cart" function ={() => this.getMenu("Shopping Cart")}><span id="addToShoppingPopup" className={classNameForPopup}>+1</span></SidewaysMenuButtonShopping>
+                <SidewaysMenuButtonShopping name ="Shopping Cart" cart={this.state.shoppingcart} function ={() => this.getMenu("Shopping Cart")}><span id="addToShoppingPopup" className={classNameForPopup}>+1</span></SidewaysMenuButtonShopping>
               </section>
             <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} itemList={this.state.itemList} />
             </Route>

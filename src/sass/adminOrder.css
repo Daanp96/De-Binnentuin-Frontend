@@ -54,6 +54,7 @@ html {
   color: white;
   grid-column: 1/span 2;
   padding: 0.3em 0;
+  height: 50px;
 }
 .order__button {
   border: none;

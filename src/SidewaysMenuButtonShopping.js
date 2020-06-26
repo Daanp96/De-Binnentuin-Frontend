@@ -9,7 +9,12 @@ class SidewaysMenuButtonShopping extends React.Component {
   render(){
     return(
         <section className="sidewaysMenuButtoncontainer--shopping">
-            <button onClick={this.onClick} className="sidewaysMenuButtoncontainer--shopping__button" type="button">{this.props.name}</button>
+            <button onClick={this.onClick} className="sidewaysMenuButtoncontainer--shopping__button" type="button">
+              <p>({this.props.cart.length})</p>
+              <figure>
+                <img src="images/cart.png" />
+              </figure>
+            </button>
             {this.props.children}
         </section>
     );

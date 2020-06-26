@@ -96,8 +96,41 @@ body {
   cursor: pointer;
 }
 
-.menu_list {
-  margin: 0 auto;
+.OpeningArticle {
+  border-top: #000000 solid medium;
+  border-bottom: #000000 solid medium;
+}
+
+.OpeningArticle__figure {
+  width: 25%;
+  display: inline-block;
+}
+
+.OpeningArticle__figure__img {
+  width: 60%;
+}
+
+.weather {
+  max-width: 200px;
+}
+
+.sidewaysMenu {
+  background-color: #333;
+  overflow-x: scroll;
+  white-space: nowrap;
+  width: 100%;
+  display: inline-block;
+  float: left;
+}
+
+.submenu {
+  display: grid;
+  grid-template-columns: 85% 15%;
+  position: sticky;
+  top: 0;
+}
+.submenu__button {
+  background-color: blue;
 }
 
 .popuptext {
@@ -150,41 +183,6 @@ body {
     opacity: 1;
   }
 }
-.OpeningArticle {
-  border-top: #000000 solid medium;
-  border-bottom: #000000 solid medium;
-}
-
-.OpeningArticle__figure {
-  width: 25%;
-  display: inline-block;
-}
-
-.OpeningArticle__figure__img {
-  width: 60%;
-}
-
-.weather {
-  max-width: 200px;
-}
-
-.sidewaysMenu {
-  background-color: #333;
-  overflow: scroll;
-  white-space: nowrap;
-  width: 100%;
-  display: inline-block;
-  float: left;
-}
-
-.submenu {
-  display: grid;
-  grid-template-columns: 85% 15%;
-}
-.submenu__button {
-  background-color: blue;
-}
-
 .sidewaysMenuButtoncontainer {
   display: inline;
   width: 100%;
@@ -216,6 +214,9 @@ body {
   width: 100%;
   position: relative;
   border: none;
+}
+.sidewaysMenuButtoncontainer--shopping img {
+  max-height: 35px;
 }
 
 .timeslot {
@@ -343,6 +344,7 @@ html {
   color: white;
   grid-column: 1/span 2;
   padding: 0.3em 0;
+  height: 50px;
 }
 .order__button {
   border: none;
