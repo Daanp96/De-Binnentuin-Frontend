@@ -63,7 +63,7 @@ onDelete = (id, restaurant) => {
 }
 
 componentDidMount = () =>{
-  this.getMenu("all");
+  this.getMenu("All");
   this.getCatergories();
 }
   render(){

@@ -19,7 +19,7 @@
   &__price{
     font-size: 24px;
   }
- 
+
   &__cart, &__favorite{
     display: inline-block;
     background-color: $button;
@@ -27,4 +27,12 @@
     width: 100px;
     padding: 10px;
   }
+
+  &__cartButton{
+    display: none;
+  }
+}
+
+.showCartButton{
+  display: block;
 }

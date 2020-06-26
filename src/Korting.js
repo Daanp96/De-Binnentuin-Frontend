@@ -37,6 +37,7 @@ class Korting extends React.Component{
 
   componentDidMount = () =>{
     this.makeApiCallUsers();
+    console.log(this.props.shoppingcart);
   }
 
   render(){

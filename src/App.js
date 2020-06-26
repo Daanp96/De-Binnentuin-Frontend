@@ -42,7 +42,8 @@ class App extends React.Component {
       categoryList: [],
       shoppingcart: [],
       popup: false,
-      restaurant: 1
+      restaurant: 1,
+      isShoppingcart: false
   }
 
   tafels;
@@ -75,7 +76,8 @@ class App extends React.Component {
           categoryList: this.state.categoryList,
           shoppingcart: this.state.shoppingcart,
           popup: this.state.popup,
-          restaurant: this.state.restaurant
+          restaurant: this.state.restaurant,
+          isShoppingcart: true
       });
     }else{
     const BASE_URL = `http://127.0.0.1:8000/api/menu/${this.state.restaurant}/${submenu}`;
@@ -89,7 +91,8 @@ class App extends React.Component {
               categoryList: this.state.categoryList,
               shoppingcart: this.state.shoppingcart,
               popup: this.state.popup,
-              restaurant: this.state.restaurant
+              restaurant: this.state.restaurant,
+              isShoppingcart: false
           });
       });
     }
@@ -193,8 +196,12 @@ class App extends React.Component {
 
   render(){
     let classNameForPopup = "popuptext";
+    let classNameForButtons = "menu_list__item__cartButton"
     if (this.state.popup === true){
       classNameForPopup += " show";
+    }
+    if (this.state.isShoppingcart === true) {
+      classNameForButtons += " showCartButton";
     }
 
 
@@ -217,11 +224,11 @@ class App extends React.Component {
               <Route path="/submenu">
                 <SidewaysMenu function={this.getMenu} categoryList ={this.state.categoryList}/>
                 <SidewaysMenuButton name ="Shopping Cart" function ={() => this.getMenu("Shopping Cart")}><span id="addToShoppingPopup" className={classNameForPopup}>+1</span></SidewaysMenuButton>
-                <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} itemList={this.state.itemList} />
+                <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} itemList={this.state.itemList} buttonClass={classNameForButtons}/>
               </Route>
               <Route path="/opmerking">
                 <Opmerking/>
-                <Korting/>
+                <Korting shoppingcart = {this.state.shoppingcart}/>
               </Route>
               <Route path="/login" component={LoginPage} />
               <Route path="/signup" component={RegisterPage} />
