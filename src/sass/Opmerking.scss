@@ -1,0 +1,40 @@
+.searchbarContainer{
+  height: 50px;
+  margin: 0 auto;
+  width: 1500px;
+
+  &__searchbar{
+    height: 100%;
+    width: 90%;
+
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  &__submit{
+    width: 10%;
+    height: 100%;
+    border-radius: 0;
+
+    border: 1px solid #ccc;
+    border-left: none;
+
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .searchbarContainer{
+    width: 96vw;
+    margin: 50px 2vw 0;
+
+      &__searchbar{
+        width: 50%;
+      }
+
+      &__submit{
+        width: 30%;
+      }
+  }
+}
