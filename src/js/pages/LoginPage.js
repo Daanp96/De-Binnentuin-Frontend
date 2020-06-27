@@ -29,27 +29,27 @@ export class LoginPage extends React.Component {
      });
   };
 
+  checkbox = () => {
+    document.getElementById("box").click();
+  }
+
   render() {
     return (
       <div>
         <Helmet>
           <style>{'body { background-color: white; background-repeat: no-repeat;}'}</style>
         </Helmet>
-        <section className="login-container">
+        <section className="user-container">
 
-          <label><b>Email</b>
-          <input type="text" placeholder="Vul email in" id="email" name="email" required />
+          <label className="user-container__subject"><b>Email</b>
+          <input type="text" placeholder="Vul email in" id="email" className="user-container__fields" name="email" required />
           </label>
 
-          <label><b>Wachtwoord</b>
-          <input type="password" placeholder="Vul wachtwoord in" id="password" name="psw" required />
+          <label className="user-container__subject"><b>Wachtwoord</b>
+          <input type="password" placeholder="Vul wachtwoord in" id="password" className="user-container__fields"name="psw" required />
           </label>
 
-          <label><b>Herinner mij?</b>
-          <input type="checkbox" checked="checked" name="remember" />
-          </label>
-
-        <button type="submit" onClick={this.loginReq}>Log in</button>
+        <button type="submit" className="user-container__send" onClick={this.loginReq}><b>Log in</b></button>
 
         </section>
       </div>
