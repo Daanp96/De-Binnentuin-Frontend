@@ -69,9 +69,6 @@ componentDidMount = () =>{
   render(){
     return(
       <div className="App">
-        <header className="App-header">
-          <p>De Binnentuin</p>
-        </header>
         <Router>
           <Switch>
           <Route path="/adminmenu">

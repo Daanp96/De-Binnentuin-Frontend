@@ -32,6 +32,10 @@ html{
       padding: 0.4em ;
       margin-left: 1em;
     }
+
+    & button:hover{
+      background-color: #6BB46B;
+    }
   }
 
   & .order:nth-child(odd){

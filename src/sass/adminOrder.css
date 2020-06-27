@@ -32,6 +32,9 @@ html {
   padding: 0.4em;
   margin-left: 1em;
 }
+.orderlist__a button:hover {
+  background-color: #6BB46B;
+}
 .orderlist .order:nth-child(odd) h2 {
   background-color: #336633;
 }

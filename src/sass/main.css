@@ -238,6 +238,9 @@ body {
   display: grid;
   grid-template-columns: 85% 15%;
 }
+.timeslotlist__form input {
+  font-size: 1.2em;
+}
 .timeslotlist__form__button {
   width: 70%;
   margin: 0.6em auto 0 auto;
@@ -251,9 +254,9 @@ body {
   grid-column: 1/span 2;
   border: none;
   color: white;
-  border-radius: 15px 50px 30px 5px;
+  border-radius: 5px;
   padding: 0.4em 0.4em;
-  font-size: 1em;
+  font-size: 1em !important;
   width: 60%;
   margin: auto;
 }
@@ -262,13 +265,17 @@ body {
   background-color: #857d6e;
 }
 
+.timeslotlist__form__button--add:hover, .timeslotlist__form__button--submit:hover {
+  background-color: #6BB46B;
+}
+
 .timeslotlist__form__button--add {
   margin: 1em auto;
   background-color: #336633;
   grid-column: 1/span 2;
   border: none;
   color: white;
-  border-radius: 15px 50px 30px 5px;
+  border-radius: 5px;
   padding: 0.4em 0.4em;
   font-size: 1em;
   font-family: "Muli", sans-serif;
@@ -321,6 +328,9 @@ html {
   font-size: 1.2em;
   padding: 0.4em;
   margin-left: 1em;
+}
+.orderlist__a button:hover {
+  background-color: #6BB46B;
 }
 .orderlist .order:nth-child(odd) h2 {
   background-color: #336633;
@@ -510,6 +520,7 @@ html, body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 2em;
 }
 .AdminMenuSection__button {
   background-color: #336633;
@@ -517,6 +528,7 @@ html, body {
   display: block;
   border: none;
   font-size: 1.6em;
+  border-radius: 5px;
   width: 100%;
   text-decoration: none;
   padding: 0.4em 0.4em;
@@ -552,13 +564,15 @@ html, body {
   justify-content: center;
   flex-flow: column;
   text-align: left;
+  width: 60%;
+  margin: auto;
 }
 .MenuEditBox__Form__submit {
   background-color: #336633;
   color: white;
   padding: 0.4em 0.6em;
   border: none;
-  margin-bottom: 1em;
+  margin: 0 auto 1em auto;
   font-size: 1em;
 }
 .MenuEditBox__Form label {
@@ -570,9 +584,23 @@ html, body {
 }
 .MenuEditBox__Form input, .MenuEditBox__Form textarea {
   margin-top: 0.4em;
+  padding: 0.3em;
   display: block;
+  font-size: 1.2em;
+  width: 60%;
+}
+.MenuEditBox__Form textarea {
+  height: 4.5em;
+}
+.MenuEditBox__Form__check {
+  width: auto !important;
 }
 
+@media screen and (max-width: 700px) {
+  .MenuEditBox__Form {
+    width: 90%;
+  }
+}
 .menu_list {
   width: 70%;
   margin: auto;
