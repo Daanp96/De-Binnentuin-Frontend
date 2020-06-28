@@ -104,7 +104,7 @@ class TimeslotList extends React.Component{
             Nieuw Tijdslot
           </button>
 
-        <input disabled={enabled} className='timeslotlist__form__button--submit' type="submit" value="Submit"/>
+        <input disabled={enabled} className='timeslotlist__form__button--submit' type="submit" value="Opslaan"/>
       </form>
 
       </section>

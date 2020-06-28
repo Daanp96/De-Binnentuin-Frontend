@@ -11,6 +11,7 @@ import Weather from './Weather.js'
 import MenuItemList from "./MenuItemList";
 import SidewaysMenu from './SidewaysMenu';
 import SidewaysMenuButton from "./SidewaysMenuButton";
+import SidewaysMenuButtonShopping from './SidewaysMenuButtonShopping';
 
 import Korting from "./Korting";
 
@@ -18,7 +19,13 @@ import LoginPage from "./js/pages/LoginPage";
 import RegisterPage from "./js/pages/RegisterPage";
 import UserPage from "./js/pages/UserPage";
 
-import Admin from './Admin';
+import OrderList from './OrderList';
+import TimeslotList from './TimeslotList';
+import OpeningsbordSection from './OpeningsbordSection';
+import AdminMenuOverview from './AdminMenuOverview';
+import AdminMenuItemEdit from './AdminMenuItemEdit';
+import AdminMenuItemCreate from './AdminMenuItemCreate';
+import AdminMenuItemList from './AdminMenuItemList';
 
 import Header from "./Header";
 
@@ -112,6 +119,26 @@ class App extends React.Component {
     }
   }
 
+  //event de item naam veranderd voor het aanpassen van het item in de menu pagina's
+  onItemClick = (naam) => {
+    this.setState({item_naam: naam});
+  }
+
+  //event voor update van open/dicht
+  onRestaurantClick = (restaurant) => {
+    this.setState({restaurant: restaurant});
+  }
+
+  //event dat een menu item van de restaurant_menu verwijderd
+  onItemDelete = (id, restaurant) => {
+    axios({
+      method:"DELETE",
+      url: 'http://localhost:8000/api/admin/restaurant_item/delete',
+      data: {restaurant: restaurant, item_id: id}
+    })
+    window.location.reload();
+  }
+
   componentDidMount = () =>{
       this.fetchPage();
   }
@@ -179,6 +206,7 @@ class App extends React.Component {
               </section>
               {reserveren}
               </Route>
+
               <Route path="/menu">
                   <SidewaysMenu getMenu={this.getMenu} getCatergories={this.getCatergories} categoryList ={this.state.categoryList}/>
                   <SidewaysMenuButton name ="Shopping Cart" function ={() => this.getMenu("Shopping Cart")}><span id="addToShoppingPopup" className={classNameForPopup}>+1</span></SidewaysMenuButton>
@@ -192,6 +220,33 @@ class App extends React.Component {
                 <Route path="/user" component={UserPage} />
 
                 <Route path="/Admin" component={Admin} />
+                  <Route path="/adminmenu">
+                    <SidewaysMenu function={this.getMenu} categoryList ={this.state.categoryList}/>
+                    <AdminMenuItemList function={this.getMenu} onClick={this.onItemClick} restaurant={this.state.restaurant} onDelete={this.onItemDelete} itemList={this.state.itemList} />
+                  </Route>
+                  <Route path="/edit">
+                    <AdminMenuItemEdit naam={this.state.item_naam}/>
+                  </Route>
+                  <Route path="/create">
+                    <AdminMenuItemCreate />
+                  </Route>
+                  <Route path="/admin">
+                    <AdminMenuOverview event={this.onRestaurantClick}/>
+                  </Route>
+                  <Route path="/bestellingen">
+                    <OrderList />
+                  </Route>
+                  <Route path="/tijden">
+                    <section className="tijden_section">
+                      <Link to='/admin' className='orderlist__a'>
+                        <button>
+                           &#8592; Terug
+                        </button>
+                      </Link>
+                      <OpeningsbordSection />
+                      <TimeslotList />
+                    </section>
+                  </Route>
 
                 <Route path="/">
                   <Maincontent/>

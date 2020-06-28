@@ -11,7 +11,7 @@
     & button{
       margin-left: 0;
     }
-  } 
+  }
 
   & h2{
     margin: 0.5em 0;
@@ -23,13 +23,15 @@
   justify-content: center;
   flex-flow: column;
   text-align: left;
+  width: 60%;
+  margin: auto;
 
   &__submit{
     background-color: #336633;
     color: white;
     padding: 0.4em 0.6em;
     border: none;
-    margin-bottom: 1em;
+    margin: 0 auto 1em auto;
     font-size: 1em;
   }
 
@@ -44,7 +46,25 @@
 
     & input, textarea{
       margin-top: 0.4em;
+      padding: 0.3em;
       display: block;
+      font-size: 1.2em;
+      width: 60%;
     }
+
+    & textarea{
+      height: 4.5em;
+    }
+
+    &__check{
+      width: auto !important;
+    }
+  }
+}
+
+@media screen and (max-width: 700px){
+  .MenuEditBox__Form{
+    width: 90%;
+
   }
 }

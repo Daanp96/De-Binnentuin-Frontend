@@ -67,7 +67,7 @@ class AdminMenuItemEdit extends React.Component{
   render(){
     return (
       <section className = "MenuEditBox">
-        <Link to="/menu" className="MenuEditBox__link">
+        <Link to="/adminmenu" className="MenuEditBox__link">
           <button className="Terugknop">
              &#8592; Terug
           </button>
@@ -94,10 +94,10 @@ class AdminMenuItemEdit extends React.Component{
         </label>
         <label>
           Chef's special:
-          <input type="checkbox" id="special" name="special" checked={this.state.special} onChange={(event) => this.handleChangeSpecial(event)}/>
+          <input className='MenuEditBox__Form__check' type="checkbox" id="special" name="special" checked={this.state.special} onChange={(event) => this.handleChangeSpecial(event)}/>
         </label>
 
-        <input className='MenuEditBox__Form__submit' type="submit" value="Veranderen"/>
+        <input className='MenuEditBox__Form__submit' type="submit" value="Opslaan"/>
 
         </form>
       </section>

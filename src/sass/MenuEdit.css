@@ -20,13 +20,15 @@
   justify-content: center;
   flex-flow: column;
   text-align: left;
+  width: 60%;
+  margin: auto;
 }
 .MenuEditBox__Form__submit {
   background-color: #336633;
   color: white;
   padding: 0.4em 0.6em;
   border: none;
-  margin-bottom: 1em;
+  margin: 0 auto 1em auto;
   font-size: 1em;
 }
 .MenuEditBox__Form label {
@@ -38,7 +40,22 @@
 }
 .MenuEditBox__Form input, .MenuEditBox__Form textarea {
   margin-top: 0.4em;
+  padding: 0.3em;
   display: block;
+  font-size: 1.2em;
+  width: 60%;
+}
+.MenuEditBox__Form textarea {
+  height: 4.5em;
+}
+.MenuEditBox__Form__check {
+  width: auto !important;
+}
+
+@media screen and (max-width: 700px) {
+  .MenuEditBox__Form {
+    width: 90%;
+  }
 }
 
 /*# sourceMappingURL=MenuEdit.css.map */

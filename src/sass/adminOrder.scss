@@ -13,7 +13,7 @@ html{
   display: grid;
   grid-template-columns: 50% 50%;
   grid-column-gap: 1em;
- 
+
   &__a{
     display: flex;
     align-items: flex-start;
@@ -31,6 +31,10 @@ html{
       font-size: 1.2em;
       padding: 0.4em ;
       margin-left: 1em;
+    }
+
+    & button:hover{
+      background-color: #6BB46B;
     }
   }
 
@@ -62,6 +66,7 @@ html{
     color: white;
     grid-column: 1/ span 2;
     padding: 0.3em 0;
+    height: 50px;
   }
 
   &__button{
@@ -70,10 +75,14 @@ html{
     color: white;
     font-size: 1.2em;
     padding: 0.3em 0.9em;
-    border-radius: 15px 50px 30px 5px;
+    border-radius: 5px;
     grid-column: 1 / span 2;
     margin: 0.7em auto 0.7em auto;
     width: 50%;
+  }
+
+  &__button:hover{
+    background-color: #0E7275;
   }
 
   &__opmerking{

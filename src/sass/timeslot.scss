@@ -18,6 +18,10 @@
     display: grid;
     grid-template-columns: 85% 15%;
 
+    & input{
+      font-size: 1.2em;
+    }
+
     &__button{
       width: 70%;
       margin: 0.6em auto 0 auto;
@@ -38,9 +42,9 @@
   grid-column: 1 / span 2;
   border: none;
   color: white;
-  border-radius: 15px 50px 30px 5px;
+  border-radius: 5px;
   padding: 0.4em 0.4em;
-  font-size: 1em;
+  font-size: 1em !important;
   width: 60%;
   margin: auto;
 }
@@ -49,13 +53,17 @@
   background-color: #857d6e;
 }
 
+.timeslotlist__form__button--add:hover, .timeslotlist__form__button--submit:hover{
+  background-color: #6BB46B;
+}
+
 .timeslotlist__form__button--add{
   margin: 1em auto ;
   background-color: #336633;
   grid-column: 1 / span 2;
   border: none;
   color: white;
-  border-radius: 15px 50px 30px 5px;
+  border-radius: 5px;
   padding: 0.4em 0.4em;
   font-size: 1em;
   font-family: "Muli", sans-serif;

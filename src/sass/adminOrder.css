@@ -32,6 +32,9 @@ html {
   padding: 0.4em;
   margin-left: 1em;
 }
+.orderlist__a button:hover {
+  background-color: #6BB46B;
+}
 .orderlist .order:nth-child(odd) h2 {
   background-color: #336633;
 }
@@ -54,6 +57,7 @@ html {
   color: white;
   grid-column: 1/span 2;
   padding: 0.3em 0;
+  height: 50px;
 }
 .order__button {
   border: none;
@@ -61,10 +65,13 @@ html {
   color: white;
   font-size: 1.2em;
   padding: 0.3em 0.9em;
-  border-radius: 15px 50px 30px 5px;
+  border-radius: 5px;
   grid-column: 1/span 2;
   margin: 0.7em auto 0.7em auto;
   width: 50%;
+}
+.order__button:hover {
+  background-color: #0E7275;
 }
 .order__opmerking {
   margin: 0.6em auto;
