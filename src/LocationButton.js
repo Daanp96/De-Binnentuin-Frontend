@@ -51,11 +51,11 @@ const LocationButton = (props) =>{
 
   return(
     <section className="location">
-      <button className="location__locationButton location__child" onClick={onLocatieClick} locatie={props.locatie}>
+      <button className="location__locationButton" onClick={onLocatieClick} locatie={props.locatie}>
         {img}
         <p className="location__locationButton__text">{props.locatie}</p>
       </button>
-      <section className="location__dropdown location__child">
+      <section className="location__dropdown">
         <p className="location__dropdown__text">geselecteerd</p>
       </section>
     </section>

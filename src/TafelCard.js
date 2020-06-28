@@ -126,11 +126,11 @@ class TafelCard extends React.Component{
       <section className="tafelcard">
         <section className="tafelcard__head">
           <article className="tafelcard__head__infoContainer">
-            <p className="tafelcard__head__infoContainer__text tafelcard__head__infoContainer__text--label">Tafelnr</p>
+            <p className="tafelcard__head__infoContainer__text tafelcard__head__infoContainer__text--label">TafelNr</p>
             <p className="tafelcard__head__infoContainer__text">{this.props.tafelNummer}</p>
           </article>
           <article className="tafelcard__head__infoContainer">
-            <p className="tafelcard__head__infoContainer__text tafelcard__head__infoContainer__text--label">Aantal plekken</p>
+            <p className="tafelcard__head__infoContainer__text tafelcard__head__infoContainer__text--label">{this.props.tafelPersonenTekst}</p>
             <p className="tafelcard__head__infoContainer__text">{this.props.maxAantalPersonen}</p>
           </article>
           <button className="tafelcard__head__continue" onClick={this.openDropdown}>
