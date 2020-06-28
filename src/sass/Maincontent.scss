@@ -4,8 +4,16 @@
     padding: 15px 25%;
 }
 
+.main_content__button{
+  width: 20%;
+}
+
 @media (max-width: 992px){
     .main_content__text{
         padding: 15px 10%;
+    }
+
+    .main_content__button{
+      width: 40%;
     }
 }
