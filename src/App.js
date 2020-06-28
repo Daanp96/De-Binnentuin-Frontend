@@ -35,7 +35,6 @@ import {
 
 class App extends React.Component {
   state = {
-      locatie: "",
       time: "",
       isOpen1: "true" ,
       isOpen2: "false",
@@ -44,7 +43,8 @@ class App extends React.Component {
       shoppingcart: [],
       popup: false,
       restaurant: 1,
-      isShoppingcart: false
+      isShoppingcart: false,
+      afhalen: false
   }
 
   tafels;
@@ -127,11 +127,19 @@ class App extends React.Component {
       <TafelCard key={res.data[res.data.indexOf(x)].tafelnummer}
       tafelNummer={res.data[res.data.indexOf(x)].tafelnummer}
       maxAantalPersonen={res.data[res.data.indexOf(x)].maxAantalMensen}
-      tafelId={res.data[res.data.indexOf(x)].id}/>);
+      tafelId={res.data[res.data.indexOf(x)].id}
+      tafelNummerTekst="TafelNr"
+      tafelPersonenTekst="Aantal plekken"/>);
 
-      this.setState({
-          locatie: locatie
-      });
+      if(locatie == "dakterras"){
+        this.setState({
+            'restaurant': 2
+        });
+      }else if(locatie == "binnentuin"){
+        this.setState({
+            'restaurant': 1
+        });
+      }
     });
   }
 
@@ -145,23 +153,35 @@ class App extends React.Component {
     if (this.state.isShoppingcart === true) {
       classNameForButtons += " showCartButton";
     }
-
-
+    let reserveren;
+    if(this.state.reserveren){
+      reserveren = <section className="main__location">
+                <h2 className="main__location__text">Kies uw locatie</h2>
+                <section className="main__location__locationContainer">
+                  <LocationButton locatie="binnentuin" onClick={this.makeApiCall}/>
+                  <LocationButton locatie="dakterras" onClick={this.makeApiCall}/>
+                </section>
+                {this.tafels}
+                </section>
+    }else{
+        reserveren = <section>
+        <section className="main__location">
+        <h2 className="main__location__text">Kies uw tijd om af te halen</h2>
+        </section>
+        <TafelCard key="0" tafelNummer="0" maxAantalPersonen="" tafelId="0" tafelPersonenTekst="Type Bestelling" maxAantalPersonen="Afhalen"/></section>
+    }
     return (
       <article className="App">
         <main className="main">
           <Router>
           <Header/>
-            <Switch>
-              <Route path="/reserveren">
-                <section className="main__location">
-                  <h2 className="main__location__text">Kies uw locatie</h2>
-                  <section className="main__location__locationContainer">
-                    <LocationButton locatie="binnentuin" onClick={this.makeApiCall}/>
-                    <LocationButton locatie="dakterras" onClick={this.makeApiCall}/>
-                  </section>
-                  {this.tafels}
-                </section>
+           <Switch>
+            <Route path="/reserveren">
+              <section className="optionContainer">
+                <button className="optionContainer__button" onClick={()=>{this.setState({reserveren:false})}}>Afhalen</button>
+                <button className="optionContainer__button" onClick={()=>{this.setState({reserveren:true})}}>Reserveren</button>
+              </section>
+              {reserveren}
               </Route>
               <Route path="/menu">
                   <SidewaysMenu function={this.getMenu} categoryList ={this.state.categoryList}/>

@@ -1,6 +1,9 @@
 import React from "react";
 import "./sass/TafelCard.scss";
 import axios from "axios";
+import {
+  Link
+} from "react-router-dom";
 
 class TafelCard extends React.Component{
   state = {day: "", month:"", year:""};
@@ -126,11 +129,11 @@ class TafelCard extends React.Component{
       <section className="tafelcard">
         <section className="tafelcard__head">
           <article className="tafelcard__head__infoContainer">
-            <p className="tafelcard__head__infoContainer__text tafelcard__head__infoContainer__text--label">Tafelnr</p>
+            <p className="tafelcard__head__infoContainer__text tafelcard__head__infoContainer__text--label">TafelNr</p>
             <p className="tafelcard__head__infoContainer__text">{this.props.tafelNummer}</p>
           </article>
           <article className="tafelcard__head__infoContainer">
-            <p className="tafelcard__head__infoContainer__text tafelcard__head__infoContainer__text--label">Aantal plekken</p>
+            <p className="tafelcard__head__infoContainer__text tafelcard__head__infoContainer__text--label">{this.props.tafelPersonenTekst}</p>
             <p className="tafelcard__head__infoContainer__text">{this.props.maxAantalPersonen}</p>
           </article>
           <button className="tafelcard__head__continue" onClick={this.openDropdown}>
@@ -150,7 +153,7 @@ class TafelCard extends React.Component{
           </section>
           <section className="tafelcard__dropdown__inputContainer" style={{display:"none"}}>
             <label className="tafelcard__dropdown__inputContainer__label" htmlFor="submit">Reserveer</label>
-            <button name="submit" className="tafelcard__dropdown__inputContainer__input tafelcard__dropdown__submit">reserveer</button>
+            <Link to="/menu"><button name="submit" className="tafelcard__dropdown__inputContainer__input tafelcard__dropdown__submit">reserveer</button></Link>
           </section>
 
         </section>
