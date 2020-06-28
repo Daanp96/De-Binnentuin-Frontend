@@ -1,3 +1,10 @@
 .weather{
     max-width: 200px;
+    margin-top: 2vh;
+    &__h2{
+      margin-top: 1em;
+    }
+    &__h3{
+      margin-top: 2em;
+    }
 }

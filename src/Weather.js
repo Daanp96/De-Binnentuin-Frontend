@@ -41,7 +41,8 @@ class Weather extends React.Component {
     render(){
         return(
             <section>
-                <h3>{this.state.temperature}</h3>
+                <h2 className="weather__h2">Het weer in Leiden:</h2>
+                <h3 className="weather__h3">{this.state.temperature}</h3>
                 <img className="weather" src={this.state.image} alt="weather_icon"/>
             </section>
         );

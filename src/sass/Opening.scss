@@ -1,14 +1,18 @@
 .OpeningArticle{
   border-top:#000000 solid medium;
   border-bottom:#000000 solid medium;
-}
+  &__figure{
+    width: 25%;
+    display: inline-block;
 
-.OpeningArticle__figure{
-  width: 25%;
-  display: inline-block;
+    &__img{
+      width: 60%;
+    }
+  }
+  &__h2{
+    margin-top: 2em;
+  }
+  &__h2Time{
+    margin-bottom: 2em;
+  }
 }
-
-.OpeningArticle__figure__img{
-  width: 60%;
-}
- 

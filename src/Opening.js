@@ -12,7 +12,7 @@ const Opening = (props) => {
         <figcaption className="OpeningArticle__figure__figcaption">{props.imgName2 ? 'Het dakterras is open' : "Het dakterras is dicht"}</figcaption>
       </figure>
       <h2 className="OpeningArticle__h2">Openingstijd</h2>
-      <h2 className="OpeningArticle__h2">{props.time}</h2>
+      <h2 className="OpeningArticle__h2Time">{props.time}</h2>
     </article>
   );
 }
