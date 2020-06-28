@@ -25,10 +25,13 @@ class Opmerking extends React.Component{
 
   render(){
     return(
-      <section>
-        <form onSubmit={(event) => this.makeApiCallPatch(event)}>
-          <input className="" type="text" placeholder="Opmerkingen..." onChange={this.onSearch} />
-          <input className="" type="submit" name="button" value = "Submit" />
+      <section className='opmerkingen'>
+        <form className='opmerkingen__form' onSubmit={(event) => this.makeApiCallPatch(event)}>
+          <label>
+            Opmerking
+          <textarea className="opmerkingen__form__textarea" type="text" placeholder="Opmerkingen..." onChange={this.onSearch} />
+          </label>
+          <input className="opmerkingen__form__submit" type="submit" name="button" value = "Verstuur opmerking" />
         </form>
       </section>
     )

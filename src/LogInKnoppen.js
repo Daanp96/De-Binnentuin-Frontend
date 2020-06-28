@@ -44,9 +44,9 @@ state = {
 
   render(){
     return(
-        <section>
-          <button className="" type="button" name="button">Log in</button>
-          <button className="" type="button" name="button" onClick = {this.goBetalenNu}>Betaal zonder in te loggen</button>
+        <section className='loginKnoppen'>
+          <button className="loginKnoppen__button" type="button" name="button">Log in</button>
+          <button className="loginKnoppen__button" type="button" name="button" onClick = {this.goBetalenNu}>Betaal zonder in te loggen</button>
         </section>
     );
   }
