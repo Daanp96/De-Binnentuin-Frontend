@@ -2,6 +2,11 @@ import React from "react";
 import SidewaysMenuButton from "./SidewaysMenuButton";
 
 class SidewaysMenu extends React.Component  {
+  componentDidMount = () =>{
+    this.props.getMenu('All');
+    this.props.getCatergories();
+  }
+
   render(){
     const buttons = this.props.categoryList.map((item, index) =>
         <SidewaysMenuButton

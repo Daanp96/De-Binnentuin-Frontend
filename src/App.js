@@ -115,9 +115,7 @@ class App extends React.Component {
   }
 
   componentDidMount = () =>{
-      this.getMenu("All");
       this.fetchPage();
-      this.getCatergories();
   }
 
   makeApiCall = locatie =>{
@@ -184,7 +182,7 @@ class App extends React.Component {
               {reserveren}
               </Route>
               <Route path="/menu">
-                  <SidewaysMenu function={this.getMenu} categoryList ={this.state.categoryList}/>
+                  <SidewaysMenu getMenu={this.getMenu} getCatergories={this.getCatergories} categoryList ={this.state.categoryList}/>
                   <SidewaysMenuButton name ="Shopping Cart" function ={() => this.getMenu("Shopping Cart")}><span id="addToShoppingPopup" className={classNameForPopup}>+1</span></SidewaysMenuButton>
                   <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} itemList={this.state.itemList} buttonClass={classNameForButtons}/>
                 </Route>

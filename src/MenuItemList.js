@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 
 class MenuItemList extends React.Component {
+
     render(){
 
         const items = this.props.itemList.map((item, index) =>
@@ -23,7 +24,7 @@ class MenuItemList extends React.Component {
         return(
             <section className="menu_list">
                 {items}
-                <button className = {this.props.buttonClass}><Link to = "/opmerking">Checkout</Link></button>
+                <Link to = "/opmerking"><button className = {this.props.buttonClass}>Checkout</button></Link>
             </section>
 
         );

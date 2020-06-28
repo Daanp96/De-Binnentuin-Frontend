@@ -6,11 +6,14 @@ class LogInKnoppen extends React.Component{
 
   goBetalenNu = event =>{
     const BASE_URL = 'http://127.0.0.1:8000/api/bestellingen/new/true'
+    console.log(this.props.shoppingcart);
     axios.post(BASE_URL, {
       shoppingcart: this.props.shoppingcart
-    }).then(res =>{
-      console.log(res)
+    }).then(function(response){
+      console.log(response);
       //ga naar mollie
+    }).catch(function (error){
+      console.log(error);
     });
   }
 
@@ -22,7 +25,7 @@ class LogInKnoppen extends React.Component{
     return(
         <section>
           <button className="" type="button" name="button">Log in</button>
-          <button className="" type="button" name="button" onClick = {this.goBetalenNu()}>Betaal zonder in te loggen</button>
+          <button className="" type="button" name="button" onClick = {this.goBetalenNu}>Betaal zonder in te loggen</button>
         </section>
     );
   }
