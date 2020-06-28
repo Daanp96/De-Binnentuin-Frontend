@@ -1,5 +1,10 @@
+.admin_menu_list {
+  width: 80%;
+  margin: auto;
+}
 .admin_menu_list__a {
   display: flex;
+  grid-row: 2;
   align-items: flex-start;
   justify-content: flex-start;
   text-decoration: none;
@@ -79,6 +84,12 @@ html, body {
   width: 50%;
   text-decoration: none;
   margin: 1em 0;
+}
+
+@media screen and (max-width: 700px) {
+  .admin_menu_list {
+    width: 90%;
+  }
 }
 
 /*# sourceMappingURL=AdminMenu.css.map */

@@ -67,7 +67,7 @@ class AdminMenuItemEdit extends React.Component{
   render(){
     return (
       <section className = "MenuEditBox">
-        <Link to="/menu" className="MenuEditBox__link">
+        <Link to="/adminmenu" className="MenuEditBox__link">
           <button className="Terugknop">
              &#8592; Terug
           </button>

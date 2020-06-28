@@ -16,7 +16,7 @@
 }
 
 .sidewaysMenuButtoncontainer_button:hover {
-  background-color: #ffffff;
+  background-color: #0E7275;
 }
 
 .sidewaysMenuButtoncontainer--shopping__button {
@@ -25,13 +25,20 @@
   padding: 14px;
   text-decoration: none;
   display: inline;
-  background-color: #002C2D;
-  width: 100%;
+  background-color: #336633;
+  width: 60%;
   position: relative;
   border: none;
+  max-height: 70px;
 }
 .sidewaysMenuButtoncontainer--shopping img {
   max-height: 35px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidewaysMenuButtoncontainer--shopping__button {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=SidewaysMenuButton.css.map */

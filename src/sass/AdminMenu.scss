@@ -1,7 +1,9 @@
 .admin_menu_list{
-
+    width: 80%;
+    margin: auto;
   &__a{
     display: flex;
+    grid-row: 2;
     align-items: flex-start;
     justify-content: flex-start;
     text-decoration: none;
@@ -93,6 +95,11 @@ html, body{
     text-decoration: none;
     margin: 1em 0;
   }
+}
 
+@media screen and (max-width: 700px){
+  .admin_menu_list{
+  width: 90%;
+  }
 
 }

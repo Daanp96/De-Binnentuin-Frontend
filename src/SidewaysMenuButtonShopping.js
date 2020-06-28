@@ -12,7 +12,7 @@ class SidewaysMenuButtonShopping extends React.Component {
             <button onClick={this.onClick} className="sidewaysMenuButtoncontainer--shopping__button" type="button">
               <p>({this.props.cart.length})</p>
               <figure>
-                <img src="images/cart.png" />
+                <img src="images/cart_2.png" />
               </figure>
             </button>
             {this.props.children}

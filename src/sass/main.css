@@ -115,12 +115,11 @@ body {
 }
 
 .sidewaysMenu {
-  background-color: #333;
   overflow-x: scroll;
   white-space: nowrap;
   width: 100%;
   display: inline-block;
-  float: left;
+  height: auto;
 }
 
 .submenu {
@@ -201,7 +200,7 @@ body {
 }
 
 .sidewaysMenuButtoncontainer_button:hover {
-  background-color: #ffffff;
+  background-color: #0E7275;
 }
 
 .sidewaysMenuButtoncontainer--shopping__button {
@@ -210,15 +209,21 @@ body {
   padding: 14px;
   text-decoration: none;
   display: inline;
-  background-color: #002C2D;
-  width: 100%;
+  background-color: #336633;
+  width: 60%;
   position: relative;
   border: none;
+  max-height: 70px;
 }
 .sidewaysMenuButtoncontainer--shopping img {
   max-height: 35px;
 }
 
+@media screen and (max-width: 700px) {
+  .sidewaysMenuButtoncontainer--shopping__button {
+    width: 100%;
+  }
+}
 .timeslot {
   display: grid;
   grid-template-columns: 45% 10% 45%;
@@ -362,10 +367,13 @@ html {
   color: white;
   font-size: 1.2em;
   padding: 0.3em 0.9em;
-  border-radius: 15px 50px 30px 5px;
+  border-radius: 5px;
   grid-column: 1/span 2;
   margin: 0.7em auto 0.7em auto;
   width: 50%;
+}
+.order__button:hover {
+  background-color: #0E7275;
 }
 .order__opmerking {
   margin: 0.6em auto;
@@ -459,8 +467,13 @@ html {
     width: 90%;
   }
 }
+.admin_menu_list {
+  width: 80%;
+  margin: auto;
+}
 .admin_menu_list__a {
   display: flex;
+  grid-row: 2;
   align-items: flex-start;
   justify-content: flex-start;
   text-decoration: none;
