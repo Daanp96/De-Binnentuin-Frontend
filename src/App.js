@@ -220,6 +220,7 @@ class App extends React.Component {
                   <LocationButton locatie="dakterras" onClick={this.makeApiCall}/>
                 </section>
                 {this.tafels}
+                </section>
               </Route>
               <Route path="/submenu">
                 <SidewaysMenu function={this.getMenu} categoryList ={this.state.categoryList}/>
