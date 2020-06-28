@@ -42,7 +42,7 @@ class App extends React.Component {
       popup: false,
       restaurant: 1,
       isShoppingcart: false,
-      afhalen: false
+      reserveren: false
   }
 
   tafels;
@@ -185,7 +185,7 @@ class App extends React.Component {
                   <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} itemList={this.state.itemList} buttonClass={classNameForButtons}/>
                 </Route>
                 <Route path="/opmerking">
-                  <Korting tafeltimeslot = {5} shoppingcart = {this.state.shoppingcart}/>
+                  <Korting tafeltimeslot = {this.state.reserveren ? 1 : 2} shoppingcart = {this.state.shoppingcart}/>
                 </Route>
                 <Route path="/login" component={LoginPage} />
                 <Route path="/signup" component={RegisterPage} />
