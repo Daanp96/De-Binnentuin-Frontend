@@ -208,9 +208,11 @@ class App extends React.Component {
               </Route>
 
               <Route path="/menu">
+                 <section className="submenu">
                   <SidewaysMenu getMenu={this.getMenu} getCatergories={this.getCatergories} categoryList ={this.state.categoryList}/>
-                  <SidewaysMenuButton name ="Shopping Cart" function ={() => this.getMenu("Shopping Cart")}><span id="addToShoppingPopup" className={classNameForPopup}>+1</span></SidewaysMenuButton>
-                  <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} itemList={this.state.itemList} buttonClass={classNameForButtons}/>
+                  <SidewaysMenuButtonShopping name ="Shopping Cart" cart={this.state.shoppingcart} function ={() => this.getMenu("Shopping Cart")}><span id="addToShoppingPopup" className={classNameForPopup}>+1</span></SidewaysMenuButtonShopping>
+                  </section>
+                <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} itemList={this.state.itemList} buttonClass={classNameForButtons}/>
                 </Route>
                 <Route path="/opmerking">
                   <Korting tafeltimeslot = {this.state.reserveren ? 1 : 2} shoppingcart = {this.state.shoppingcart}/>

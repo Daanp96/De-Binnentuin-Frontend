@@ -45,6 +45,9 @@
   width: 100px;
   padding: 10px;
 }
+.menu_list__item__cart:hover {
+  background-color: #6BB46B;
+}
 .menu_list__item p:nth-child(odd) {
   margin-top: 0.5em;
 }

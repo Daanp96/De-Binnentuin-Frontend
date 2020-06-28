@@ -124,6 +124,12 @@ body {
   border-color: #555 transparent transparent transparent;
 }
 
+.show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
 .optionContainer {
   width: 80%;
   margin: 0 auto;
@@ -731,6 +737,9 @@ html, body {
   margin: 1em 9% 0 9%;
   width: 100px;
   padding: 10px;
+}
+.menu_list__item__cart:hover {
+  background-color: #6BB46B;
 }
 .menu_list__item p:nth-child(odd) {
   margin-top: 0.5em;
