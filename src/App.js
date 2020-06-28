@@ -1,5 +1,4 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './sass/main.scss';
 
 import LocationButton from "./LocationButton";
@@ -17,7 +16,6 @@ import Opmerking from "./Opmerking";
 import Korting from "./Korting";
 
 import LoginPage from "./js/pages/LoginPage";
-
 import RegisterPage from "./js/pages/RegisterPage";
 import UserPage from "./js/pages/UserPage";
 
