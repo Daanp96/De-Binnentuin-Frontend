@@ -166,6 +166,9 @@ button {
     &:hover{
       background-color: #027102;
     }
+    &:focus{
+      background-color: #027102;
+    }
   }
 }
 
@@ -180,6 +183,15 @@ button {
 }
 
 @media only screen and (max-width: 600px){
+  .optionContainer{
+    flex-wrap: wrap;
+
+    &__button{
+      width: 80%;
+      margin: 10px auto;
+    }
+  }
+
   .main__location{
     width: 90%;
     margin: 40px auto 0;
@@ -190,6 +202,7 @@ button {
 
     &__locationContainer{
       height: 200px;
+      width: 100%;
 
       & .location__locationButton{
         width: 150px;
