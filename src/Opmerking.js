@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from "axios";
 import './sass/App.scss';
+import './sass/Opmerking.scss';
 
 class Opmerking extends React.Component{
 
@@ -33,9 +34,9 @@ class Opmerking extends React.Component{
   render(){
     return(
       <section>
-        <form onSubmit={(event) => this.makeApiCallPatch(event)}>
-          <input className="" type="text" placeholder="Opmerkingen..." onChange={this.onSearch} />
-          <input className="" type="submit" name="button" value = "Submit" />
+        <form className="searchbarContainer" onSubmit={(event) => this.makeApiCallPatch(event)}>
+          <input className="searchbarContainer__searchbar" type="text" placeholder="Opmerkingen..." onChange={this.onSearch} />
+          <input className="searchbarContainer__submit" type="submit" name="button" value = "Submit" />
         </form>
         <p>{this.state.text}</p>
       </section>
