@@ -4,7 +4,7 @@ import './sass/Header.scss';
 const Header = () => {
     return(
         <header>
-            <img class="header_logo" src="images/binnentuin_logo.png" href="binnentuin_logo"/>
+            <img className="header_logo" src="images/binnentuin_logo.png" href="binnentuin_logo"/>
         </header>
     );
 }

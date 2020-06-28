@@ -28,7 +28,7 @@ class Korting extends React.Component{
     //MERGE: hebt de korting calculatie gebruikt van user-story-17V2
     axios.get( BASE_URL + '2').then(res =>{
       console.log(res);
-      if (this.state.login == "true") {
+      if (this.state.login === "true") {
         this.setState({prijs: (res.data.prijsVoledigeBestelling/100) * 85});
       }else {
         this.setState({prijs: res.data.prijsVoledigeBestelling});

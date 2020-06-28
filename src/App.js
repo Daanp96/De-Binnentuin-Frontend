@@ -53,17 +53,11 @@ class App extends React.Component {
 
   fetchPage(){
     const Base_URL = "http://127.0.0.1:8000";
-    axios.get(Base_URL + "/landing").then(res => {
+    axios.get(Base_URL + "/api/landing").then(res => {
        this.setState({
-           locatie: this.state.locatie,
            time: res.data[0] + "-" + res.data[1],
-           isOpen1: this.state.isOpen,
-           isOpen2: this.state.isOpen2,
-           itemList: this.state.itemList,
-           categoryList: this.state.categoryList,
-           shoppingcart: this.state.shoppingcart,
-           popup: this.state.popup,
-           restaurant: this.state.restaurant
+           isOpen1: res.data[2],
+           isOpen2: res.data[3]
        });
      });
    }
@@ -71,30 +65,15 @@ class App extends React.Component {
   getMenu = (submenu) => {
     if(submenu === "Shopping Cart"){
       this.setState({
-          locatie: this.state.locatie,
-          time: this.state.time,
-          isOpen1: this.state.isOpen,
-          isOpen2: this.state.isOpen2,
           itemList: this.state.shoppingcart,
-          categoryList: this.state.categoryList,
           shoppingcart: this.state.shoppingcart,
-          popup: this.state.popup,
-          restaurant: this.state.restaurant,
           isShoppingcart: true
       });
     }else{
     const BASE_URL = `http://127.0.0.1:8000/api/menu/${this.state.restaurant}/${submenu}`;
       axios.get(BASE_URL).then(res => {
           this.setState({
-              locatie: this.state.locatie,
-              time: this.state.time,
-              isOpen1: this.state.isOpen,
-              isOpen2: this.state.isOpen2,
               itemList: res.data,
-              categoryList: this.state.categoryList,
-              shoppingcart: this.state.shoppingcart,
-              popup: this.state.popup,
-              restaurant: this.state.restaurant,
               isShoppingcart: false
           });
       });
@@ -105,15 +84,7 @@ class App extends React.Component {
     const BASE_URL = `http://127.0.0.1:8000/api/menu/${this.state.restaurant}/categories`;
     axios.get(BASE_URL).then(res => {
         this.setState({
-            locatie: this.state.locatie,
-            time: this.state.time,
-            isOpen1: this.state.isOpen,
-            isOpen2: this.state.isOpen2,
-            itemList: this.state.itemList,
             categoryList: res.data,
-            shoppingcart: this.state.shoppingcart,
-            popup: this.state.popup,
-            restaurant: this.state.restaurant
         });
     });
   }
@@ -124,27 +95,12 @@ class App extends React.Component {
     newCart = this.state.shoppingcart;
     newCart.push(item);
     this.setState({
-        locatie: this.state.locatie,
-        time: this.state.time,
-        isOpen1: this.state.isOpen,
-        isOpen2: this.state.isOpen2,
-        itemList: this.state.itemList,
-        categoryList: this.state.categoryList,
         shoppingcart: newCart,
-        popup: true,
-        restaurant: this.state.restaurant
+        popup: true
     });
     this.forceUpdate();
     setTimeout(()=>{this.setState({
-        locatie: this.state.locatie,
-        time: this.state.time,
-        isOpen1: this.state.isOpen,
-        isOpen2: this.state.isOpen2,
-        itemList: this.state.itemList,
-        categoryList: this.state.categoryList,
-        shoppingcart: this.state.shoppingcart,
-        popup: false,
-        restaurant: this.state.restaurant
+        popup: false
     })}, 1000);
   }
 
@@ -155,21 +111,14 @@ class App extends React.Component {
       newCart = this.state.shoppingcart;
       newCart.splice(newCart.indexOf(item),1);
         this.setState({
-            locatie: this.state.locatie,
-            time: this.state.time,
-            isOpen1: this.state.isOpen,
-            isOpen2: this.state.isOpen2,
-            itemList: this.state.itemList,
-            categoryList: this.state.categoryList,
-            shoppingcart: newCart,
-            popup: this.state.popup,
-            restaurant: this.state.restaurant
+            shoppingcart: newCart
         });
     }
   }
 
   componentDidMount = () =>{
       this.getMenu("All");
+      this.fetchPage();
       this.getCatergories();
   }
 
@@ -183,15 +132,7 @@ class App extends React.Component {
       tafelId={res.data[res.data.indexOf(x)].id}/>);
 
       this.setState({
-          locatie: locatie,
-          time: this.state.time,
-          isOpen1: this.state.isOpen,
-          isOpen2: this.state.isOpen2,
-          itemList: this.state.itemList,
-          categoryList: this.state.categoryList,
-          shoppingcart: this.state.shoppingcart,
-          popup: this.state.popup,
-          restaurant: this.state.restaurant
+          locatie: locatie
       });
     });
   }
@@ -212,38 +153,40 @@ class App extends React.Component {
       <article className="App">
         <main className="main">
           <Router>
-            <Header/>
-            <Route path="/reserveren">
-              <section className="main__location">
-                <h2 className="main__location__text">Kies uw locatie</h2>
-                <section className="main__location__locationContainer">
-                  <LocationButton locatie="binnentuin" onClick={this.makeApiCall}/>
-                  <LocationButton locatie="dakterras" onClick={this.makeApiCall}/>
+          <Header/>
+            <Switch>
+              <Route path="/reserveren">
+                <section className="main__location">
+                  <h2 className="main__location__text">Kies uw locatie</h2>
+                  <section className="main__location__locationContainer">
+                    <LocationButton locatie="binnentuin" onClick={this.makeApiCall}/>
+                    <LocationButton locatie="dakterras" onClick={this.makeApiCall}/>
+                  </section>
+                  {this.tafels}
                 </section>
-                {this.tafels}
-              </section>
-            </Route>
-            <Route path="/submenu">
-                <SidewaysMenu function={this.getMenu} categoryList ={this.state.categoryList}/>
-                <SidewaysMenuButton name ="Shopping Cart" function ={() => this.getMenu("Shopping Cart")}><span id="addToShoppingPopup" className={classNameForPopup}>+1</span></SidewaysMenuButton>
-                <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} itemList={this.state.itemList} buttonClass={classNameForButtons}/>
               </Route>
-              <Route path="/opmerking">
-                <Korting shoppingcart = {this.state.shoppingcart}/>
-                <Opmerking/>
-                <LogInKnoppen shoppingcart = {this.state.shoppingcart}/>
-              </Route>
-              <Route path="/login" component={LoginPage} />
-              <Route path="/signup" component={RegisterPage} />
-              <Route path="/user" component={UserPage} />
+              <Route path="/menu">
+                  <SidewaysMenu function={this.getMenu} categoryList ={this.state.categoryList}/>
+                  <SidewaysMenuButton name ="Shopping Cart" function ={() => this.getMenu("Shopping Cart")}><span id="addToShoppingPopup" className={classNameForPopup}>+1</span></SidewaysMenuButton>
+                  <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} itemList={this.state.itemList} buttonClass={classNameForButtons}/>
+                </Route>
+                <Route path="/opmerking">
+                  <Korting shoppingcart = {this.state.shoppingcart}/>
+                  <Opmerking/>
+                  <LogInKnoppen shoppingcart = {this.state.shoppingcart}/>
+                </Route>
+                <Route path="/login" component={LoginPage} />
+                <Route path="/signup" component={RegisterPage} />
+                <Route path="/user" component={UserPage} />
 
-              <Route path="/Admin" component={Admin} />
+                <Route path="/Admin" component={Admin} />
 
-              <Route path="/home">
-                <Maincontent/>
-                <Opening img1Src ="./images/open-sign.png" imgName1 ="De Binnentuin is open" img2Src ="./images/closed-sign.png" imgName2 ="Het dakterras is dicht" time={this.state.time}/>
-                <Weather/>
-              </Route>
+                <Route path="/">
+                  <Maincontent/>
+                  <Opening img1Src ={this.state.isOpen1} img2Src ={this.state.isOpen2} time={this.state.time}/>
+                  <Weather/>
+                </Route>
+            </Switch>
           </Router>
         </main>
       </article>
