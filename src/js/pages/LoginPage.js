@@ -1,16 +1,15 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {Helmet} from 'react-helmet';
-import "../../sass/App.scss";
+import "../../sass/Authentication.scss";
 import axios from "axios";
 import background from "../../img/loginpage-background.jpg";
 
 export class LoginPage extends React.Component {
-/*hier word geregiestreerd welke taal voorkeur heeft en er word door gegaan naar
- de volgende pagina*/
+
   loginReq = () => {
-     axios.post('http://localhost:8000/api/auth/login', {
-     email: document.getElementById("username").value,
+     axios.post('http://127.0.0.1:8000/api/auth/login', {
+     email: document.getElementById("email").value,
      password: document.getElementById("password").value,
      remember_me: true,
      headers: {'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest'},
@@ -25,8 +24,13 @@ export class LoginPage extends React.Component {
      })
      .catch(function (error) {
        console.log(error);
+       alert("Not possible to login, try again!");
      });
   };
+
+  checkbox = () => {
+    document.getElementById("box").click();
+  }
 
   render() {
     return (
@@ -34,19 +38,19 @@ export class LoginPage extends React.Component {
         <Helmet>
           <style>{'body { background-color: white; background-repeat: no-repeat;}'}</style>
         </Helmet>
-        <div className="login-container">
-        <label for="uname"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" id="username" name="uname" required />
+        <section className="user-container">
 
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" id="password" name="psw" required />
+          <label className="user-container__subject"><b>Email</b>
+          <input type="text" placeholder="Vul email in" id="email" className="user-container__fields" name="email" required />
+          </label>
 
-        <label for="remember"><b>Remember me?</b></label>
-        <input type="checkbox" checked="checked" name="remember" />
+          <label className="user-container__subject"><b>Wachtwoord</b>
+          <input type="password" placeholder="Vul wachtwoord in" id="password" className="user-container__fields"name="psw" required />
+          </label>
 
-        <button type="submit" onClick={this.loginReq}>Login</button>
+        <button type="submit" className="user-container__send" onClick={this.loginReq}><b>Log in</b></button>
 
-        </div>
+        </section>
       </div>
     );
   }
