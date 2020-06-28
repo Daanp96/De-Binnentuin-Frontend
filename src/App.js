@@ -12,9 +12,7 @@ import MenuItemList from "./MenuItemList";
 import SidewaysMenu from './SidewaysMenu';
 import SidewaysMenuButton from "./SidewaysMenuButton";
 
-import Opmerking from "./Opmerking";
 import Korting from "./Korting";
-import LogInKnoppen from "./LogInKnoppen";
 
 import LoginPage from "./js/pages/LoginPage";
 import RegisterPage from "./js/pages/RegisterPage";
@@ -187,9 +185,7 @@ class App extends React.Component {
                   <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} itemList={this.state.itemList} buttonClass={classNameForButtons}/>
                 </Route>
                 <Route path="/opmerking">
-                  <Korting shoppingcart = {this.state.shoppingcart}/>
-                  <Opmerking/>
-                  <LogInKnoppen shoppingcart = {this.state.shoppingcart}/>
+                  <Korting tafeltimeslot = {5} shoppingcart = {this.state.shoppingcart}/>
                 </Route>
                 <Route path="/login" component={LoginPage} />
                 <Route path="/signup" component={RegisterPage} />

@@ -2,10 +2,12 @@ import React from 'react';
 import axios from "axios";
 import './sass/App.scss';
 import ShoppingCartConfirm from "./ShoppingCartConfirm";
+import Opmerking from "./Opmerking";
+import LogInKnoppen from "./LogInKnoppen";
 
 class Korting extends React.Component{
 
-  state = {login: "false", prijs: ""};
+  state = {login: "false"};
 
   makeApiCallUsers = invoer =>{
     const BASE_URL = 'http://127.0.0.1:8000/api/users/'
@@ -44,6 +46,8 @@ class Korting extends React.Component{
     return(
       <section>
         <ShoppingCartConfirm itemList = {this.props.shoppingcart}/>
+        <Opmerking/>
+        <LogInKnoppen tafeltimeslot={this.props.tafeltimeslot} shoppingcart = {this.props.shoppingcart}/>
       </section>
     )
   }
