@@ -2,6 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {Helmet} from 'react-helmet';
 import "../../sass/Authentication.scss";
+import { Redirect } from 'react-router-dom'
 import axios from "axios";
 import background from "../../img/loginpage-background.jpg";
 
@@ -20,7 +21,7 @@ export class LoginPage extends React.Component {
        sessionStorage.setItem('token_type', response.data.token_type);
        sessionStorage.setItem('access_token', response.data.access_token);
        var status = response.data.status;
-       alert(status);
+       window.location.replace('http://localhost:3000/opmerking');
      })
      .catch(function (error) {
        console.log(error);

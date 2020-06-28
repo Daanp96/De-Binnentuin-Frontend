@@ -14,13 +14,13 @@ export class RegisterPage extends React.Component {
        password_confirmation: document.getElementById("confirm-password").value,
        rekeningNummer: document.getElementById("rekeningnummer").value,
        adres: document.getElementById("postcode").value + " " + document.getElementById("huisnummer").value,
-
      headers: {'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest'},
      })
      .then(function (response) {
        console.log(response.data.message);
        var status = response.data.message;
-       alert(status);
+       console.log(status);
+       window.location.replace('http://localhost:3000/opmerking');
      })
      .catch(function (error) {
        console.log(error);

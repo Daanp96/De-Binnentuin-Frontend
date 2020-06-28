@@ -73,7 +73,7 @@ body{
 
 /* Popup arrow */
 .popuptext::after {
-  content: "";
+  // content: "";
   position: absolute;
   top: 100%;
   left: 50%;
@@ -98,4 +98,4 @@ body{
 @keyframes fadeIn {
   from {opacity: 0;}
   to {opacity:1 ;}
-}
+}}
