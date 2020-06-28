@@ -49,63 +49,9 @@ body{
   }
 }
 
-.login-container {
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-  background-color: #282c34;
-  margin-left: 37%;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  min-height: 60vh;
-  width: 25vw;
-  display: flex;
-  flex-direction: column;
-  // align-items: center;
-  text-align: left;
-  justify-content: center;
-  font-size: 26px;
-  color: white;
-  padding: 25px;
-}
-
-.user-container__fields {
-  width: 88%;
-  padding: 12px 20px;
-  margin: 12px 0;
-  display: block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-.user-container__subject {
-  font-size: 18px;
-  padding-left: 10%;
-  padding-top: 4vh;
-}
-
-.user-container__send {
-  margin-left: 10%;
-}
-
-.user-container__send {
-  width: 81%;
-  height: 6vh;
-  margin-top: 5vh;
-  margin-left: 9%;
-  margin-bottom: 5vh;
-  background-color: green;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.user-container__check {
-  display: block;
-}
-
 .App-link {
   color: #61dafb;
-=======
+
 .menu_list{
   margin: 0 auto;
 }

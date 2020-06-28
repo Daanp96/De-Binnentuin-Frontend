@@ -1,17 +1,12 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {Helmet} from 'react-helmet';
-import "../../sass/App.scss";
+import "../../sass/Authentication.scss";
 import axios from "axios";
 
 export class RegisterPage extends React.Component {
-/*hier word geregiestreerd welke taal voorkeur heeft en er word door gegaan naar
- de volgende pagina*/
-  Register = () => {
-     // var combineAddress = document.getElementById("postcode").value + " " + document.getElementById("huisnummer").value;
-     // console.log(combineAddress);
-     // console.log(document.getElementById("username").value);
 
+  Register = () => {
      axios.post('http://127.0.0.1:8000/api/auth/signup', {
        name: document.getElementById("username").value,
        email: document.getElementById("email").value,

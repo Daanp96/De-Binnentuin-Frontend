@@ -1,13 +1,12 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {Helmet} from 'react-helmet';
-import "../../sass/App.scss";
+import "../../sass/Authentication.scss";
 import axios from "axios";
 import background from "../../img/loginpage-background.jpg";
 
 export class LoginPage extends React.Component {
-/*hier word geregiestreerd welke taal voorkeur heeft en er word door gegaan naar
- de volgende pagina*/
+
   loginReq = () => {
      axios.post('http://127.0.0.1:8000/api/auth/login', {
      email: document.getElementById("email").value,
