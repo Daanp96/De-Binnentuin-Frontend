@@ -1,0 +1,71 @@
+.timeslot {
+  display: grid;
+  grid-template-columns: 45% 10% 45%;
+  margin-top: 1em;
+}
+.timeslot input {
+  width: 100%;
+}
+
+.timeslotlist {
+  width: 90%;
+  margin: 0 auto;
+  grid-row: 2;
+  grid-column: auto;
+}
+.timeslotlist__form {
+  display: grid;
+  grid-template-columns: 85% 15%;
+}
+.timeslotlist__form__button {
+  width: 70%;
+  margin: 0.6em auto 0 auto;
+  border: none;
+  color: #336633;
+  background-color: transparent;
+  font-size: 1.3em;
+}
+.timeslotlist__form__button--submit {
+  background-color: #336633;
+  grid-column: 1/span 2;
+  border: none;
+  color: white;
+  border-radius: 15px 50px 30px 5px;
+  padding: 0.4em 0.4em;
+  font-size: 1em;
+  width: 60%;
+  margin: auto;
+}
+
+.timeslotlist__form__button--submit:disabled {
+  background-color: #857d6e;
+}
+
+.timeslotlist__form__button--add {
+  margin: 1em auto;
+  background-color: #336633;
+  grid-column: 1/span 2;
+  border: none;
+  color: white;
+  border-radius: 15px 50px 30px 5px;
+  padding: 0.4em 0.4em;
+  font-size: 1em;
+  font-family: "Muli", sans-serif;
+  width: 60%;
+}
+.timeslotlist__form__button--add__figure {
+  display: inline;
+  margin-right: 0.5em;
+}
+.timeslotlist__form__button--add__figure img {
+  max-width: 20%;
+  max-height: 0.7em;
+}
+
+@media screen and (max-width: 700px) {
+  .timeslotlist {
+    margin: 2em auto;
+  }
+}
+
+/*# sourceMappingURL=timeslot.css.map */

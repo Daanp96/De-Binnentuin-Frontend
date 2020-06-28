@@ -1,0 +1,50 @@
+.MenuEditBox{
+  width: 90%;
+  margin: auto;
+
+  &__link{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-decoration: none;
+
+    & button{
+      margin-left: 0;
+    }
+  } 
+
+  & h2{
+    margin: 0.5em 0;
+    color: #002C2D;
+  }
+
+  &__Form{
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  text-align: left;
+
+  &__submit{
+    background-color: #336633;
+    color: white;
+    padding: 0.4em 0.6em;
+    border: none;
+    margin-bottom: 1em;
+    font-size: 1em;
+  }
+
+
+    & label{
+      margin: 0.5em 0;
+      border: 2px solid #336633;
+      padding: 0.4em;
+      color: #996501;
+      font-weight: bold;
+    }
+
+    & input, textarea{
+      margin-top: 0.4em;
+      display: block;
+    }
+  }
+}
