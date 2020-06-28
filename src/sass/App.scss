@@ -28,7 +28,7 @@ body{
   }
 
   &__location{
-    width: 30%;
+    width: 90%;
     margin: 100px auto 0;
 
     &__text{
@@ -37,7 +37,7 @@ body{
     }
 
     &__locationContainer{
-      width: 100%;
+      width: 30%;
       height: 400px;
       margin: 10px auto 0;
 
@@ -177,4 +177,26 @@ button {
 @keyframes fadeIn {
   from {opacity: 0;}
   to {opacity:1 ;}
+}
+
+@media only screen and (max-width: 600px){
+  .main__location{
+    width: 90%;
+    margin: 40px auto 0;
+
+    &__text{
+      text-align: center;
+    }
+
+    &__locationContainer{
+      height: 200px;
+
+      & .location__locationButton{
+        width: 150px;
+        height: 150px;
+
+        margin: 0px;
+      }
+    }
+  }
 }
