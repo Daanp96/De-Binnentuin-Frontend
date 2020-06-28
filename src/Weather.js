@@ -19,7 +19,7 @@ class Weather extends React.Component {
                     image: "images/noweather.png"
                 });
             } else {
-                if(res.data.current.temperature > 20){
+                if(res.data.current.temperature >= 20){
                     this.setState({
                         temperature: "Het is " + res.data.current.temperature + " ºC in Leiden. Lekker weer om buiten te zitten!",
                         image: res.data.current.weather_icons[0]

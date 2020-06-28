@@ -93,6 +93,10 @@ body {
   cursor: pointer;
 }
 
+.App-link {
+  color: #61dafb;
+}
+
 .menu_list {
   margin: 0 auto;
 }
@@ -114,7 +118,6 @@ body {
 
 /* Popup arrow */
 .popuptext::after {
-  content: "";
   position: absolute;
   top: 100%;
   left: 50%;

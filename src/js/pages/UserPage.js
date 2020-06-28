@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {Helmet} from 'react-helmet';
-import "../../sass/Authentication.scss";
+
 import axios from "axios";
 
 export class UserPage extends React.Component {
