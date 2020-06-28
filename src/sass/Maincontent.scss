@@ -1,5 +1,11 @@
 @import "variables";
 
 .main_content__text{
-    padding: 15px;
+    padding: 15px 25%;
+}
+
+@media (max-width: 992px){
+    .main_content__text{
+        padding: 15px 10%;
+    }
 }

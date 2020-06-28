@@ -19,10 +19,17 @@ class Weather extends React.Component {
                     image: "images/noweather.png"
                 });
             } else {
-                this.setState({
-                    temperature: "Het is " + res.data.current.temperature + " ºC in Leiden.",
-                    image: res.data.current.weather_icons[0]
-                });
+                if(res.data.current.temperature > 20){
+                    this.setState({
+                        temperature: "Het is " + res.data.current.temperature + " ºC in Leiden. Lekker weer om buiten te zitten!",
+                        image: res.data.current.weather_icons[0]
+                    });
+                } else {
+                    this.setState({
+                        temperature: "Het is " + res.data.current.temperature + " ºC in Leiden.",
+                        image: res.data.current.weather_icons[0]
+                    });
+                }
             }
         });
     }
@@ -34,7 +41,7 @@ class Weather extends React.Component {
     render(){
         return(
             <section>
-                <p>{this.state.temperature}</p>
+                <h3>{this.state.temperature}</h3>
                 <img className="weather" src={this.state.image} alt="weather_icon"/>
             </section>
         );
