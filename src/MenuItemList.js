@@ -24,7 +24,9 @@ class MenuItemList extends React.Component {
         return(
             <section className="menu_list">
                 {items}
-                <Link to = "/opmerking"><button className = {this.props.buttonClass}>Checkout</button></Link>
+                <Link to = "/opmerking">
+                  <button className = {this.props.buttonClass +' menu_list__checkout'}>Checkout</button>
+                </Link>
             </section>
 
         );

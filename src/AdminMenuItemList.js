@@ -8,7 +8,7 @@ class AdminMenuItemList extends React.Component {
       }
 
       componentDidMount(){
-        this.props.function('all');
+        this.props.getMenu('All');
       }
 
     render(){

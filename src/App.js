@@ -169,7 +169,7 @@ class App extends React.Component {
 
   render(){
     let classNameForPopup = "popuptext";
-    let classNameForButtons = "menu_list__item__cartButton"
+    let classNameForButtons = "menu_list__item__cartButton menu_list__item__cart"
     if (this.state.popup === true){
       classNameForPopup += " show";
     }
@@ -219,10 +219,9 @@ class App extends React.Component {
                 <Route path="/signup" component={RegisterPage} />
                 <Route path="/user" component={UserPage} />
 
-                <Route path="/Admin" component={Admin} />
                   <Route path="/adminmenu">
-                    <SidewaysMenu function={this.getMenu} categoryList ={this.state.categoryList}/>
-                    <AdminMenuItemList function={this.getMenu} onClick={this.onItemClick} restaurant={this.state.restaurant} onDelete={this.onItemDelete} itemList={this.state.itemList} />
+                    <SidewaysMenu getCatergories={this.getCatergories} getMenu={this.getMenu} categoryList ={this.state.categoryList}/>
+                    <AdminMenuItemList getMenu={this.getMenu} onClick={this.onItemClick} restaurant={this.state.restaurant} onDelete={this.onItemDelete} itemList={this.state.itemList} />
                   </Route>
                   <Route path="/edit">
                     <AdminMenuItemEdit naam={this.state.item_naam}/>
