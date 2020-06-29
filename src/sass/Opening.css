@@ -1,1 +1,35 @@
-.OpeningArticle{border-top:#000000 solid medium;border-bottom:#000000 solid medium}.OpeningArticle__figure{width:25%;display:inline-block}.OpeningArticle__figure__img{width:60%}.OpeningArticle__h2{margin-top:2em}.OpeningArticle__h2Time{margin-bottom:2em}
+.OpeningArticle {
+  width: 70%;
+  border-top: #336633 solid medium;
+  border-bottom: #336633 solid medium;
+  margin: 0 auto;
+  padding: 1em 0;
+}
+.OpeningArticle__section {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.OpeningArticle__figure {
+  width: 100%;
+  display: inline-block;
+}
+.OpeningArticle__figure__img {
+  width: 60%;
+}
+.OpeningArticle__h2 {
+  margin-top: 2em;
+  font-size: 1.6em;
+  margin-bottom: 0.6em;
+}
+.OpeningArticle__h2Time {
+  font-size: 1.4em;
+  margin-bottom: 1em;
+}
+
+@media (max-width: 700px) {
+  .OpeningArticle {
+    width: 90%;
+  }
+}
+
+/*# sourceMappingURL=Opening.css.map */

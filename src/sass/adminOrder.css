@@ -26,6 +26,7 @@ html {
   border: none;
   text-decoration: none;
   background-color: #336633;
+  border-radius: 5px;
   color: white;
   margin-top: 1em;
   font-size: 1.2em;

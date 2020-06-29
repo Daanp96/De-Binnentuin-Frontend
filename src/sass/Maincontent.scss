@@ -1,19 +1,49 @@
 @import "variables";
 
-.main_content__text{
-    padding: 15px 25%;
+.main_content{
+  width: 70%;
+  margin: 1em auto 2em auto;
+
+  &__text{
+    margin: 0 auto 1em auto;
+    font-size: 1em;
+    width: 70%;
+  }
+
+  &__button{
+    width: 70%;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    font-size: 1.3em;
+    margin-top: 1em;
+    padding: 0.5em 0;
+    background-color: $green;
+  }
+
+  &__figure{
+    width: 70%;
+    margin: auto;
+    margin-bottom: 1em;
+    &__img{
+      max-width: 100%
+    }
+  }
 }
 
-.main_content__button{
-  width: 20%;
-}
 
-@media (max-width: 992px){
-    .main_content__text{
-        padding: 15px 10%;
+
+@media (max-width: 700px){
+
+  .main_content{
+    width: 90%;
+    &__text{
+
     }
 
-    .main_content__button{
-      width: 40%;
+    &__button{
+      width: 70%;
+
     }
+  }
 }

@@ -1,1 +1,38 @@
-.main_content__text{padding:15px 25%}.main_content__button{width:20%}@media (max-width: 992px){.main_content__text{padding:15px 10%}.main_content__button{width:40%}}
+.main_content {
+  width: 70%;
+  margin: 1em auto 2em auto;
+}
+.main_content__text {
+  margin: 0 auto 1em auto;
+  font-size: 1em;
+  width: 70%;
+}
+.main_content__button {
+  width: 70%;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  font-size: 1.3em;
+  margin-top: 1em;
+  padding: 0.5em 0;
+  background-color: #336633;
+}
+.main_content__figure {
+  width: 70%;
+  margin: auto;
+  margin-bottom: 1em;
+}
+.main_content__figure__img {
+  max-width: 100%;
+}
+
+@media (max-width: 700px) {
+  .main_content {
+    width: 90%;
+  }
+  .main_content__button {
+    width: 70%;
+  }
+}
+
+/*# sourceMappingURL=Maincontent.css.map */

@@ -161,11 +161,18 @@ body {
   }
 }
 .OpeningArticle {
-  border-top: #000000 solid medium;
-  border-bottom: #000000 solid medium;
+  width: 70%;
+  border-top: #336633 solid medium;
+  border-bottom: #336633 solid medium;
+  margin: 0 auto;
+  padding: 1em 0;
+}
+.OpeningArticle__section {
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 .OpeningArticle__figure {
-  width: 25%;
+  width: 100%;
   display: inline-block;
 }
 .OpeningArticle__figure__img {
@@ -173,22 +180,45 @@ body {
 }
 .OpeningArticle__h2 {
   margin-top: 2em;
+  font-size: 1.6em;
+  margin-bottom: 0.6em;
 }
 .OpeningArticle__h2Time {
-  margin-bottom: 2em;
+  font-size: 1.4em;
+  margin-bottom: 1em;
 }
 
+@media (max-width: 700px) {
+  .OpeningArticle {
+    width: 90%;
+  }
+}
 .weather {
-  max-width: 200px;
-  margin-top: 2vh;
+  width: 70%;
+  margin: 0 auto 2em auto;
 }
 .weather__h2 {
   margin-top: 1em;
 }
 .weather__h3 {
-  margin-top: 2em;
+  margin-top: 1em;
+}
+.weather figure {
+  width: 70%;
+  margin: 1em auto 0 auto;
+}
+.weather figure img {
+  width: 50%;
 }
 
+@media (max-width: 700px) {
+  .weather {
+    width: 90%;
+  }
+  .weather figure img {
+    width: 50%;
+  }
+}
 .sidewaysMenu {
   overflow-x: scroll;
   white-space: nowrap;
@@ -403,6 +433,7 @@ html {
   border: none;
   text-decoration: none;
   background-color: #336633;
+  border-radius: 5px;
   color: white;
   margin-top: 1em;
   font-size: 1.2em;
@@ -553,6 +584,9 @@ html {
   justify-content: flex-start;
   text-decoration: none;
 }
+.admin_menu_list__a button {
+  border-radius: 5px;
+}
 .admin_menu_list__link {
   text-decoration: none;
   color: white;
@@ -561,6 +595,7 @@ html {
   margin: 1em auto;
   padding: 0.4em 0;
   display: block;
+  border-radius: 5px;
 }
 .admin_menu_list__div {
   overflow: auto;
@@ -569,6 +604,7 @@ html {
 }
 .admin_menu_list__div button {
   border: none;
+  border-radius: 5px;
   background-color: #336633;
   color: white;
   padding: 0.4em 0.6em;

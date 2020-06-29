@@ -1,10 +1,35 @@
 .weather{
-    max-width: 200px;
-    margin-top: 2vh;
+    width: 70%;
+    margin: 0 auto 2em auto;
+
     &__h2{
       margin-top: 1em;
     }
     &__h3{
-      margin-top: 2em;
+      margin-top: 1em;
     }
+
+    & figure{
+      width: 70%;
+      margin: 1em auto 0 auto;
+
+      & img{
+        width: 50%;
+      }
+    }
+}
+
+@media (max-width: 700px){
+  .weather{
+      width: 90%;
+
+      & figure{
+
+        & img{
+          width: 50%;
+        }
+      }
+    }
+
+
 }
