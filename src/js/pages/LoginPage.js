@@ -29,7 +29,9 @@ export class LoginPage extends React.Component {
      });
   };
 
-
+  checkbox = () => {
+    document.getElementById("box").click();
+  }
   render() {
     return (
       <div>
