@@ -41,8 +41,10 @@ export class LoginPage extends React.Component {
         <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" id="password" name="psw" required />
 
-        <label for="remember"><b>Remember me?</b></label>
-        <input type="checkbox" checked="checked" name="remember" />
+        <section className="login-container__remember">
+          <label className="login-container__remember__label" for="remember"><b>Remember me?</b></label>
+          <input className="login-container__remember__check" type="checkbox" checked="checked" name="remember" />
+        </section>
 
         <button type="submit" onClick={this.loginReq}>Login</button>
 
