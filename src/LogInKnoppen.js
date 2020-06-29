@@ -1,34 +1,44 @@
 import React from 'react';
 import axios from 'axios';
+import  { Redirect, Link } from 'react-router-dom'
 import "./sass/Menuitem.scss";
 
 class LogInKnoppen extends React.Component{
 state = {
   prijs: 0
 }
-
+  buttons;
 
   componentDidMount = () =>{
     this.getTotaalPrijs();
+    this.checkLoggedIn();
   }
 
   goBetalenNu = event =>{
-    const BASE_URL = 'http://127.0.0.1:8000/api/bestellingen/new/true'
-    console.log(this.props.shoppingcart);
+    const BASE_URL = 'http://127.0.0.1:8000/api/bestellingen/new/true';
     axios.post(BASE_URL, {
       shoppingcart: this.props.shoppingcart,
       totaalprijs: this.state.prijs,
       tafeltimeslot: this.props.tafeltimeslot
     }).then(function(response){
       console.log(response);
-      //ga naar mollie
+      window.location.replace('http://127.0.0.1:8000/api/bestellingen/'+ this.state.prijs +'/betaalnu');
     }).catch(function (error){
       console.log(error);
     });
   }
 
   goBetalenLater = event =>{
-    //post, ga dan niet naar mollie maar naar de volgende pagina
+    const BASE_URL = 'http://127.0.0.1:8000/api/bestellingen/new/false';
+    axios.post(BASE_URL, {
+      shoppingcart: this.props.shoppingcart,
+      totaalprijs: this.state.prijs,
+      tafeltimeslot: this.props.tafeltimeslot
+    }).then(function(response){
+      console.log(response);
+    }).catch(function (error){
+      console.log(error);
+    });
   }
 
   getTotaalPrijs = () => {
@@ -42,11 +52,21 @@ state = {
     });
   }
 
+  checkLoggedIn(){
+    if(sessionStorage.getItem('token_type') != null){
+      this.buttons = [<Link to="/"><button className="loginKnoppen__button" type="button" name="button"onClick = {this.goBetalenLater}>Zet op rekening</button></Link>,
+      <Link to="/"><button className="loginKnoppen__button" type="button" name="button" onClick = {this.goBetalenNu}>Betaal nu via ideal</button></Link>] ;
+    }else{
+      this.buttons = [<Link to="/login"><button className="loginKnoppen__button" type="button" name="button">Log in</button></Link>,
+      <Link to="/signup"><button className="loginKnoppen__button" type="button" name="button">Registreer</button></Link>,
+      <Link to="/"><button className="loginKnoppen__button" type="button" name="button" onClick = {this.goBetalenNu}>Betaal zonder in te loggen</button></Link>];
+    }
+    console.log(sessionStorage.getItem('token_type'));
+  }
   render(){
     return(
         <section className='loginKnoppen'>
-          <button className="loginKnoppen__button" type="button" name="button">Log in</button>
-          <button className="loginKnoppen__button" type="button" name="button" onClick = {this.goBetalenNu}>Betaal zonder in te loggen</button>
+          {this.buttons}
         </section>
     );
   }

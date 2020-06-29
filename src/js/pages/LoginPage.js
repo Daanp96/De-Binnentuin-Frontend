@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {Helmet} from 'react-helmet';
- 
+
 import { Redirect } from 'react-router-dom'
 import axios from "axios";
 import background from "../../img/loginpage-background.jpg";
@@ -32,7 +32,6 @@ export class LoginPage extends React.Component {
   checkbox = () => {
     document.getElementById("box").click();
   }
-
   render() {
     return (
       <div>
