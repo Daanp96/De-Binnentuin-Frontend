@@ -48,6 +48,11 @@
   flex-flow: column;
   margin-top: 2em;
 
+  & a{
+   width:70%;
+
+  }
+
   &__button{
     background-color: #336633;
     border: none;

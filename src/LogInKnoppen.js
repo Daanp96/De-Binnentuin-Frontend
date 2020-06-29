@@ -1,9 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import  { Redirect, Link } from 'react-router-dom'
 import "./sass/Menuitem.scss";
-import {
-  Link
-} from "react-router-dom";
 
 class LogInKnoppen extends React.Component{
 state = {
@@ -24,7 +22,7 @@ state = {
       tafeltimeslot: this.props.tafeltimeslot
     }).then(function(response){
       console.log(response);
-      //ga naar mollie
+      window.location.replace('http://127.0.0.1:8000/api/bestellingen/'+ this.state.prijs +'/betaalnu');
     }).catch(function (error){
       console.log(error);
     });
@@ -60,11 +58,11 @@ state = {
       <Link to="/"><button className="loginKnoppen__button" type="button" name="button" onClick = {this.goBetalenNu}>Betaal nu via ideal</button></Link>] ;
     }else{
       this.buttons = [<Link to="/login"><button className="loginKnoppen__button" type="button" name="button">Log in</button></Link>,
+      <Link to="/signup"><button className="loginKnoppen__button" type="button" name="button">Registreer</button></Link>,
       <Link to="/"><button className="loginKnoppen__button" type="button" name="button" onClick = {this.goBetalenNu}>Betaal zonder in te loggen</button></Link>];
     }
     console.log(sessionStorage.getItem('token_type'));
   }
-
   render(){
     return(
         <section className='loginKnoppen'>
