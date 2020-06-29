@@ -65,9 +65,9 @@ class App extends React.Component {
     console.log(this.state.shoppingcart);
   }
 
-  getSort(event, sort){
+  getSort = (event, sort) => {
       event.preventDefault();
-      const BASE_URL = `http://127.0.0.1:8000/api/menu/sort/${sort}`;
+      const BASE_URL = `http://127.0.0.1:8000/api/menu/sort/${sort}/${this.state.restaurant}`;
       axios.get(BASE_URL).then(res => {
         this.setState({
           itemList: res.data
