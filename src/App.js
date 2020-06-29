@@ -1,42 +1,9 @@
 import React from 'react';
-<<<<<<< HEAD
-// import logo from './logo.svg';
-import './sass/App.scss';
-
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from "react-router-dom";
-
-
-import LoginPage from "./js/pages/LoginPage";
-import Home from "./js/pages/Home";
-import RegisterPage from "./js/pages/RegisterPage";
-import UserPage from "./js/pages/UserPage";
-
-
-const App = (props) => {
-  return (
-    <Router>
-      <div>
-
-        <Switch>
-          <Route path="/login" component={LoginPage} />
-          <Route path="/signup" component={RegisterPage} />
-          <Route path="/user" component={UserPage} />
-          <Route path="/" component={Home} />
-        </Switch>
-
-      </div>
-    </Router>
-  );
-};
-=======
 import './sass/main.scss';
 // import Weather from "./Weather";
 import MenuItemList from "./MenuItemList";
 import SidewaysMenu from './SidewaysMenu';
+import Sort from "./Sort";
 import axios from 'axios';
 
 class App extends React.Component {
@@ -48,7 +15,7 @@ class App extends React.Component {
   }
 
   getMenu = (submenu) => {
-    if(submenu == "Shopping Cart"){
+    if(submenu === "Shopping Cart"){
       this.setState({
         itemList: this.state.shoppingcart
       });
@@ -98,6 +65,16 @@ class App extends React.Component {
     console.log(this.state.shoppingcart);
   }
 
+  getSort(event, sort){
+      event.preventDefault();
+      const BASE_URL = `http://127.0.0.1:8000/api/menu/sort/${sort}`;
+      axios.get(BASE_URL).then(res => {
+        this.setState({
+          itemList: res.data
+        });
+    });
+  }
+
   componentDidMount = () =>{
       this.getMenu("all");
       this.getCatergories();
@@ -111,12 +88,11 @@ class App extends React.Component {
           <p>De Binnentuin</p>
         </header>
         <SidewaysMenu function={this.getMenu} categoryList ={this.state.categoryList}/>
-        <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} itemList={this.state.itemList} />
+        <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} itemList={this.state.itemList} getSort={this.getSort}/>
       </div>
     );
   }
 }
->>>>>>> submenu
 
 
 
