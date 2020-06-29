@@ -180,11 +180,12 @@ class App extends React.Component {
     }
     let reserveren;
     if(this.state.reserveren){
-      reserveren = <section className="main__location">
+      reserveren = <section><section className="main__location">
                 <h2 className="main__location__text">Kies uw locatie</h2>
                 <section className="main__location__locationContainer">
                   <LocationButton locatie="binnentuin" onClick={this.makeApiCall}/>
                   <LocationButton locatie="dakterras" onClick={this.makeApiCall}/>
+                </section>
                 </section>
                 {this.tafels}
                 </section>
