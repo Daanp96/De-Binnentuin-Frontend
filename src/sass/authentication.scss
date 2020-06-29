@@ -1,4 +1,5 @@
 .user-container {
+  border-radius: 5px;
   text-align: center;
   background-color: #282c34;
   margin-left: 37%;
@@ -15,6 +16,7 @@
 }
 
 .user-container__fields {
+  border-radius: 5px;
   width: 88%;
   padding: 12px 20px;
   margin: 12px 0;
@@ -32,8 +34,9 @@
 .user-container__send {
   margin-left: 10%;
 }
- 
+
 .user-container__send {
+  border-radius: 5px;
   width: 81%;
   height: 6vh;
   margin-top: 5vh;

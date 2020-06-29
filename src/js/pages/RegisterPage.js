@@ -45,7 +45,7 @@ export class RegisterPage extends React.Component {
         </label>
 
         <label className="user-container__subject"><b>Wachtwoord</b>
-        <input type="text" placeholder="Vul wachtwoord in" id="password" className="user-container__fields" name="psw" required />
+        <input type="password" placeholder="Vul wachtwoord in" id="password" className="user-container__fields" name="psw" required />
         </label>
 
         <label className="user-container__subject"><b>Bevestig wachtwoord</b>
@@ -53,7 +53,7 @@ export class RegisterPage extends React.Component {
         </label>
 
         <label className="user-container__subject"><b>Rekeningnummer</b>
-        <input type="password" placeholder="Vul rekeningnummer in" id="rekeningnummer" className="user-container__fields" name="iban" required />
+        <input type="text" placeholder="Vul rekeningnummer in" id="rekeningnummer" className="user-container__fields" name="iban" required />
         </label>
 
         <label className="user-container__subject"><b>Postcode</b>
