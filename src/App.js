@@ -3,13 +3,13 @@ import './sass/main.scss';
 // import Weather from "./Weather";
 import MenuItemList from "./MenuItemList";
 import SidewaysMenu from './SidewaysMenu';
-import Sort from "./Sort";
 import axios from 'axios';
 
 class App extends React.Component {
   state = {
       itemList: [],
       categoryList: [],
+      category: "All",
       shoppingcart: [],
       restaurant: 1
   }
@@ -25,7 +25,8 @@ class App extends React.Component {
     const BASE_URL = `http://127.0.0.1:8000/api/menu/${this.state.restaurant}/${submenu}`;
       axios.get(BASE_URL).then(res => {
           this.setState({
-              itemList: res.data
+              itemList: res.data,
+              category: submenu
           });
       });
     }
@@ -67,7 +68,7 @@ class App extends React.Component {
 
   getSort = (event, sort) => {
       event.preventDefault();
-      const BASE_URL = `http://127.0.0.1:8000/api/menu/sort/${sort}/${this.state.restaurant}`;
+      const BASE_URL = `http://127.0.0.1:8000/api/menu/sort/${sort}/${this.state.restaurant}/${this.state.category}`;
       axios.get(BASE_URL).then(res => {
         this.setState({
           itemList: res.data
@@ -76,7 +77,7 @@ class App extends React.Component {
   }
 
   componentDidMount = () =>{
-      this.getMenu("all");
+      this.getMenu("All");
       this.getCatergories();
   }
 

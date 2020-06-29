@@ -1,7 +1,6 @@
 import React from "react";
 import MenuItem from "./MenuItem";
 import Sort from "./Sort";
-import axios from "axios";
 
 class MenuItemList extends React.Component {
 
