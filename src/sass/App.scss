@@ -175,3 +175,41 @@ body{
   from {opacity: 0;}
   to {opacity: 1;}
 }
+
+
+@media only screen and (max-width: 600px){
+  .optionContainer{
+    flex-wrap: wrap;
+
+    &__button{
+      width: 80%;
+      margin: 10px auto;
+    }
+  }
+
+  .main__location{
+    width: 90%;
+    margin: 40px auto 0;
+
+    &__text{
+      text-align: center;
+    }
+
+    &__locationContainer{
+      height: 200px;
+      width: 100%;
+
+      & .location__locationButton{
+        width: 150px;
+        height: 150px;
+
+        margin: 0px;
+      }
+    }
+  }
+
+  .login-container{
+    width: 100%;
+    margin: 10px 0;
+  }
+}

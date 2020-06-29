@@ -16,7 +16,7 @@
 
     border-radius: 10px;
     overflow: hidden;
- 
+
     z-index: 2;
     position: relative;
 
@@ -52,6 +52,7 @@
 
       transition: 0.5s all;
 
+
         &__text{
           font-size: 50px;
           font-family: 'Abel', sans-serif;
@@ -61,8 +62,10 @@
           display: block;
           pointer-events: none;
 
+          transform: translateX(-5%);
+
           &--selected{
-            transform: rotate(90deg);
+            transform: translateX(-5%) rotate(90deg);
           }
         }
 
@@ -122,6 +125,7 @@
     &__submit{
       padding: 20px;
       width: 250px;
+      height: 65px;
 
       font-size: 20px;
 
@@ -137,4 +141,41 @@
     }
   }
 
+}
+
+@media only screen and (max-width: 600px){
+  .tafelcard{
+    width: 90%;
+
+    &__head{
+      &__infoContainer{
+        margin-left: 20px;
+      }
+
+      &__continue{
+        width: 100px;
+        right: 30px;
+      }
+    }
+
+    &__dropdown{
+      flex-wrap: wrap;
+
+      &__inputContainer{
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      &--open{
+        height: 375px;
+      }
+
+      &__submit{
+        margin: 0 auto;
+        height: 60px;
+        padding: 15px;
+        width: 100%;
+      }
+    }
+  }
 }
