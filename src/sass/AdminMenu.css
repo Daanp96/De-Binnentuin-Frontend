@@ -9,6 +9,9 @@
   justify-content: flex-start;
   text-decoration: none;
 }
+.admin_menu_list__a button {
+  border-radius: 5px;
+}
 .admin_menu_list__link {
   text-decoration: none;
   color: white;
@@ -17,6 +20,7 @@
   margin: 1em auto;
   padding: 0.4em 0;
   display: block;
+  border-radius: 5px;
 }
 .admin_menu_list__div {
   overflow: auto;
@@ -25,6 +29,7 @@
 }
 .admin_menu_list__div button {
   border: none;
+  border-radius: 5px;
   background-color: #336633;
   color: white;
   padding: 0.4em 0.6em;

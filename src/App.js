@@ -40,7 +40,8 @@ import {
 
 class App extends React.Component {
   state = {
-      time: "",
+      timeStart: "",
+      timeEnd: "",
       isOpen1: "true" ,
       isOpen2: "false",
       itemList: [],
@@ -58,7 +59,8 @@ class App extends React.Component {
     const Base_URL = "http://127.0.0.1:8000";
     axios.get(Base_URL + "/api/landing").then(res => {
        this.setState({
-           time: res.data[0] + "-" + res.data[1],
+           timeStart: res.data[0],
+           timeEnd: res.data[1],
            isOpen1: res.data[2],
            isOpen2: res.data[3]
        });
@@ -251,7 +253,7 @@ class App extends React.Component {
 
                 <Route path="/">
                   <Maincontent/>
-                  <Opening img1Src ={this.state.isOpen1} img2Src ={this.state.isOpen2} time={this.state.time}/>
+                  <Opening img1Src ={this.state.isOpen1} img2Src ={this.state.isOpen2} timeStart={this.state.timeStart} timeEnd={this.state.timeEnd}/>
                   <Weather/>
                 </Route>
             </Switch>

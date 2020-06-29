@@ -1,1 +1,28 @@
-.weather{max-width:200px;margin-top:2vh}.weather__h2{margin-top:1em}.weather__h3{margin-top:2em}
+.weather {
+  width: 70%;
+  margin: 0 auto 2em auto;
+}
+.weather__h2 {
+  margin-top: 1em;
+}
+.weather__h3 {
+  margin-top: 1em;
+}
+.weather figure {
+  width: 70%;
+  margin: 1em auto 0 auto;
+}
+.weather figure img {
+  width: 50%;
+}
+
+@media (max-width: 700px) {
+  .weather {
+    width: 90%;
+  }
+  .weather figure img {
+    width: 50%;
+  }
+}
+
+/*# sourceMappingURL=Weather.css.map */
