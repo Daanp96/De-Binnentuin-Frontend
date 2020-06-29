@@ -1,9 +1,6 @@
 import React from "react";
 import MenuItem from "./MenuItem";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   Link
 } from "react-router-dom";
 

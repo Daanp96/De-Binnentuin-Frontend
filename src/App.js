@@ -206,7 +206,6 @@ class App extends React.Component {
               </section>
               {reserveren}
               </Route>
-
               <Route path="/menu">
                  <section className="submenu">
                   <SidewaysMenu getMenu={this.getMenu} getCatergories={this.getCatergories} categoryList ={this.state.categoryList}/>
