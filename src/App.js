@@ -27,6 +27,8 @@ import AdminMenuItemEdit from './AdminMenuItemEdit';
 import AdminMenuItemCreate from './AdminMenuItemCreate';
 import AdminMenuItemList from './AdminMenuItemList';
 
+import Twitter from "./Twitter";
+
 import Header from "./Header";
 
 import axios from "axios";
@@ -199,6 +201,9 @@ class App extends React.Component {
           <Router>
           <Header/>
            <Switch>
+             <Route path="/twitter">
+              <Twitter />
+             </Route>
             <Route path="/reserveren">
               <section className="optionContainer">
                 <button className="optionContainer__button" onClick={()=>{this.setState({reserveren:false})}}>Afhalen</button>

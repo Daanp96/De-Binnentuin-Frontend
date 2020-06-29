@@ -54,12 +54,12 @@ state = {
 
   checkLoggedIn(){
     if(sessionStorage.getItem('token_type') != null){
-      this.buttons = [<Link to="/"><button className="loginKnoppen__button" type="button" name="button"onClick = {this.goBetalenLater}>Zet op rekening</button></Link>,
-      <Link to="/"><button className="loginKnoppen__button" type="button" name="button" onClick = {this.goBetalenNu}>Betaal nu via ideal</button></Link>] ;
+      this.buttons = [<Link to="/twitter"><button className="loginKnoppen__button" type="button" name="button"onClick = {this.goBetalenLater}>Zet op rekening</button></Link>,
+      <button className="loginKnoppen__button" type="button" name="button" onClick = {this.goBetalenNu}>Betaal nu via ideal</button>] ;
     }else{
       this.buttons = [<Link to="/login"><button className="loginKnoppen__button" type="button" name="button">Log in</button></Link>,
       <Link to="/signup"><button className="loginKnoppen__button" type="button" name="button">Registreer</button></Link>,
-      <Link to="/"><button className="loginKnoppen__button" type="button" name="button" onClick = {this.goBetalenNu}>Betaal zonder in te loggen</button></Link>];
+      <button className="loginKnoppen__button" type="button" name="button" onClick = {this.goBetalenNu}>Betaal zonder in te loggen</button>];
     }
     console.log(sessionStorage.getItem('token_type'));
   }
