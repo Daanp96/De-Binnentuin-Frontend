@@ -22,7 +22,6 @@ export class LoginPage extends React.Component {
        sessionStorage.setItem('access_token', response.data.access_token);
        var status = response.data.status;
        window.location.replace('http://localhost:3000/opmerking');
-       return <Redirect to="/opmerking"/>
      })
      .catch(function (error) {
        console.log(error);
