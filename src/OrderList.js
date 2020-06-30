@@ -13,7 +13,7 @@ class OrderList extends React.Component{
 
     componentDidMount(){
       //pakt van de api alle bestellingen die nog niet klaar zijn
-      axios.get('http://localhost:8000/api/admin/kok').then(res =>{
+      axios.get('http://localhost:8000/api/admins/kok').then(res =>{
         const lijst = res.data;;
         this.setState({orders: res.data});
         console.log(this.state.orders)

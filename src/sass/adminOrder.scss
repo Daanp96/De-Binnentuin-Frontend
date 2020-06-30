@@ -116,6 +116,10 @@ html{
     color: #002C2D;
     list-style-position: inside;
     list-style-type: none;
+
+    &__item{
+      margin-bottom: 0.4em;
+    }
   }
 
 }
