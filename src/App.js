@@ -48,6 +48,7 @@ class App extends React.Component {
       isOpen2: "false",
       itemList: [],
       categoryList: [],
+      category: "All",
       shoppingcart: [],
       popup: false,
       restaurant: 1,
@@ -81,7 +82,8 @@ class App extends React.Component {
       axios.get(BASE_URL).then(res => {
           this.setState({
               itemList: res.data,
-              isShoppingcart: false
+              isShoppingcart: false,
+              category: submenu
           });
       });
     }
@@ -141,6 +143,16 @@ class App extends React.Component {
       data: {restaurant: restaurant, item_id: id}
     })
     window.location.reload();
+  }
+
+  getSort = (event, sort) => {
+      event.preventDefault();
+      const BASE_URL = `http://127.0.0.1:8000/api/menu/sort/${sort}/${this.state.restaurant}/${this.state.category}`;
+      axios.get(BASE_URL).then(res => {
+        this.setState({
+          itemList: res.data
+        });
+    });
   }
 
   componentDidMount = () =>{
@@ -219,7 +231,7 @@ class App extends React.Component {
                   <SidewaysMenu getMenu={this.getMenu} getCatergories={this.getCatergories} categoryList ={this.state.categoryList}/>
                   <SidewaysMenuButtonShopping name ="Shopping Cart" cart={this.state.shoppingcart} function ={() => this.getMenu("Shopping Cart")}><span id="addToShoppingPopup" className={classNameForPopup}>+1</span></SidewaysMenuButtonShopping>
                   </section>
-                <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} itemList={this.state.itemList} buttonClass={classNameForButtons}/>
+                <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} getSort={this.getSort} itemList={this.state.itemList} buttonClass={classNameForButtons}/>
                 </Route>
                 <Route path="/opmerking">
                   <Korting tafeltimeslot = {this.state.reserveren ? 1 : 2} shoppingcart = {this.state.shoppingcart}/>

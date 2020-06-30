@@ -3,6 +3,8 @@ import MenuItem from "./MenuItem";
 import {
   Link
 } from "react-router-dom";
+import Sort from './Sort';
+
 
 class MenuItemList extends React.Component {
 
@@ -20,6 +22,7 @@ class MenuItemList extends React.Component {
 
         return(
             <section className="menu_list">
+                <Sort handleSubmit={this.props.getSort}/>
                 {items}
                 <Link to = "/opmerking">
                   <button className = {this.props.buttonClass +' menu_list__checkout'}>Checkout</button>
