@@ -21,6 +21,10 @@
     background-color: $green;
   }
 
+  &__button:hover{
+    background-color: #6BB46B;
+  }
+
   &__figure{
     width: 50%;
     margin: auto;

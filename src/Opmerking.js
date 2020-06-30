@@ -24,9 +24,11 @@ class Opmerking extends React.Component{
   }
 
   render(){
+    //onSubmit={(event) => this.makeApiCallPatch(event)}
     return(
       <section className='opmerkingen'>
-        <form className='opmerkingen__form' onSubmit={(event) => this.makeApiCallPatch(event)}>
+
+        <form className='opmerkingen__form' >
           <label>
             Opmerking
           <textarea className="opmerkingen__form__textarea" type="text" placeholder="Opmerkingen..." onChange={this.onSearch} />

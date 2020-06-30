@@ -10,7 +10,12 @@
 
     & button{
       border-radius: 5px;
+      text-decoration: none;
     }
+  }
+
+  &__a:visited{
+    text-decoration: none;
   }
 
   &__link{
@@ -29,6 +34,11 @@
     overflow: auto;
     max-height: 60vh;
     margin-top: 0.7em;
+    text-decoration: none;
+
+    & a{
+      text-decoration: none;
+    }
 
     & button{
       border: none;
@@ -46,6 +56,10 @@
     text-align: left;
     color: #002C2D;
     text-decoration: none;
+
+    & h2{
+      text-decoration: none;
+    }
   }
 
   &__item:hover{

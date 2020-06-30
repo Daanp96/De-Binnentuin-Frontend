@@ -149,11 +149,12 @@ body {
   justify-content: center;
   margin-top: 20px;
   border: none;
-  background-color: green;
+  font-size: 1.3em;
+  background-color: #336633;
   color: white;
 }
 .optionContainer__button:hover {
-  background-color: #027102;
+  background-color: #6BB46B;
 }
 
 @-webkit-keyframes fadeIn {

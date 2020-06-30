@@ -17,6 +17,9 @@
   padding: 0.5em 0;
   background-color: #336633;
 }
+.main_content__button:hover {
+  background-color: #6BB46B;
+}
 .main_content__figure {
   width: 50%;
   margin: auto;
