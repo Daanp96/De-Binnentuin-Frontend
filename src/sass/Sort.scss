@@ -11,6 +11,10 @@
         border: 1px solid black;
     }
 
+    &__hide{
+        display: none;
+    }
+
     .menulist_sort__input{
         margin: 0 15px;
         padding: 5px 15px;

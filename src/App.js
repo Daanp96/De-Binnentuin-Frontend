@@ -185,12 +185,14 @@ class App extends React.Component {
 
   render(){
     let classNameForPopup = "popuptext";
-    let classNameForButtons = "menu_list__item__cartButton menu_list__item__cart"
+    let classNameForButtons = "menu_list__item__cartButton menu_list__item__cart";
+    let classNameForSortHide = "menulist_sort";
     if (this.state.popup === true){
       classNameForPopup += " show";
     }
     if (this.state.isShoppingcart === true) {
       classNameForButtons += " showCartButton";
+      classNameForSortHide += "__hide";
     }
     let reserveren;
     if(this.state.reserveren){
@@ -231,7 +233,7 @@ class App extends React.Component {
                   <SidewaysMenu getMenu={this.getMenu} getCatergories={this.getCatergories} categoryList ={this.state.categoryList}/>
                   <SidewaysMenuButtonShopping name ="Shopping Cart" cart={this.state.shoppingcart} function ={() => this.getMenu("Shopping Cart")}><span id="addToShoppingPopup" className={classNameForPopup}>+1</span></SidewaysMenuButtonShopping>
                   </section>
-                <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} getSort={this.getSort} itemList={this.state.itemList} buttonClass={classNameForButtons}/>
+                <MenuItemList addFunction={this.addToShopping} removeFunction={this.removeFromShopping} getSort={this.getSort} sortClass={classNameForSortHide} itemList={this.state.itemList} buttonClass={classNameForButtons}/>
                 </Route>
                 <Route path="/opmerking">
                   <Korting tafeltimeslot = {this.state.reserveren ? 1 : 2} shoppingcart = {this.state.shoppingcart}/>

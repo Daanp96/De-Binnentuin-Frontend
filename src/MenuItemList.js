@@ -22,7 +22,7 @@ class MenuItemList extends React.Component {
 
         return(
             <section className="menu_list">
-                <Sort handleSubmit={this.props.getSort}/>
+                <Sort handleSubmit={this.props.getSort} sortClass={this.props.sortClass}/>
                 {items}
                 <Link to = "/opmerking">
                   <button className = {this.props.buttonClass +' menu_list__checkout'}>Checkout</button>

@@ -14,7 +14,7 @@ class Sort extends React.Component {
 
     render(){
         return(
-            <section className="menulist_sort">
+            <section className={this.props.sortClass}>
                 <form onSubmit={(event) => this.props.handleSubmit(event, this.state.sort)}>
                     <select className="menulist_sort__select" name="sort" onChange={this.handleChange}>
                         <option value="default">Niet gesorteerd</option>
