@@ -11,6 +11,10 @@
 }
 .admin_menu_list__a button {
   border-radius: 5px;
+  text-decoration: none;
+}
+.admin_menu_list__a:visited {
+  text-decoration: none;
 }
 .admin_menu_list__link {
   text-decoration: none;
@@ -26,6 +30,10 @@
   overflow: auto;
   max-height: 60vh;
   margin-top: 0.7em;
+  text-decoration: none;
+}
+.admin_menu_list__div a {
+  text-decoration: none;
 }
 .admin_menu_list__div button {
   border: none;
@@ -40,6 +48,9 @@
   margin: 0px 35px 0px 35px;
   text-align: left;
   color: #002C2D;
+  text-decoration: none;
+}
+.admin_menu_list__item h2 {
   text-decoration: none;
 }
 .admin_menu_list__item:hover {

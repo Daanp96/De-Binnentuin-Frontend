@@ -157,7 +157,7 @@ body {
   background-color: #6BB46B;
 }
 
-@-webkit-keyframes fadeIn {
+@keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -196,6 +196,10 @@ body {
     margin: 10px 0;
   }
 }
+button, input {
+  cursor: pointer;
+}
+
 .OpeningArticle {
   width: 70%;
   border-top: #336633 solid medium;
@@ -625,6 +629,10 @@ html {
 }
 .admin_menu_list__a button {
   border-radius: 5px;
+  text-decoration: none;
+}
+.admin_menu_list__a:visited {
+  text-decoration: none;
 }
 .admin_menu_list__link {
   text-decoration: none;
@@ -640,6 +648,10 @@ html {
   overflow: auto;
   max-height: 60vh;
   margin-top: 0.7em;
+  text-decoration: none;
+}
+.admin_menu_list__div a {
+  text-decoration: none;
 }
 .admin_menu_list__div button {
   border: none;
@@ -654,6 +666,9 @@ html {
   margin: 0px 35px 0px 35px;
   text-align: left;
   color: #002C2D;
+  text-decoration: none;
+}
+.admin_menu_list__item h2 {
   text-decoration: none;
 }
 .admin_menu_list__item:hover {
