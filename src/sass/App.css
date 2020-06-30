@@ -147,6 +147,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 20px;
+  border: none;
+  background-color: green;
+  color: white;
 }
 .optionContainer__button:hover {
   background-color: #027102;
@@ -158,6 +162,37 @@ body {
   }
   to {
     opacity: 1;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .optionContainer {
+    flex-wrap: wrap;
+  }
+  .optionContainer__button {
+    width: 80%;
+    margin: 10px auto;
+  }
+
+  .main__location {
+    width: 90%;
+    margin: 40px auto 0;
+  }
+  .main__location__text {
+    text-align: center;
+  }
+  .main__location__locationContainer {
+    height: 200px;
+    width: 100%;
+  }
+  .main__location__locationContainer .location__locationButton {
+    width: 150px;
+    height: 150px;
+    margin: 0px;
+  }
+
+  .login-container {
+    width: 100%;
+    margin: 10px 0;
   }
 }
 

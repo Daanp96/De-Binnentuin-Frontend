@@ -16,13 +16,14 @@ state = {
 
   goBetalenNu = event =>{
     const BASE_URL = 'http://127.0.0.1:8000/api/bestellingen/new/true';
+    const totaalprijs = this.state.prijs;
     axios.post(BASE_URL, {
       shoppingcart: this.props.shoppingcart,
-      totaalprijs: this.state.prijs,
+      totaalprijs: totaalprijs,
       tafeltimeslot: this.props.tafeltimeslot
     }).then(function(response){
       console.log(response);
-      window.location.replace('http://127.0.0.1:8000/api/bestellingen/'+ this.state.prijs +'/betaalnu');
+      window.location.replace('http://127.0.0.1:8000/api/bestellingen/'+ totaalprijs +'/betaalnu');
     }).catch(function (error){
       console.log(error);
     });
