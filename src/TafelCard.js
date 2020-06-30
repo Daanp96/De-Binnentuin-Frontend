@@ -129,7 +129,7 @@ class TafelCard extends React.Component{
       <section className="tafelcard">
         <section className="tafelcard__head">
           <article className="tafelcard__head__infoContainer">
-            <p className="tafelcard__head__infoContainer__text tafelcard__head__infoContainer__text--label">TafelNr</p>
+            <p className="tafelcard__head__infoContainer__text tafelcard__head__infoContainer__text--label">SectieNr</p>
             <p className="tafelcard__head__infoContainer__text">{this.props.tafelNummer}</p>
           </article>
           <article className="tafelcard__head__infoContainer">

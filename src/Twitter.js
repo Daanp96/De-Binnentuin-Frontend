@@ -19,7 +19,7 @@ const Twitter = (props) => {
          options={{height: 800}}
          theme="dark"
         />
-        <Hashtag hashtag="plant" className="twitter_container__hashtag"/>
+        <Hashtag hashtag="debinnentuin" className="twitter_container__hashtag"/>
       </section>
     </section>
   );
