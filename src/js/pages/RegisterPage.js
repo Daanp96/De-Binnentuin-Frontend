@@ -8,7 +8,7 @@ export class RegisterPage extends React.Component {
 
   Register = () => {
      axios.post('http://127.0.0.1:8000/api/auth/signup', {
-       name: document.getElementById("username").value,
+       naam: document.getElementById("username").value,
        email: document.getElementById("email").value,
        password: document.getElementById("password").value,
        password_confirmation: document.getElementById("confirm-password").value,
