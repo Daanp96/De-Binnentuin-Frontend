@@ -23,7 +23,7 @@ class Sort extends React.Component {
                         <option value="high_to_low">Prijs: Hoog naar Laag</option>
                         <option value="low_to_high">Prijs: Laag naar Hoog</option>
                     </select>
-                    <input type="submit" value="Sorteer"/>
+                    <input className="menulist_sort__input" type="submit" value="Sorteer"/>
                 </form>
             </section>
         );
