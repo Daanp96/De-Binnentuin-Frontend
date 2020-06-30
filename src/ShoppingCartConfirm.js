@@ -16,7 +16,7 @@ class ShoppingCartConfirm extends React.Component {
         for (let i = 0; i < this.props.itemList.length; i++) {
           prijs += this.props.itemList[i].prijs;
         }
-
+        prijs = prijs.toFixed(2);
         return(
             <section className="menu_list">
                 {items}

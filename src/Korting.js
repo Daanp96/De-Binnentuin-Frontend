@@ -39,7 +39,7 @@ class Korting extends React.Component{
   }
 
   componentDidMount = () =>{
-    this.makeApiCallUsers();
+  //  this.makeApiCallUsers();
   }
 
   render(){

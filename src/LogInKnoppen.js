@@ -16,7 +16,7 @@ state = {
 
   goBetalenNu = event =>{
     const BASE_URL = 'http://127.0.0.1:8000/api/bestellingen/new/true';
-    const totaalprijs = this.state.prijs;
+    const totaalprijs = this.state.prijs.toFixed(2);
     axios.post(BASE_URL, {
       shoppingcart: this.props.shoppingcart,
       totaalprijs: totaalprijs,
@@ -55,14 +55,14 @@ state = {
 
   checkLoggedIn(){
     if(sessionStorage.getItem('token_type') != null){
-      this.buttons = [<Link to="/twitter"><button className="loginKnoppen__button" type="button" name="button"onClick = {this.goBetalenLater}>Zet op rekening</button></Link>,
-      <button className="loginKnoppen__button" type="button" name="button" onClick = {this.goBetalenNu}>Betaal nu via ideal</button>] ;
+      this.buttons = [<Link key={6} to="/twitter"><button key={4} className="loginKnoppen__button" type="button" name="button"onClick = {this.goBetalenLater}>Zet op rekening</button></Link>,
+      <button className="loginKnoppen__button" type="button" key={5} name="button" onClick = {this.goBetalenNu}>Betaal nu via ideal</button>] ;
     }else{
-      this.buttons = [<Link to="/login"><button className="loginKnoppen__button" type="button" name="button">Log in</button></Link>,
-      <Link to="/signup"><button className="loginKnoppen__button" type="button" name="button">Registreer</button></Link>,
-      <button className="loginKnoppen__button" type="button" name="button" onClick = {this.goBetalenNu}>Betaal zonder in te loggen</button>];
+      this.buttons = [<Link key={7} to="/login"><button key={1} className="loginKnoppen__button" type="button" name="button">Log in</button></Link>,
+      <Link key={8} to="/signup"><button className="loginKnoppen__button" key={2} type="button" name="button">Registreer</button></Link>,
+      <button className="loginKnoppen__button" type="button" key={3} name="button" onClick = {this.goBetalenNu}>Betaal zonder in te loggen</button>];
     }
-    console.log(sessionStorage.getItem('token_type'));
+  //  console.log(sessionStorage.getItem('token_type'));
   }
   render(){
     return(

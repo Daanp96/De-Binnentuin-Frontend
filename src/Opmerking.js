@@ -17,7 +17,7 @@ class Opmerking extends React.Component{
     axios.put( BASE_URL + '2/update',{
       opmerking: this.state.opmerking
     }).then(res =>{
-    window.location.replace('http://localhost:3000/opmerking');
+  //  window.location.replace('http://localhost:3000/opmerking');
     }).catch(error => {
    console.log(error.response)
     });

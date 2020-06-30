@@ -13,7 +13,7 @@ export class RegisterPage extends React.Component {
        password: document.getElementById("password").value,
        password_confirmation: document.getElementById("confirm-password").value,
        rekeningNummer: document.getElementById("rekeningnummer").value,
-       adres: document.getElementById("postcode").value + " " + document.getElementById("huisnummer").value,
+       adres: document.getElementById("postcode").value,
      headers: {'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest'},
      })
      .then(function (response) {
