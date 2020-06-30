@@ -10,7 +10,7 @@ const Opening = (props) => {
         </figure>
         <figure className="OpeningArticle__figure">
           <img className="OpeningArticle__figure__img" src={props.img2Src ? './images/open-sign.png' : "./images/closed-sign.png"} alt="dit laat zien of het open of dicht is"/>
-          <figcaption className="OpeningArticle__figure__figcaption">{props.imgName2 ? 'Het dakterras is open' : "Het dakterras is dicht"}</figcaption>
+          <figcaption className="OpeningArticle__figure__figcaption">{props.img2Src ? 'Het dakterras is open' : "Het dakterras is dicht"}</figcaption>
         </figure>
       </section>
       <h2 className="OpeningArticle__h2">Openingstijd</h2>
