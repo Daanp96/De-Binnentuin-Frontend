@@ -14,6 +14,7 @@ class Sort extends React.Component {
 
     render(){
         return(
+            // CSS class die ervoor zorgt dat de sorteer knop niet bij de winkelwagen te zien is.
             <section className={this.props.sortClass}>
                 <form onSubmit={(event) => this.props.handleSubmit(event, this.state.sort)}>
                     <select className="menulist_sort__select" name="sort" onChange={this.handleChange}>
