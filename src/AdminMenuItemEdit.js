@@ -11,7 +11,6 @@ class AdminMenuItemEdit extends React.Component{
   }
 
   componentDidMount(){
-    //console.log(this.props);
     axios.get('http://127.0.0.1:8000/api/admin/menuitem/' + this.props.naam).then(res =>{
       this.setState({
         naam: res.data.naam,
@@ -23,6 +22,7 @@ class AdminMenuItemEdit extends React.Component{
 
       })
 
+      //Zet de nummers om in false of true
       if(this.state.special == 1){
         this.setState({special: true});
       }

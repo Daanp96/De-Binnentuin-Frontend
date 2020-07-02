@@ -23,6 +23,7 @@ state = {
       tafeltimeslot: this.props.tafeltimeslot
     }).then(function(response){
       console.log(response);
+      // Hieronder word de gebruiker doorgestuurd naar onze betaalservice Mollie, de prijs van de bestelling word hierbij meegegeven in de request.
       window.location.replace('http://127.0.0.1:8000/api/bestellingen/'+ totaalprijs +'/betaalnu');
     }).catch(function (error){
       console.log(error);

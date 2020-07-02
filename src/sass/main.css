@@ -265,6 +265,7 @@ button, input {
   width: 100%;
   display: inline-block;
   height: auto;
+  background-color: #336633;
 }
 
 .submenu {
@@ -334,10 +335,13 @@ button, input {
 
 .sidewaysMenuButtoncontainer_button {
   color: white;
+  border-left: 3px solid #002C2D;
   text-align: center;
+  border-radius: 5px;
   padding: 14px;
   text-decoration: none;
   display: inline;
+  margin: 0.3em 1em;
   background-color: #002C2D;
   width: 8em;
   position: relative;
@@ -348,14 +352,20 @@ button, input {
   background-color: #0E7275;
 }
 
+.sidewaysMenuButtoncontainer--shopping {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .sidewaysMenuButtoncontainer--shopping__button {
   color: white;
   text-align: center;
-  padding: 14px;
   text-decoration: none;
+  border-radius: 5px;
   display: inline;
   background-color: #336633;
   width: 60%;
+  margin: 0.3em auto 0 auto;
   position: relative;
   border: none;
   max-height: 70px;
