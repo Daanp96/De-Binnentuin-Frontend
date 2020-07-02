@@ -11,23 +11,20 @@ class Opmerking extends React.Component{
     console.log(this.state.opmerking);
   }
 
+  //functie om op de opmerking toe te voegen aan de database zodat die later weer gebruikt kan worden
   makeApiCallPatch = event =>{
     event.preventDefault();
     const BASE_URL = 'http://127.0.0.1:8000/api/bestellingen/'
     axios.put( BASE_URL + '2/update',{
       opmerking: this.state.opmerking
-    }).then(res =>{
-  //  window.location.replace('http://localhost:3000/opmerking');
     }).catch(error => {
    console.log(error.response)
     });
   }
 
   render(){
-    //onSubmit={(event) => this.makeApiCallPatch(event)}
     return(
       <section className='opmerkingen'>
-
         <form className='opmerkingen__form' >
           <label>
             Opmerking
