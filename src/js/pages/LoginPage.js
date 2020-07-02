@@ -1,14 +1,15 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {Helmet} from 'react-helmet';
-
 import { Redirect } from 'react-router-dom'
 import axios from "axios";
-import background from "../../img/loginpage-background.jpg";
 
 export class LoginPage extends React.Component {
 
   loginReq = () => {
+
+        // Hier word er een GET-request gemaakt om een gebruiker in te loggen
+
      axios.post('http://127.0.0.1:8000/api/auth/login', {
      email: document.getElementById("email").value,
      password: document.getElementById("password").value,
@@ -16,6 +17,8 @@ export class LoginPage extends React.Component {
      headers: {'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest'},
      })
      .then(function (response) {
+       // Wanneer de request succesvol is word de gebruiker ingelogd en word verschillende inlogdata in sessionStorage opgeslagen. Ook gaat de gebruiker door naar Opmerking.js
+
        console.log(response)
        console.log(response.data.status);
        sessionStorage.setItem('token_type', response.data.token_type);
@@ -24,8 +27,9 @@ export class LoginPage extends React.Component {
        window.location.replace('http://localhost:3000/opmerking');
      })
      .catch(function (error) {
+        // Wanneer de login niet succesvol is krijgt de gebruiker een pop-up dat er iets fout is gegaan
        console.log(error);
-       alert("Not possible to login, try again!");
+       alert("Not possible to login!");
      });
   };
 
@@ -34,6 +38,7 @@ export class LoginPage extends React.Component {
   }
   render() {
     return (
+              // Formulier voor het registeren van een nieuwe gebruiker
       <div>
         <Helmet>
           <style>{'body { background-color: white; background-repeat: no-repeat;}'}</style>
