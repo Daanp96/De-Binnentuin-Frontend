@@ -10,7 +10,6 @@ import Weather from './Weather.js'
 
 import MenuItemList from "./MenuItemList";
 import SidewaysMenu from './SidewaysMenu';
-import SidewaysMenuButton from "./SidewaysMenuButton";
 import SidewaysMenuButtonShopping from './SidewaysMenuButtonShopping';
 
 import Korting from "./Korting";
@@ -145,7 +144,7 @@ class App extends React.Component {
     window.location.reload();
   }
 
-  // Stuurt een sorteer optie door, en krijgt de sorteerde items terug van de API en verwerkt die in de itemList array. 
+  // Stuurt een sorteer optie door, en krijgt de sorteerde items terug van de API en verwerkt die in de itemList array.
   getSort = (event, sort) => {
       event.preventDefault();
       const BASE_URL = `http://127.0.0.1:8000/api/menu/sort/${sort}/${this.state.restaurant}/${this.state.category}`;
@@ -171,11 +170,11 @@ class App extends React.Component {
       tafelNummerTekst="TafelNr"
       tafelPersonenTekst="Aantal plekken"/>);
 
-      if(locatie == "dakterras"){
+      if(locatie === "dakterras"){
         this.setState({
             'restaurant': 2
         });
-      }else if(locatie == "binnentuin"){
+      }else if(locatie === "binnentuin"){
         this.setState({
             'restaurant': 1
         });
@@ -211,7 +210,7 @@ class App extends React.Component {
         <section className="main__location">
         <h2 className="main__location__text">Kies uw tijd om af te halen</h2>
         </section>
-        <TafelCard key="0" tafelNummer="0" maxAantalPersonen="" tafelId="0" tafelPersonenTekst="Type Bestelling" maxAantalPersonen="Afhalen"/></section>
+        <TafelCard key="0" tafelNummer="0" tafelId="0" tafelPersonenTekst="Type Bestelling" maxAantalPersonen="Afhalen"/></section>
     }
     return (
       <article className="App">

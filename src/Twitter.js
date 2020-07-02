@@ -2,7 +2,7 @@ import React from 'react';
 import "./sass/Twitter.scss";
 
 import { Hashtag } from 'react-twitter-widgets'
-import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
+import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 //twitter embed with live feed from @DBinnentuin
 //under that is a hashtag button with #debinnentuin

@@ -7,7 +7,7 @@ import LogInKnoppen from "./LogInKnoppen";
 
 class Korting extends React.Component{
 
-  state = {login: "false"};
+  state = {login: "false", opmerking: ''};
 
   makeApiCallUsers = invoer =>{
     const BASE_URL = 'http://127.0.0.1:8000/api/users/'
@@ -42,12 +42,17 @@ class Korting extends React.Component{
   //  this.makeApiCallUsers();
   }
 
+  opmerkingToevoegen = (event, opmerking) => {
+    event.preventDefault();
+    this.setState({opmerking: opmerking});
+  }
+
   render(){
     return(
       <section>
         <ShoppingCartConfirm itemList = {this.props.shoppingcart}/>
-        <Opmerking/>
-        <LogInKnoppen tafeltimeslot={this.props.tafeltimeslot} shoppingcart = {this.props.shoppingcart}/>
+        <Opmerking opmerkingToevoegen={this.opmerkingToevoegen}/>
+        <LogInKnoppen tafeltimeslot={this.props.tafeltimeslot} opmerking={this.state.opmerking} shoppingcart = {this.props.shoppingcart}/>
       </section>
     )
   }

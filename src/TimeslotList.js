@@ -21,58 +21,55 @@ class TimeslotList extends React.Component{
   //maakt een nieuwe timeslot aan en voegt die aan de state toe
   handleClick(){
     //console.log('this is', this);
-    var oldInput = this.state.timeslots;
+    let oldInput = this.state.timeslots;
     oldInput.push({TimeStop: "00:00", TimeStart:"00:00"});
-    console.log(oldInput);
     this.setState({timeslots: oldInput})
   }
 
 //verwijdert een timeslot uit de state
   handleDeleteClick(placeIndex){
-    var currentState = this.state.timeslots;
+    let currentState = this.state.timeslots;
     currentState.splice(placeIndex, 1);
     this.setState({timeslots: currentState});
-    console.log(this.state.timeslots);
   }
 
   handleSubmit(event){
     event.preventDefault();
-    console.log('send');
-    var start = [];
-    var stop = [];
-    {this.state.timeslots.map((timeslot, index) =>{
+    let start = [];
+    let stop = [];
+    console.log('test');
+    this.state.timeslots.map((timeslot, index) =>{
           start.push(timeslot.TimeStart);
           stop.push(timeslot.TimeStop);
-    })}
+          return null;
+    });
     // stuurt naar de api
    axios({
       method:'put',
       url: 'http://localhost:8000/api/admin/timeslots/update',
       data: {timestart: start, timestop: stop},
     });
-    console.log(start);
-    console.log(stop);
   }
 
   //onclick event dat de state van één input (Timestart) veranderd
   onStartChange = (event, index) => {
-    console.log(event);
     this.setState(state => {
         this.state.timeslots.map((item, j) =>{
-        if(j == index){
+        if(j === index){
           item.TimeStart = event;
         }
+        return null;
       });
     });
   }
   //onclick event dat de state van één input (TimeStop) veranderd
   onEndChange = (event, index) => {
-    console.log(event);
     this.setState(state => {
         this.state.timeslots.map((item, j) =>{
-        if(j == index){
+        if(j === index){
           item.TimeStop = event;
         }
+          return null;
       });
     });
   }
@@ -99,7 +96,7 @@ class TimeslotList extends React.Component{
           })}
           <button  className="timeslotlist__form__button--add" type="button" onClick={() => this.handleClick()} >
             <figure className="timeslotlist__form__button--add__figure">
-              <img src="/images/plus.svg"></img>
+              <img src="/images/plus.svg" alt="plaatje van een +"></img>
             </figure>
             Nieuw Tijdslot
           </button>

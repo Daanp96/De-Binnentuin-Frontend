@@ -23,7 +23,7 @@ class AdminMenuItemEdit extends React.Component{
       })
 
       //Zet de nummers om in false of true
-      if(this.state.special == 1){
+      if(this.state.special === 1){
         this.setState({special: true});
       }
       else{

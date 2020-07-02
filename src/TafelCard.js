@@ -104,15 +104,16 @@ class TafelCard extends React.Component{
     //get timeslots which are already taken from api
     axios.get(BASE_URL + "tafel/" + this.props.tafelId + "/" + day + "/" + month + "/" + year).then(res=>{
       //push ID's from timeslots to takenTimeSlots array
-      res.data.map(timeslot =>{takenTimeslots.push(timeslot.timeslots_id)});
+      res.data.map(timeslot =>{ return takenTimeslots.push(timeslot.timeslots_id)});
 
       //get all timeslots from api
       axios.get(BASE_URL).then(res=>{
         res.data.map(timeslot =>{
           //if any current timeslot is NOT in array takenTimeSlots > it is available so we push it to array availableTimeslots
           if (takenTimeslots.indexOf(timeslot.id) === -1) {
-            availableTimeslots.push(timeslot);
+             availableTimeslots.push(timeslot);
           }
+          return null;
         })
 
         //convert availableTimeslots to an array with <option> tags by taking start-time and stop-time data from timeslot

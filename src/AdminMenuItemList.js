@@ -1,12 +1,8 @@
 import React from "react";
 import AdminMenuItem from "./AdminMenuItem";
-import {Switch, Route, BrowserRouter as Router, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 class AdminMenuItemList extends React.Component {
-      constructor(){
-        super();
-      }
-
       componentDidMount(){
         this.props.getMenu('All');
       }

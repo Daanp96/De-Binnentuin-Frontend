@@ -1,5 +1,4 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import {Helmet} from 'react-helmet';
 
 import axios from "axios";
@@ -21,15 +20,11 @@ export class RegisterPage extends React.Component {
 
      // Wanneer de request succesvol is word dit gelogd en de user word doorgeleid naar de Opmerking.js
      .then(function (response) {
-       console.log(response.data.message);
-       var status = response.data.message;
-       console.log(status);
        window.location.replace('http://localhost:3000/opmerking');
      })
 
      // Wanneer de request niet succesvol is krijgt de gebruiker een pop-up dat er iets fout is gegaan
      .catch(function (error) {
-       console.log(error);
        alert("Not possible to register!");
      });
   };
@@ -38,7 +33,7 @@ export class RegisterPage extends React.Component {
     return (
       <div>
 
-        // Formulier voor het registeren van een nieuwe gebruiker
+        {/*  Formulier voor het registeren van een nieuwe gebruiker */}
         <Helmet>
           <style>{'body { background-color: white; background-repeat: no-repeat;}'}</style>
         </Helmet>

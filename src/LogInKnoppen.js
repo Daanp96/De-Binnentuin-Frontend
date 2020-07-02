@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import  { Redirect, Link } from 'react-router-dom'
+import  {Link } from 'react-router-dom'
 import "./sass/Menuitem.scss";
 
 class LogInKnoppen extends React.Component{
@@ -18,6 +18,7 @@ state = {
     const BASE_URL = 'http://127.0.0.1:8000/api/bestellingen/new/true';
     const totaalprijs = this.state.prijs.toFixed(2);
     axios.post(BASE_URL, {
+      opmerking: this.props.opmerking,
       shoppingcart: this.props.shoppingcart,
       totaalprijs: totaalprijs,
       tafeltimeslot: this.props.tafeltimeslot
@@ -33,6 +34,7 @@ state = {
   goBetalenLater = event =>{
     const BASE_URL = 'http://127.0.0.1:8000/api/bestellingen/new/false';
     axios.post(BASE_URL, {
+      opmerking: this.props.opmerking,
       shoppingcart: this.props.shoppingcart,
       totaalprijs: this.state.prijs,
       tafeltimeslot: this.props.tafeltimeslot

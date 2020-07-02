@@ -14,9 +14,7 @@ class OrderList extends React.Component{
     componentDidMount(){
       //pakt van de api alle bestellingen die nog niet klaar zijn
       axios.get('http://localhost:8000/api/admins/kok').then(res =>{
-        const lijst = res.data;;
         this.setState({orders: res.data});
-        console.log(this.state.orders)
       })
     }
 
@@ -37,7 +35,7 @@ class OrderList extends React.Component{
 
     // pakt elk item en doet hem bij de bestellijst
   let bestellijst = [];
-  for(const [order, value] of this.state.orders.entries()){
+  for(const [order] of this.state.orders.entries()){
     bestellijst.push( {amount: this.state.orders[order].Aantal, item: this.state.orders[order].MenuItem_id} )
   }
     //Return functie

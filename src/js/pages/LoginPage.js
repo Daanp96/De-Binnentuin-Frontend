@@ -1,7 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import {Helmet} from 'react-helmet';
-import { Redirect } from 'react-router-dom'
 import axios from "axios";
 
 export class LoginPage extends React.Component {
@@ -19,16 +17,14 @@ export class LoginPage extends React.Component {
      .then(function (response) {
        // Wanneer de request succesvol is word de gebruiker ingelogd en word verschillende inlogdata in sessionStorage opgeslagen. Ook gaat de gebruiker door naar Opmerking.js
 
-       console.log(response)
-       console.log(response.data.status);
+
        sessionStorage.setItem('token_type', response.data.token_type);
        sessionStorage.setItem('access_token', response.data.access_token);
-       var status = response.data.status;
+      // var status = response.data.status;
        window.location.replace('http://localhost:3000/opmerking');
      })
      .catch(function (error) {
         // Wanneer de login niet succesvol is krijgt de gebruiker een pop-up dat er iets fout is gegaan
-       console.log(error);
        alert("Not possible to login!");
      });
   };
