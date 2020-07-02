@@ -14,13 +14,11 @@ class TimeslotList extends React.Component{
   componentDidMount(){
     axios.get('http://localhost:8000/api/admin/timeslots').then(res =>{
       this.setState({timeslots: res.data});
-      console.log(this.state.timeslots);
     })
   }
 
   //maakt een nieuwe timeslot aan en voegt die aan de state toe
   handleClick(){
-    //console.log('this is', this);
     let oldInput = this.state.timeslots;
     oldInput.push({TimeStop: "00:00", TimeStart:"00:00"});
     this.setState({timeslots: oldInput})
@@ -37,7 +35,6 @@ class TimeslotList extends React.Component{
     event.preventDefault();
     let start = [];
     let stop = [];
-    console.log('test');
     this.state.timeslots.map((timeslot, index) =>{
           start.push(timeslot.TimeStart);
           stop.push(timeslot.TimeStop);

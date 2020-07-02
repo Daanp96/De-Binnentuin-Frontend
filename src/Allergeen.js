@@ -15,8 +15,10 @@ const Allergeen = (props) =>{
   return(
     <section className="allergeen-icoon-container">
       <section className={classes}>
-        <img className="allergeen-icoon-container__icoon__img" src={source} alt={props.allergy + " allergy warning"}/>
-      </section>
+        <figure>
+          <img className="allergeen-icoon-container__icoon__img" src={source} alt={props.allergy + " allergy warning"}/>
+        </figure>
+    </section>
       <p className="allergeen-icoon-container__text">{"contains " + props.allergy}</p>
     </section>
 

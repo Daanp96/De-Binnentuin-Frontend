@@ -52,7 +52,9 @@ const LocationButton = (props) =>{
   return(
     <section className="location">
       <button className="location__locationButton" onClick={onLocatieClick} locatie={props.locatie}>
-        {img}
+          {/* geen figure want het geeft problemen bij het laden van de pagina */ }
+          {img}
+
         <p className="location__locationButton__text">{props.locatie}</p>
       </button>
       <section className="location__dropdown">

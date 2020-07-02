@@ -12,10 +12,10 @@ class Rekening extends React.Component{
     axios.put( BASE_URL + '2/update',{
       prijs: this.state.rekening + this.state.prijs
     }).then(res =>{
-      console.log(res);
+
       this.setState({rekening: (this.state.rekening + this.state.prijs)});
     }).catch(error => {
-   console.log(error.response)
+
     });
   }
 

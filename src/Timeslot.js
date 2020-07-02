@@ -20,7 +20,6 @@ class Timeslot extends React.Component{
 }
 onEndChange = (event) => {
   this.setState({end: event.target.value})
-  console.log(this.state.end);
 }
 
   render(){

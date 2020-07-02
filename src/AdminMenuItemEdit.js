@@ -29,7 +29,7 @@ class AdminMenuItemEdit extends React.Component{
       else{
           this.setState({special: false});
       }
-            console.log(this.state);
+
 
     });
 
@@ -49,14 +49,13 @@ class AdminMenuItemEdit extends React.Component{
        this.setState({categorie: event.target.value});
   }
   handleChangeSpecial(event){
-    console.log(event.target.checked);
+
      this.setState({special: event.target.checked});
   }
 
   //verstuurd de form naar de api en de api update de gegevens vervolgens
   handleSubmit = (event) =>{
     event.preventDefault();
-    console.log(this.state);
     axios({
       method:'put',
       url: 'http://localhost:8000/api/admin/menuitem/update',

@@ -32,22 +32,22 @@ class AdminMenuItemEdit extends React.Component{
        this.setState({categorie: event.target.value});
   }
   handleChangeSpecial(event){
-    console.log(event.target.checked);
+
      this.setState({special: event.target.checked});
   }
   handleChangeBinnen(event){
-    console.log(event.target.checked);
+
     this.setState({binnentuin: event.target.checked});
   }
   handleChangeDakterras(event){
-    console.log(event.target.checked);
+
     this.setState({dakterras: event.target.checked});
   }
 
 //stuurd de form naar de api om een nieuw item aan te maken
   handleSubmit = (event) =>{
     event.preventDefault();
-    console.log(this.state);
+
     axios({
       method:'post',
       url: 'http://localhost:8000/api/admin/menuitem/create',
