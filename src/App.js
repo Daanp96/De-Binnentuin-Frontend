@@ -145,6 +145,7 @@ class App extends React.Component {
     window.location.reload();
   }
 
+  // Stuurt een sorteer optie door, en krijgt de sorteerde items terug van de API en verwerkt die in de itemList array. 
   getSort = (event, sort) => {
       event.preventDefault();
       const BASE_URL = `http://127.0.0.1:8000/api/menu/sort/${sort}/${this.state.restaurant}/${this.state.category}`;
