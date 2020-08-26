@@ -1010,5 +1010,12 @@ html, body {
     margin-left: 12px;
   }
 }
+.errorBox {
+  margin-top: 25vh;
+  width: 40%;
+}
+.errorBox__firstLine {
+  padding: 3rem;
+}
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,13 @@
+.errorBox {
+  margin-top: 25vh;
+  margin-left: 30%;
+  width: 40%;
+}
+.errorBox__text {
+  padding: 3rem;
+}
+.errorBox__text--top {
+  padding-bottom: 1rem;
+}
+
+/*# sourceMappingURL=errorBox.css.map */

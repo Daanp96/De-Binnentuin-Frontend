@@ -1,0 +1,13 @@
+.errorBox{
+  margin-top: 25vh;
+  margin-left: 30%;
+  width: 40%;
+
+  &__text{
+    padding: 3rem;
+
+    &--top{
+      padding-bottom: 1rem;
+    }
+  }
+}
