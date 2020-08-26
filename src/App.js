@@ -30,6 +30,8 @@ import Twitter from "./Twitter";
 
 import Header from "./Header";
 
+import Error404 from './Error404';
+
 import axios from "axios";
 
 import {
@@ -269,12 +271,16 @@ class App extends React.Component {
                       <TimeslotList />
                     </section>
                   </Route>
+                  <Route path = "/404">
+                    <Error404/>
+                  </Route>
 
                 <Route path="/">
                   <Maincontent/>
                   <Opening img1Src ={this.state.isOpen1} img2Src ={this.state.isOpen2} timeStart={this.state.timeStart} timeEnd={this.state.timeEnd}/>
                   <Weather/>
                 </Route>
+
             </Switch>
           </Router>
         </main>
