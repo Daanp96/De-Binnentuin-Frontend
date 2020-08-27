@@ -12,6 +12,7 @@ class Error404 extends React.Component{
       <section className = "errorBox">
         <h2 className = "errorBox__text--top">De pagina kan helaas niet worden gevonden</h2>
         <p className = 'errorBox__text'>Excuses voor het ongemak!</p>
+        //een link naar de "/" zodat je volgens de switch in App.js naar de hoofdpagina gaat
         <Link to = '/'>
         <button className = 'loginKnoppen__button'>Terug naar de hoofdpagina</button>
         </Link>

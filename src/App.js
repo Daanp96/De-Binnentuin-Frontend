@@ -271,15 +271,14 @@ class App extends React.Component {
                       <TimeslotList />
                     </section>
                   </Route>
-
-
-
+                  // de "/" hier exact gemaakt zodat een niet gevonden pagina niet naar de mainpage default maar dat je daar alleen komt met de "/"
                 <Route path="/" exact>
                   <Maincontent/>
                   <Opening img1Src ={this.state.isOpen1} img2Src ={this.state.isOpen2} timeStart={this.state.timeStart} timeEnd={this.state.timeEnd}/>
                   <Weather/>
                 </Route>
 
+                // als laatste route hier alleen een component van de 404 pagina zonder path, alle paths die niet in de switch staan worden hier naar toe verwezen
                 <Route component={Error404} />
 
             </Switch>
