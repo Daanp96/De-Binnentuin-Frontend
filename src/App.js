@@ -272,15 +272,15 @@ class App extends React.Component {
                     </section>
                   </Route>
 
-                  <Route component={Error404} />
 
-                <Route path="/">
+
+                <Route path="/" exact>
                   <Maincontent/>
                   <Opening img1Src ={this.state.isOpen1} img2Src ={this.state.isOpen2} timeStart={this.state.timeStart} timeEnd={this.state.timeEnd}/>
                   <Weather/>
                 </Route>
 
-
+                <Route component={Error404} />
 
             </Switch>
           </Router>
